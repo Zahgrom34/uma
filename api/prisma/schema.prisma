@@ -1,0 +1,117 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           String @id @default(cuid())
+  email        String @unique
+  passwordHash String
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  slug      String    @unique
+  nameRu    String    @unique
+  nameUz    String
+  nameEn    String
+  sortOrder Int       @default(0)
+  products  Product[]
+}
+
+model Product {
+  id            String               @id
+  categoryId    String
+  category      Category             @relation(fields: [categoryId], references: [id])
+  price         Int
+  oldPrice      Int?
+  sale          Boolean              @default(false)
+  tag           String? // 'new' | 'sale' | 'online-exclusive'
+  online        Boolean              @default(false)
+  outOfStock    Boolean              @default(false)
+  stock         Int?
+  sizeGuide     String?
+  sizeValues    String? // JSON string[]
+  colorVariants String? // JSON string[]
+  status        String               @default("published") // 'draft' | 'published'
+  sortOrder     Int                  @default(0)
+  createdAt     DateTime             @default(now())
+  updatedAt     DateTime             @updatedAt
+  translations  ProductTranslation[]
+  sizes         ProductSize[]
+  images        ProductImage[]
+}
+
+model ProductTranslation {
+  productId String
+  lang      String // 'ru' | 'uz' | 'en'
+  name      String
+  color     String
+  material  String
+  desc      String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@id([productId, lang])
+}
+
+model ProductSize {
+  productId   String
+  size        String
+  available   Boolean @default(true)
+  lowStockQty Int?
+  product     Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@id([productId, size])
+}
+
+model MediaAsset {
+  id           String         @id @default(cuid())
+  filename     String         @unique // sha1-12 content hash + .webp | .mp4
+  originalName String
+  mimeType     String
+  kind         String         @default("image") // 'image' | 'video'
+  width        Int?
+  height       Int?
+  sizeBytes    Int
+  sourceUrl    String?
+  alt          String?
+  createdAt    DateTime       @default(now())
+  products     ProductImage[]
+}
+
+model ProductImage {
+  productId String
+  mediaId   String
+  sortOrder Int        @default(0)
+  product   Product    @relation(fields: [productId], references: [id], onDelete: Cascade)
+  media     MediaAsset @relation(fields: [mediaId], references: [id])
+
+  @@id([productId, mediaId])
+}
+
+model InfoPage {
+  slug    String // about | delivery | returns | payment | contact
+  lang    String // ru | uz | en
+  eyebrow String
+  heading String
+  body    String
+
+  @@id([slug, lang])
+}
+
+model UiString {
+  key     String  @id
+  ru      String
+  uz      String
+  en      String
+  context String?
+}
+
+model Setting {
+  key   String @id // commerce | contact | socialLinks | contentVersion
+  value String // JSON
+}
