@@ -9,4 +9,6 @@ export const qk = {
   pages: ["pages"] as const,
   uiStrings: ["ui-strings"] as const,
   settings: ["settings"] as const,
+  billzStatus: ["billz", "status"] as const,
+  billzShops: ["billz", "shops"] as const,
 }

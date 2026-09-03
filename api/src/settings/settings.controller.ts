@@ -1,5 +1,5 @@
 import { BadRequestException, Body, Controller, Get, Header, Put, UseGuards } from '@nestjs/common';
-import type { HeroSettingsInput, SettingsInput } from '@uma/shared';
+import type { BillzSettings, HeroSettingsInput, SettingsInput } from '@uma/shared';
 import { SettingsSchema } from '@uma/shared';
 import { AdminGuard } from '../auth/admin.guard';
 import { ZodValidationPipe } from '../common/zod-validation.pipe';
@@ -11,13 +11,22 @@ type SettingsDto = {
   contact: { phone: string; email: string; hoursWeekdays: string; hoursWeekend: string };
   socialLinks: { label: string; href: string }[];
   hero: { slides: { mediaId: string }[] } | null;
+  billz: BillzSettings;
 };
+
+/**
+ * Shape of the `billz` Setting row at rest — the real secret, never sent to the client.
+ * Legacy billz-v1 rows carry extra fields (username/issuer/officeIds): ignored on read,
+ * rewritten clean on the next PUT.
+ */
+type StoredBillz = { secretKey?: string; shopIds?: string[] };
 
 const DEFAULTS: SettingsDto = {
   commerce: { freeShipThreshold: 1500000, flatShipping: 35000 },
   contact: { phone: '', email: '', hoursWeekdays: '', hoursWeekend: '' },
   socialLinks: [],
   hero: null,
+  billz: { secretKey: '', secretKeySet: false, shopIds: [] },
 };
 
 @Controller('api/admin/settings')
@@ -48,7 +57,7 @@ export class SettingsController {
   }
 
   private async read(): Promise<SettingsDto> {
-    const rows = await this.prisma.setting.findMany({ where: { key: { in: ['commerce', 'contact', 'socialLinks', 'hero'] } } });
+    const rows = await this.prisma.setting.findMany({ where: { key: { in: ['commerce', 'contact', 'socialLinks', 'hero', 'billz'] } } });
     const result: SettingsDto = structuredClone(DEFAULTS);
     for (const row of rows) {
       try {
@@ -57,7 +66,27 @@ export class SettingsController {
         /* keep default */
       }
     }
+    // The secret never leaves the server: the client sees only whether one is stored.
+    const stored = result.billz as StoredBillz;
+    result.billz = {
+      secretKey: '',
+      secretKeySet: typeof stored.secretKey === 'string' && stored.secretKey !== '',
+      shopIds: Array.isArray(stored.shopIds) ? stored.shopIds.filter((s) => typeof s === 'string' && s !== '') : [],
+    };
     return result;
+  }
+
+  /** '' on PUT keeps the stored secret; a non-empty value replaces it. `secretKeySet` is stripped by Zod. */
+  private async resolveBillzSecret(incoming: string): Promise<string> {
+    if (incoming !== '') return incoming;
+    const row = await this.prisma.setting.findUnique({ where: { key: 'billz' } });
+    if (!row) return '';
+    try {
+      const stored = JSON.parse(row.value) as StoredBillz;
+      return typeof stored.secretKey === 'string' ? stored.secretKey : '';
+    } catch {
+      return '';
+    }
   }
 
   @Get()
@@ -70,7 +99,11 @@ export class SettingsController {
   @Header('Cache-Control', 'no-store')
   async put(@Body(new ZodValidationPipe(SettingsSchema)) body: SettingsInput): Promise<SettingsDto> {
     if (body.hero != null) await this.validateHero(body.hero);
-    const entries = Object.entries(body).filter(([, value]) => value !== undefined);
+    const payload: Record<string, unknown> = { ...body };
+    if (body.billz) {
+      payload.billz = { ...body.billz, secretKey: await this.resolveBillzSecret(body.billz.secretKey) };
+    }
+    const entries = Object.entries(payload).filter(([, value]) => value !== undefined);
     await this.prisma.$transaction(
       entries.map(([key, value]) =>
         value === null

@@ -40,6 +40,7 @@ export interface AdminProduct extends PublicProduct {
   updatedAt: string;                   // ISO
   sizes: { size: string; available: boolean; lowStockQty?: number }[];  // write-side source of the derived fields
   mediaIds: string[];                  // ordered
+  billzSku: string | null;             // match key for Billz stock+price sync (billz-v1)
 }
 
 export interface MediaAssetDto {
@@ -59,3 +60,8 @@ export interface SocialLink { label: string; href: string }
 
 export interface UiStringDto { key: string; ru: string; uz: string; en: string; context?: string }
 export interface CommerceSettings { freeShipThreshold: number; flatShipping: number }
+
+export interface BillzSettings { secretKey: string; secretKeySet: boolean; shopIds: string[] }
+export interface BillzShop { id: string; name: string }
+export interface BillzSyncReport { startedAt: string; durationMs: number; totalRows: number; matchedProducts: number; updatedProducts: number; unmatchedSkus: string[]; warnings: string[]; error: string | null }
+export interface BillzTestResult { ok: true; rows: number }

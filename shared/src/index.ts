@@ -44,7 +44,17 @@ export interface AdminProduct extends PublicProduct {
   updatedAt: string;                   // ISO
   sizes: { size: string; available: boolean; lowStockQty?: number }[];  // write-side source of the derived fields
   mediaIds: string[];                  // ordered
+  billzSku: string | null;             // match key for Billz stock+price sync (billz-v1)
 }
+
+// ---------------------------------------------------------------------------
+// Billz POS sync (contracts billz-v1 §3, billz-v2 §3 — BILLZ 2 API)
+// ---------------------------------------------------------------------------
+
+export interface BillzSettings { secretKey: string; secretKeySet: boolean; shopIds: string[] }
+export interface BillzShop { id: string; name: string }
+export interface BillzSyncReport { startedAt: string; durationMs: number; totalRows: number; matchedProducts: number; updatedProducts: number; unmatchedSkus: string[]; warnings: string[]; error: string | null }
+export interface BillzTestResult { ok: true; rows: number }
 
 export type MediaKind = 'image' | 'video';
 
@@ -134,6 +144,7 @@ const productUpsertBase = z.object({
     .array(z.string().regex(/^#[0-9a-fA-F]{3,8}$/, 'Цвет должен быть в формате #RRGGBB'))
     .nullable()
     .optional(),
+  billzSku: z.string().trim().max(200, 'Слишком длинный артикул Billz').nullable().optional(),
   status: z.enum(['draft', 'published'], { invalid_type_error: 'Статус: «draft» или «published»' }).optional().default('published'),
   sortOrder: z.number().int().optional(),
   i18n: z.object({ ru: ProductI18nSchema, uz: ProductI18nSchema, en: ProductI18nSchema }, { required_error: 'Заполните переводы товара' }),
@@ -227,10 +238,17 @@ export const HeroSettingsSchema = z.object({
 });
 export type HeroSettingsInput = z.infer<typeof HeroSettingsSchema>;
 
+export const BillzSettingsSchema = z.object({
+  secretKey: z.string().max(2000, 'Слишком длинный токен'),                          // '' on PUT = keep stored value
+  shopIds:   z.array(z.string().trim().min(1, 'Пустой ID магазина')).max(50, 'Слишком много магазинов'), // [] = все магазины
+});
+export type BillzSettingsInput = z.infer<typeof BillzSettingsSchema>;
+
 export const SettingsSchema = z.object({
   commerce: CommerceSettingsSchema.optional(),
   contact: ContactSettingsSchema.optional(),
   socialLinks: z.array(SocialLinkSchema).optional(),
   hero: HeroSettingsSchema.nullable().optional(),   // null deletes the stored hero
+  billz: BillzSettingsSchema.optional(),
 });
 export type SettingsInput = z.infer<typeof SettingsSchema>;

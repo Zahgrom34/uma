@@ -80,5 +80,6 @@ export function toAdminProduct(p: ProductWithRelations): AdminProduct {
       ...(s.lowStockQty != null ? { lowStockQty: s.lowStockQty } : {}),
     })),
     mediaIds: p.images.map((img) => img.mediaId),
+    billzSku: p.billzSku,
   };
 }

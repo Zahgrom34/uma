@@ -35,6 +35,7 @@ model Product {
   outOfStock    Boolean              @default(false)
   stock         Int?
   sizeGuide     String?
+  billzSku      String? // Billz vendor code (артикул) — match key for stock+price sync
   sizeValues    String? // JSON string[]
   colorVariants String? // JSON string[]
   status        String               @default("published") // 'draft' | 'published'

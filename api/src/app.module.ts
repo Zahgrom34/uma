@@ -8,6 +8,7 @@ import { MediaModule } from './media/media.module';
 import { PagesModule } from './pages/pages.module';
 import { UiStringsModule } from './ui-strings/ui-strings.module';
 import { SettingsModule } from './settings/settings.module';
+import { BillzModule } from './billz/billz.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { SettingsModule } from './settings/settings.module';
     PagesModule,
     UiStringsModule,
     SettingsModule,
+    BillzModule,
   ],
 })
 export class AppModule {}

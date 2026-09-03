@@ -30,6 +30,7 @@ export type ProductPatch = Partial<
     | "tag"
     | "online"
     | "outOfStock"
+    | "billzSku"
     | "stock"
     | "sizeGuide"
     | "sizeValues"

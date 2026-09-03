@@ -75,6 +75,7 @@ export class ProductsService {
           outOfStock: input.outOfStock ?? false,
           stock: input.stock ?? null,
           sizeGuide: input.sizeGuide ?? null,
+          billzSku: input.billzSku ?? null,
           sizeValues: input.sizeValues ? JSON.stringify(input.sizeValues) : null,
           colorVariants: input.colorVariants ? JSON.stringify(input.colorVariants) : null,
           status: input.status ?? 'published',
@@ -132,6 +133,7 @@ export class ProductsService {
           ...(input.outOfStock !== undefined ? { outOfStock: input.outOfStock } : {}),
           ...(input.stock !== undefined ? { stock: input.stock } : {}),
           ...(input.sizeGuide !== undefined ? { sizeGuide: input.sizeGuide } : {}),
+          ...(input.billzSku !== undefined ? { billzSku: input.billzSku } : {}),
           ...(input.sizeValues !== undefined
             ? { sizeValues: input.sizeValues ? JSON.stringify(input.sizeValues) : null }
             : {}),

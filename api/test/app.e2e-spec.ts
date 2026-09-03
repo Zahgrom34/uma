@@ -20,8 +20,30 @@ import sharp from 'sharp';
 import { AppModule } from '../src/app.module';
 import { PrismaService } from '../src/prisma/prisma.service';
 import { setupApp } from '../src/app.setup';
+import { BillzAuthError, BillzClient, BillzNetworkError, BillzProductRow, BillzProductsPage, BillzShopRow } from '../src/billz/billz.client';
 
 const ADMIN = { email: 'admin@test.uz', password: 'test-password-1' };
+
+// Mutable BillzClient stub with the BILLZ 2 seam (login/getProducts/getShops):
+// each spec swaps the impls; every call is captured with its args.
+let billzLogin: (secret: string) => Promise<void> = async () => {};
+let billzProducts: (secret: string, page: number, limit: number) => Promise<BillzProductsPage> = async () => ({ count: 0, products: [] });
+let billzShops: (secret: string) => Promise<BillzShopRow[]> = async () => [];
+let billzCalls: { method: 'login' | 'getProducts' | 'getShops'; secret: string; page?: number; limit?: number }[] = [];
+const billzStub = {
+  login: (secret: string) => {
+    billzCalls.push({ method: 'login', secret });
+    return billzLogin(secret);
+  },
+  getProducts: (secret: string, page: number, limit: number) => {
+    billzCalls.push({ method: 'getProducts', secret, page, limit });
+    return billzProducts(secret, page, limit);
+  },
+  getShops: (secret: string) => {
+    billzCalls.push({ method: 'getShops', secret });
+    return billzShops(secret);
+  },
+};
 
 describe('UMA API (e2e smoke)', () => {
   let app: INestApplication;
@@ -49,7 +71,10 @@ describe('UMA API (e2e smoke)', () => {
       stdio: 'ignore',
     });
 
-    const moduleRef = await Test.createTestingModule({ imports: [AppModule] }).compile();
+    const moduleRef = await Test.createTestingModule({ imports: [AppModule] })
+      .overrideProvider(BillzClient)
+      .useValue(billzStub)
+      .compile();
     app = moduleRef.createNestApplication();
     setupApp(app);
     await app.init();
@@ -565,6 +590,245 @@ describe('UMA API (e2e smoke)', () => {
     const res = await request(server()).get('/api/public/content');
     expect(res.body.products).toHaveLength(0);
     await auth(request(server()).patch('/api/admin/products/test-dress')).send({ status: 'published' });
+  });
+
+  // ---- billz sync (contracts billz-v1 + billz-v2, BILLZ 2 API) -------------
+
+  const SHOP_A = 'shop-aaaa-uuid';
+  const SHOP_X = 'shop-xxxx-uuid';
+
+  // Variant-group fixture per docs/reference/billz2-api-notes.md: one parent + 4 children.
+  // The foreign shop (SHOP_X) carries bogus price/qty — the shopIds filter must exclude it.
+  const billzChild = (id: string, sku: string, size: string | null, qty: number): BillzProductRow => ({
+    id,
+    parent_id: 'par-1',
+    is_variative: false,
+    name: `Naqshli ko'ylak / ${size ?? '—'}`,
+    sku,
+    product_attributes: size ? [{ attribute_name: 'razmer', attribute_value: size }] : [],
+    shop_prices: [
+      { shop_id: SHOP_A, shop_name: 'UMA ЦУМ', retail_price: 1200000, retail_currency: 'UZS', promo_price: 1000000 },
+      { shop_id: SHOP_X, shop_name: 'Склад', retail_price: 500, retail_currency: 'UZS', promo_price: 0 },
+    ],
+    shop_measurement_values: [
+      { shop_id: SHOP_A, shop_name: 'UMA ЦУМ', active_measurement_value: qty },
+      { shop_id: SHOP_X, shop_name: 'Склад', active_measurement_value: 50 },
+    ],
+  });
+  const billzCatalog: BillzProductRow[] = [
+    { id: 'par-1', parent_id: '', is_variative: true, name: "Naqshli ko'ylak", sku: 'PARENT-SKU' },
+    billzChild('c1', 'uma-001 ', 'm ', 2), // sku+size need normalization
+    billzChild('c2', 'KDE-0002', 'XS', 0),
+    billzChild('c3', 'KDE-0003', null, 1), // no razmer attr → total only
+    billzChild('c4', 'KDE-0004', 'XXL', 5), // size not present in UMA
+  ];
+  /** Two pages of 3+2 rows regardless of `limit` — exercises the pagination loop. */
+  const pagedCatalog = async (_secret: string, page: number): Promise<BillzProductsPage> => ({
+    count: billzCatalog.length,
+    products: page === 1 ? billzCatalog.slice(0, 3) : billzCatalog.slice(3),
+  });
+
+  it('billz admin endpoints without cookie → 401', async () => {
+    expect((await request(server()).post('/api/admin/billz/test')).status).toBe(401);
+    expect((await request(server()).post('/api/admin/billz/sync')).status).toBe(401);
+    expect((await request(server()).get('/api/admin/billz/status')).status).toBe(401);
+    expect((await request(server()).get('/api/admin/billz/shops')).status).toBe(401);
+  });
+
+  it('billz test and shops without a stored token → 400 «Укажите данные Billz в настройках»', async () => {
+    const test = await auth(request(server()).post('/api/admin/billz/test'));
+    expect(test.status).toBe(400);
+    expect(test.body.message).toBe('Укажите данные Billz в настройках');
+    const shops = await auth(request(server()).get('/api/admin/billz/shops'));
+    expect(shops.status).toBe(400);
+    expect(shops.body.message).toBe('Укажите данные Billz в настройках');
+  });
+
+  it('GET /api/admin/billz/status → JSON null before the first sync', async () => {
+    const res = await auth(request(server()).get('/api/admin/billz/status'));
+    expect(res.status).toBe(200);
+    expect(res.text).toBe('null');
+  });
+
+  it('legacy billz-v1 row (username/issuer/officeIds) is tolerated: extra fields ignored on read', async () => {
+    await prisma.setting.upsert({
+      where: { key: 'billz' },
+      update: { value: JSON.stringify({ secretKey: 'legacy-secret', username: 'Uma.Shop', issuer: 'umabrand.uz', officeIds: [3] }) },
+      create: { key: 'billz', value: JSON.stringify({ secretKey: 'legacy-secret', username: 'Uma.Shop', issuer: 'umabrand.uz', officeIds: [3] }) },
+    });
+    const res = await auth(request(server()).get('/api/admin/settings'));
+    expect(res.status).toBe(200);
+    expect(res.body.billz).toEqual({ secretKey: '', secretKeySet: true, shopIds: [] });
+  });
+
+  it('PUT settings billz with blank shop ids or an oversized token → 400 (zod)', async () => {
+    const blank = await auth(request(server()).put('/api/admin/settings')).send({
+      billz: { secretKey: '', shopIds: ['  '] },
+    });
+    expect(blank.status).toBe(400);
+    const oversized = await auth(request(server()).put('/api/admin/settings')).send({
+      billz: { secretKey: 'x'.repeat(2001), shopIds: [] },
+    });
+    expect(oversized.status).toBe(400);
+  });
+
+  it('PUT settings billz stores the token; GET masks it; "" on PUT keeps it (sentinel round-trip)', async () => {
+    const put = await auth(request(server()).put('/api/admin/settings')).send({
+      billz: { secretKey: 'billz-secret-1', shopIds: [SHOP_A, SHOP_X], secretKeySet: false },
+    });
+    expect(put.status).toBe(200);
+    // secretKeySet from the client is stripped; the response masks the secret; the legacy row is rewritten clean
+    expect(put.body.billz).toEqual({ secretKey: '', secretKeySet: true, shopIds: [SHOP_A, SHOP_X] });
+
+    const keep = await auth(request(server()).put('/api/admin/settings')).send({
+      billz: { secretKey: '', shopIds: [SHOP_A] },
+    });
+    expect(keep.status).toBe(200);
+    expect(keep.body.billz.secretKeySet).toBe(true);
+    expect(keep.body.billz.shopIds).toEqual([SHOP_A]);
+
+    const get = await auth(request(server()).get('/api/admin/settings'));
+    expect(get.body.billz.secretKey).toBe('');
+    expect(get.body.billz.secretKeySet).toBe(true);
+  });
+
+  it('saving a different card does not wipe the token; test = login + getProducts(1,1) → row count', async () => {
+    await auth(request(server()).put('/api/admin/settings')).send({
+      socialLinks: [{ label: 'Instagram', href: 'https://www.instagram.com/uma_uz/' }],
+    });
+    billzCalls = [];
+    billzProducts = async () => ({ count: 276, products: [] });
+    const res = await auth(request(server()).post('/api/admin/billz/test'));
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ ok: true, rows: 276 });
+    expect(billzCalls).toEqual([
+      { method: 'login', secret: 'billz-secret-1' }, // the stored secret survived the other card's PUT
+      { method: 'getProducts', secret: 'billz-secret-1', page: 1, limit: 1 },
+    ]);
+  });
+
+  it('billz network failure → 502, auth failure → 400, both with pinned Russian messages', async () => {
+    billzProducts = async () => {
+      throw new BillzNetworkError('down');
+    };
+    const net = await auth(request(server()).post('/api/admin/billz/test'));
+    expect(net.status).toBe(502);
+    expect(net.body.message).toBe('Billz недоступен, попробуйте позже');
+
+    billzProducts = async () => {
+      throw new BillzAuthError('bad token');
+    };
+    const bad = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(bad.status).toBe(400);
+    expect(bad.body.message).toBe('Неверные данные Billz');
+
+    billzLogin = async () => {
+      throw new BillzAuthError('revoked token');
+    };
+    const login = await auth(request(server()).post('/api/admin/billz/test'));
+    expect(login.status).toBe(400);
+    expect(login.body.message).toBe('Неверные данные Billz');
+    billzLogin = async () => {};
+  });
+
+  it('GET /api/admin/billz/shops returns id+name pairs; failures map to the same errors', async () => {
+    billzShops = async () => [
+      { id: SHOP_A, name: 'UMA ЦУМ' },
+      { id: SHOP_X, name: 'Склад' },
+    ];
+    const res = await auth(request(server()).get('/api/admin/billz/shops'));
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([
+      { id: SHOP_A, name: 'UMA ЦУМ' },
+      { id: SHOP_X, name: 'Склад' },
+    ]);
+
+    billzShops = async () => {
+      throw new BillzNetworkError('down');
+    };
+    const down = await auth(request(server()).get('/api/admin/billz/shops'));
+    expect(down.status).toBe(502);
+    expect(down.body.message).toBe('Billz недоступен, попробуйте позже');
+  });
+
+  it('PATCH product billzSku persists and round-trips on the admin read', async () => {
+    const res = await auth(request(server()).patch('/api/admin/products/test-dress')).send({
+      billzSku: 'UMA-001',
+      sizes: [
+        { size: 'XS', available: true },
+        { size: 'M', available: true },
+      ],
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.billzSku).toBe('UMA-001');
+    const reread = await auth(request(server()).get('/api/admin/products/test-dress'));
+    expect(reread.body.billzSku).toBe('UMA-001');
+  });
+
+  it('sync happy path: pagination, parent_id grouping, shop filter, razmer sizes, promo pricing, persisted report', async () => {
+    billzCalls = [];
+    billzProducts = pagedCatalog;
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    const report = res.body;
+    expect(report.totalRows).toBe(5);
+    expect(report.matchedProducts).toBe(1);
+    expect(report.updatedProducts).toBe(1);
+    expect(report.unmatchedSkus).toEqual([]);
+    expect(report.error).toBeNull();
+    expect(report.warnings.join(' ')).toContain('XXL');
+    expect(typeof report.startedAt).toBe('string');
+    expect(typeof report.durationMs).toBe('number');
+    // paginated until count (5) covered
+    const pages = billzCalls.filter((c) => c.method === 'getProducts');
+    expect(pages.map((c) => c.page)).toEqual([1, 2]);
+    expect(pages.every((c) => c.limit === 100 && c.secret === 'billz-secret-1')).toBe(true);
+
+    const p = (await auth(request(server()).get('/api/admin/products/test-dress'))).body;
+    expect(p.sale).toBe(true);
+    expect(p.oldPrice).toBe(1200000); // retail from the selected shop, not the foreign shop's 500
+    expect(p.price).toBe(1000000); // active promo_price
+    expect(p.stock).toBe(8); // 2 + 0 + 1 + 5, selected shop only (foreign 50s excluded)
+    expect(p.outOfStock).toBe(false);
+    expect(p.unavailableSizes).toEqual(['XS']); // qty 0 in the selected shop
+    expect(p.lowStockSizes).toEqual({ M: 2 }); // 0 < qty ≤ 3
+
+    // report persisted → survives "reload" via the status endpoint
+    const status = await auth(request(server()).get('/api/admin/billz/status'));
+    expect(status.status).toBe(200);
+    expect(status.body).toEqual(report);
+  });
+
+  it('pasting the PARENT sku matches the same group (is_variative → children)', async () => {
+    await auth(request(server()).patch('/api/admin/products/test-dress')).send({ billzSku: 'parent-sku' });
+    billzProducts = pagedCatalog;
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    expect(res.body.matchedProducts).toBe(1);
+    expect(res.body.unmatchedSkus).toEqual([]);
+    const p = (await auth(request(server()).get('/api/admin/products/test-dress'))).body;
+    expect(p.price).toBe(1000000);
+    expect(p.stock).toBe(8);
+  });
+
+  it('sync with no matching Billz rows reports the sku unmatched and leaves the product untouched', async () => {
+    billzProducts = async () => ({ count: 0, products: [] });
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    expect(res.body.matchedProducts).toBe(0);
+    expect(res.body.updatedProducts).toBe(0);
+    expect(res.body.unmatchedSkus).toEqual(['parent-sku']);
+    const p = (await auth(request(server()).get('/api/admin/products/test-dress'))).body;
+    expect(p.price).toBe(1000000); // untouched
+  });
+
+  it('the public bundle leaks nothing: no billz/billzSync settings, no billzSku, no secret anywhere', async () => {
+    const res = await request(server()).get('/api/public/content');
+    expect(res.status).toBe(200);
+    expect(res.body.settings.billz).toBeUndefined();
+    expect(res.body.settings.billzSync).toBeUndefined();
+    for (const p of res.body.products) expect(p.billzSku).toBeUndefined();
+    expect(JSON.stringify(res.body)).not.toContain('billz-secret-1');
   });
 
   it('there is no registration endpoint', async () => {

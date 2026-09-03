@@ -1,6 +1,11 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 
-import type { CommerceSettings, HeroSettings, SocialLink } from "./types"
+import type {
+  BillzSettings,
+  CommerceSettings,
+  HeroSettings,
+  SocialLink,
+} from "./types"
 import { apiFetch } from "./client"
 import { qk } from "./keys"
 
@@ -14,6 +19,12 @@ export interface AdminSettings {
   socialLinks: SocialLink[]
   /** Absent/undefined when never set; explicit null deletes the stored hero. */
   hero?: HeroSettings | null
+  /**
+   * GET returns `secretKey: ''` + `secretKeySet`; on PUT an empty secretKey
+   * means "keep the stored secret". Optional defensively — older API builds
+   * may not return the key yet.
+   */
+  billz?: BillzSettings
 }
 
 export function useSettings() {

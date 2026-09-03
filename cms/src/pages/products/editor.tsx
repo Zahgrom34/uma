@@ -468,6 +468,19 @@ export function ProductEditorPage() {
                       )}
                     />
                   </Field>
+                  <Field>
+                    <FieldLabel htmlFor="billz-sku">
+                      {t.products.billzSku}
+                    </FieldLabel>
+                    <Input
+                      id="billz-sku"
+                      autoComplete="off"
+                      {...register("billzSku")}
+                    />
+                    <FieldDescription>
+                      {t.products.billzSkuHint}
+                    </FieldDescription>
+                  </Field>
                 </FieldGroup>
               </CardContent>
             </Card>

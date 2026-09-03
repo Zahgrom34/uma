@@ -24,6 +24,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { toast } from "@/components/ui/toast"
 import { DataState } from "@/components/shared/data-state"
 import { PriceInput } from "@/components/products/price-input"
+import { BillzCard } from "@/components/settings/billz-card"
 import { SocialLinksCard } from "@/components/settings/social-links-card"
 
 interface DeliveryForm {
@@ -184,6 +185,14 @@ export function SettingsPage() {
           </Card>
         </form>
         {settings.data ? <SocialLinksCard settings={settings.data} /> : null}
+        {settings.data ? (
+          <>
+            <h2 className="pt-2 text-base font-semibold">
+              {t.billz.section}
+            </h2>
+            <BillzCard settings={settings.data} />
+          </>
+        ) : null}
         </div>
       </DataState>
     </div>

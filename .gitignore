@@ -8,3 +8,4 @@ dist/
 # Runtime state lives on the deployment volume; deploy/seed/ carries the committed copy.
 api/data/
 api/uploads/
+api/prisma/dev.db
