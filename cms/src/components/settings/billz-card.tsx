@@ -319,6 +319,12 @@ function SyncSummary({ report }: { report: BillzSyncReport }) {
         <span className="text-muted-foreground">{t.billz.updated}</span>
         <span className="tabular-nums">{report.updatedProducts}</span>
       </div>
+      {typeof report.importedPhotos === "number" ? (
+        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <span className="text-muted-foreground">{t.billz.reportPhotos}</span>
+          <span className="tabular-nums">{report.importedPhotos}</span>
+        </div>
+      ) : null}
       {report.unmatchedSkus.length > 0 ? (
         <div className="flex flex-col gap-1">
           <span className="text-muted-foreground">{t.billz.unmatched}</span>

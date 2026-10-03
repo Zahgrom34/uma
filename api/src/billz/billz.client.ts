@@ -8,6 +8,9 @@ export class BillzNetworkError extends Error {}
 
 const BILLZ_URL = 'https://api-admin.billz.ai';
 const TIMEOUT_MS = 30_000;
+const PHOTO_TIMEOUT_MS = 15_000;
+const PHOTO_MAX_BYTES = 10 * 1024 * 1024;
+const PHOTO_ATTEMPTS = 2;
 /** Re-login this long before the access token's `exp` to avoid racing the expiry. */
 const EXP_SKEW_MS = 60_000;
 
@@ -32,6 +35,12 @@ export interface BillzProductAttribute {
   attribute_value: string;
 }
 
+export interface BillzProductPhoto {
+  photo_url: string; // absolute https URL (DO Spaces), jpg/png
+  sequence: number;
+  is_main: boolean;
+}
+
 export interface BillzProductRow {
   id: string;
   parent_id: string; // '' on simple products and parents
@@ -41,6 +50,7 @@ export interface BillzProductRow {
   product_attributes?: BillzProductAttribute[] | null;
   shop_prices?: BillzShopPrice[] | null;
   shop_measurement_values?: BillzShopMeasurement[] | null;
+  photos?: BillzProductPhoto[] | null;
 }
 
 export interface BillzProductsPage {
@@ -91,6 +101,36 @@ export class BillzClient {
     return body.shops
       .filter((s) => typeof s.id === 'string' && s.id !== '')
       .map((s) => ({ id: s.id as string, name: typeof s.name === 'string' ? s.name : '' }));
+  }
+
+  /**
+   * Downloads one product photo (plain GET, no auth — public DO Spaces URLs).
+   * 15s timeout per attempt, up to 2 attempts, bodies over 10 MiB rejected
+   * (Content-Length when present AND the final buffer length). All outbound photo
+   * traffic goes through this seam so the e2e stub covers it.
+   */
+  async downloadPhoto(url: string): Promise<Buffer> {
+    let lastError = new BillzNetworkError('billz: photo download failed');
+    for (let attempt = 0; attempt < PHOTO_ATTEMPTS; attempt += 1) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), PHOTO_TIMEOUT_MS);
+      try {
+        const res = await fetch(url, { signal: controller.signal });
+        if (res.status < 200 || res.status >= 300) throw new BillzNetworkError(`billz: photo http ${res.status}`);
+        const declared = Number(res.headers.get('content-length') ?? '');
+        if (Number.isFinite(declared) && declared > PHOTO_MAX_BYTES) {
+          throw new BillzNetworkError('billz: photo larger than 10 MiB');
+        }
+        const buffer = Buffer.from(await res.arrayBuffer());
+        if (buffer.length > PHOTO_MAX_BYTES) throw new BillzNetworkError('billz: photo larger than 10 MiB');
+        return buffer;
+      } catch (e) {
+        lastError = e instanceof BillzNetworkError ? e : new BillzNetworkError('billz: photo fetch failed or timed out');
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+    throw lastError;
   }
 
   // ---- internals -----------------------------------------------------------

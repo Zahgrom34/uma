@@ -1,11 +1,15 @@
+import * as path from 'node:path';
 import { BadGatewayException, BadRequestException, ConflictException, Injectable } from '@nestjs/common';
 import type { BillzShop, BillzSyncReport, BillzTestResult } from '@uma/shared';
 import { PrismaService } from '../prisma/prisma.service';
 import { ContentService } from '../content/content.service';
+import { MediaService } from '../media/media.service';
 import { BillzAuthError, BillzClient, BillzNetworkError, BillzProductRow } from './billz.client';
 
 export const LOW_STOCK_THRESHOLD = 3;
 const PAGE_LIMIT = 100;
+/** Hard cap on Billz photos appended to one product in one sync run (billz-v3 §3.2). */
+const PHOTOS_PER_PRODUCT = 10;
 /** Merchant-defined size attribute names, matched case-insensitively (billz-v2 §3.4). */
 const SIZE_ATTR = /^(razmer|размер|size)$/i;
 
@@ -37,6 +41,7 @@ export class BillzService {
     private readonly prisma: PrismaService,
     private readonly content: ContentService,
     private readonly client: BillzClient,
+    private readonly media: MediaService,
   ) {}
 
   private async readSettings(): Promise<BillzSyncSettings> {
@@ -184,6 +189,39 @@ export class BillzService {
     return result;
   }
 
+  /**
+   * Photo URLs of a variant group (billz-v3 §3.2): collected from all rows in row order,
+   * deduplicated by photo_url, ordered is_main first, then sequence asc, then row order
+   * (stable sort), capped at PHOTOS_PER_PRODUCT.
+   */
+  private groupPhotoUrls(group: BillzProductRow[]): string[] {
+    const seen = new Map<string, { url: string; sequence: number; isMain: boolean }>();
+    for (const row of group) {
+      for (const photo of row.photos ?? []) {
+        const url = (photo.photo_url ?? '').trim();
+        if (!url || seen.has(url)) continue;
+        seen.set(url, { url, sequence: photo.sequence ?? 0, isMain: Boolean(photo.is_main) });
+      }
+    }
+    return [...seen.values()]
+      .sort((a, b) => Number(b.isMain) - Number(a.isMain) || a.sequence - b.sequence)
+      .map((p) => p.url)
+      .slice(0, PHOTOS_PER_PRODUCT);
+  }
+
+  /**
+   * Resolves one Billz photo URL to a media asset id: an already-imported asset is reused
+   * via sourceUrl, otherwise the photo is downloaded and ingested through the normal media
+   * pipeline (content-hash dedup inside). Runs BEFORE the sync $transaction.
+   */
+  private async resolvePhoto(url: string): Promise<string> {
+    const existing = await this.media.findBySourceUrl(url);
+    if (existing) return existing.id;
+    const buffer = await this.client.downloadPhoto(url);
+    const asset = await this.media.ingest(buffer, path.posix.basename(new URL(url).pathname), url);
+    return asset.id;
+  }
+
   private async doSync(): Promise<BillzSyncReport> {
     const settings = await this.readSettings();
     const startedAt = new Date().toISOString();
@@ -208,7 +246,11 @@ export class BillzService {
     // Match against UMA products by normalized billzSku.
     const products = await this.prisma.product.findMany({
       where: { billzSku: { not: null } },
-      include: { sizes: true, translations: { where: { lang: 'ru' }, select: { name: true } } },
+      include: {
+        sizes: true,
+        translations: { where: { lang: 'ru' }, select: { name: true } },
+        images: { select: { mediaId: true }, orderBy: { sortOrder: 'asc' } },
+      },
     });
     const label = (p: (typeof products)[number]): string => {
       const ru = p.translations[0]?.name?.trim();
@@ -226,6 +268,9 @@ export class BillzService {
     const ops = [];
     const unmatchedSkus: string[] = [];
     let matchedProducts = 0;
+    let appendedPhotos = 0;
+    // url → resolved media asset id, shared across products so one URL downloads once per run.
+    const photoAssets = new Map<string, string>();
 
     for (const [key, prods] of bySku) {
       const row = bySkuRow.get(key);
@@ -233,7 +278,9 @@ export class BillzService {
         unmatchedSkus.push((prods[0].billzSku ?? '').trim());
         continue;
       }
-      const group = this.aggregate(this.resolveGroup(row, children), settings.shopIds, warnings);
+      const groupRows = this.resolveGroup(row, children);
+      const group = this.aggregate(groupRows, settings.shopIds, warnings);
+      const photoUrls = this.groupPhotoUrls(groupRows);
       if (prods.length > 1) {
         warnings.push(`Артикул ${(prods[0].billzSku ?? '').trim()} указан у нескольких товаров: ${prods.map((p) => p.id).join(', ')} — обновлены все`);
       }
@@ -286,15 +333,44 @@ export class BillzService {
             data: { price, oldPrice, sale, stock: totalQty, outOfStock: totalQty === 0 },
           }),
         );
+
+        // Billz photos (billz-v3): append-missing after the curated images; download/ingest
+        // happens here, BEFORE the $transaction — only productImage.create ops go inside.
+        // Existing ProductImage rows are never deleted or reordered.
+        const attachedIds = new Set(product.images.map((i) => i.mediaId));
+        let appendIndex = 0;
+        for (const url of photoUrls) {
+          let assetId = photoAssets.get(url);
+          if (assetId === undefined) {
+            try {
+              assetId = await this.resolvePhoto(url);
+              photoAssets.set(url, assetId);
+            } catch {
+              warnings.push(`Товар ${label(product)}: не удалось загрузить фото из Billz`);
+              continue;
+            }
+          }
+          if (attachedIds.has(assetId)) continue;
+          attachedIds.add(assetId);
+          ops.push(
+            this.prisma.productImage.create({
+              data: { productId: product.id, mediaId: assetId, sortOrder: product.images.length + appendIndex },
+            }),
+          );
+          appendIndex += 1;
+          appendedPhotos += 1;
+        }
       }
     }
 
     let updatedProducts = 0;
+    let importedPhotos = 0;
     let error: string | null = null;
     if (ops.length) {
       try {
         await this.prisma.$transaction(ops);
         updatedProducts = matchedProducts;
+        importedPhotos = appendedPhotos;
         await this.content.invalidate();
       } catch {
         error = 'Не удалось сохранить изменения — синхронизация отменена, данные не изменились';
@@ -310,6 +386,7 @@ export class BillzService {
       unmatchedSkus: unmatchedSkus.slice(0, 50),
       warnings,
       error,
+      importedPhotos,
     };
     await this.prisma.setting.upsert({
       where: { key: 'billzSync' },

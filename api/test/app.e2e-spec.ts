@@ -24,12 +24,15 @@ import { BillzAuthError, BillzClient, BillzNetworkError, BillzProductRow, BillzP
 
 const ADMIN = { email: 'admin@test.uz', password: 'test-password-1' };
 
-// Mutable BillzClient stub with the BILLZ 2 seam (login/getProducts/getShops):
+// Mutable BillzClient stub with the BILLZ 2 seam (login/getProducts/getShops/downloadPhoto):
 // each spec swaps the impls; every call is captured with its args.
 let billzLogin: (secret: string) => Promise<void> = async () => {};
 let billzProducts: (secret: string, page: number, limit: number) => Promise<BillzProductsPage> = async () => ({ count: 0, products: [] });
 let billzShops: (secret: string) => Promise<BillzShopRow[]> = async () => [];
-let billzCalls: { method: 'login' | 'getProducts' | 'getShops'; secret: string; page?: number; limit?: number }[] = [];
+let billzPhoto: (url: string) => Promise<Buffer> = async () => {
+  throw new BillzNetworkError('billz: photo stub not configured');
+};
+let billzCalls: { method: 'login' | 'getProducts' | 'getShops' | 'downloadPhoto'; secret?: string; page?: number; limit?: number; url?: string }[] = [];
 const billzStub = {
   login: (secret: string) => {
     billzCalls.push({ method: 'login', secret });
@@ -42,6 +45,10 @@ const billzStub = {
   getShops: (secret: string) => {
     billzCalls.push({ method: 'getShops', secret });
     return billzShops(secret);
+  },
+  downloadPhoto: (url: string) => {
+    billzCalls.push({ method: 'downloadPhoto', url });
+    return billzPhoto(url);
   },
 };
 
@@ -820,6 +827,77 @@ describe('UMA API (e2e smoke)', () => {
     expect(res.body.unmatchedSkus).toEqual(['parent-sku']);
     const p = (await auth(request(server()).get('/api/admin/products/test-dress'))).body;
     expect(p.price).toBe(1000000); // untouched
+  });
+
+  // ---- billz photo import (contract billz-v3) ------------------------------
+
+  const PHOTO_URL = 'https://uma-test.fra1.digitaloceanspaces.com/products/naqshli-front.png';
+  const BROKEN_PHOTO_URL = 'https://uma-test.fra1.digitaloceanspaces.com/products/naqshli-broken.jpg';
+  /** The fixture catalog with `photos` grafted onto rows by id (same URL on two rows → dedupe by photo_url). */
+  const catalogWithPhotos = (photos: Record<string, { photo_url: string; sequence: number; is_main: boolean }[]>): BillzProductRow[] =>
+    billzCatalog.map((r) => (photos[r.id] ? { ...r, photos: photos[r.id] } : r));
+
+  it('sync downloads a Billz photo and appends it AFTER the curated image; importedPhotos: 1', async () => {
+    const rows = catalogWithPhotos({
+      c1: [{ photo_url: PHOTO_URL, sequence: 1, is_main: true }],
+      c2: [{ photo_url: PHOTO_URL, sequence: 2, is_main: false }], // same URL on a sibling row — attached once
+    });
+    billzProducts = async () => ({ count: rows.length, products: rows });
+    billzPhoto = async () =>
+      sharp({ create: { width: 8, height: 8, channels: 3, background: { r: 200, g: 30, b: 60 } } })
+        .png()
+        .toBuffer();
+    billzCalls = [];
+
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    expect(res.body.importedPhotos).toBe(1);
+    expect(res.body.error).toBeNull();
+    expect(res.body.warnings.join(' ')).not.toContain('не удалось загрузить фото');
+    expect(billzCalls.filter((c) => c.method === 'downloadPhoto')).toEqual([{ method: 'downloadPhoto', url: PHOTO_URL }]);
+
+    // Curated image untouched and still FIRST; the Billz photo appended after it.
+    const p = (await auth(request(server()).get('/api/admin/products/test-dress'))).body;
+    expect(p.mediaIds).toHaveLength(2);
+    expect(p.mediaIds[0]).toBe(mediaId);
+    expect(p.mediaIds[1]).not.toBe(mediaId);
+
+    // The persisted report carries the counter too.
+    const status = await auth(request(server()).get('/api/admin/billz/status'));
+    expect(status.body.importedPhotos).toBe(1);
+  });
+
+  it('second sync attaches nothing: sourceUrl dedup, no re-download, importedPhotos: 0', async () => {
+    billzCalls = [];
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    expect(res.body.importedPhotos).toBe(0);
+    expect(billzCalls.filter((c) => c.method === 'downloadPhoto')).toEqual([]); // reused via sourceUrl
+
+    const p = (await auth(request(server()).get('/api/admin/products/test-dress'))).body;
+    expect(p.mediaIds).toHaveLength(2);
+    expect(p.mediaIds[0]).toBe(mediaId);
+
+    // The appended photo flows into the public bundle images[].
+    const pub = await request(server()).get('/api/public/content');
+    const dress = pub.body.products.find((x: { id: string }) => x.id === 'test-dress');
+    expect(dress.images).toHaveLength(2);
+  });
+
+  it('photo download failure → sync still succeeds with a Russian warning, nothing attached', async () => {
+    const rows = catalogWithPhotos({ c1: [{ photo_url: BROKEN_PHOTO_URL, sequence: 1, is_main: true }] });
+    billzProducts = async () => ({ count: rows.length, products: rows });
+    billzPhoto = async () => {
+      throw new BillzNetworkError('down');
+    };
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    expect(res.body.error).toBeNull();
+    expect(res.body.importedPhotos).toBe(0);
+    expect(res.body.warnings.join(' ')).toContain('не удалось загрузить фото из Billz');
+
+    const p = (await auth(request(server()).get('/api/admin/products/test-dress'))).body;
+    expect(p.mediaIds).toHaveLength(2); // unchanged
   });
 
   it('the public bundle leaks nothing: no billz/billzSync settings, no billzSku, no secret anywhere', async () => {

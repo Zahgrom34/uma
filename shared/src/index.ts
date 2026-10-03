@@ -53,7 +53,7 @@ export interface AdminProduct extends PublicProduct {
 
 export interface BillzSettings { secretKey: string; secretKeySet: boolean; shopIds: string[] }
 export interface BillzShop { id: string; name: string }
-export interface BillzSyncReport { startedAt: string; durationMs: number; totalRows: number; matchedProducts: number; updatedProducts: number; unmatchedSkus: string[]; warnings: string[]; error: string | null }
+export interface BillzSyncReport { startedAt: string; durationMs: number; totalRows: number; matchedProducts: number; updatedProducts: number; unmatchedSkus: string[]; warnings: string[]; error: string | null; importedPhotos?: number /* photos attached this run; absent in pre-v3 stored reports */ }
 export interface BillzTestResult { ok: true; rows: number }
 
 export type MediaKind = 'image' | 'video';

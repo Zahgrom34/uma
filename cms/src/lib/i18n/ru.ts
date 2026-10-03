@@ -304,6 +304,7 @@ export const t = {
     lastRun: "Последняя синхронизация",
     matched: "Товаров совпало",
     updated: "Обновлено",
+    reportPhotos: "Загружено фото",
     unmatched: "Не найдены в Billz",
     warningsLabel: "Предупреждения",
     errorLabel: "Ошибка",

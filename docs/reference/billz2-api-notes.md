@@ -27,6 +27,14 @@ none committed (contain live commercial data) — re-probe with the token from `
   `shop_measurement_values: [{shop_id, shop_name, active_measurement_value}]` — this is the per-shop stock qty.
 - Variant model: a variative product has a parent row (`is_variative: true`) and child rows sharing
   `parent_id`; each child = one size/color combo with its own sku+barcode. Simple products are single rows.
+- `photos: [{photo_url, sequence, is_main}]` (verified live 03.10.2026) — product photos per row.
+  `photo_url` is an absolute https URL on `fra1.digitaloceanspaces.com` (jpg/png), `sequence` orders
+  them, `is_main` marks the cover. Plain unauthenticated GET downloads them. In the current catalog
+  41 of 292 rows carry exactly one photo each, but the field is an array — handle several per row.
+- **Catalog restructure (observed 03.10.2026):** the merchant's catalog was rebuilt since 03.09 —
+  every row now has a UNIQUE `parent_id` (variant groups of one). The group-resolution logic
+  (sku → row → parent_id → siblings) still functions unchanged; it just resolves single-row groups.
+  Flagged to the user separately; no sync changes made for it (billz-v3 §1/§2).
 
 ## Shops
 

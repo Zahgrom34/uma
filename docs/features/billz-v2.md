@@ -4,6 +4,7 @@ Contract: `.claude/contracts/billz-v2.md` (status: allowed; supreme-court ALLOW,
 03.09.2026, single lean iteration). Shipped: 03.09.2026. Supersedes the platform layer
 of billz-v1 (`docs/features/billz-v1.md`). Empirical API reference:
 `docs/reference/billz2-api-notes.md` — the vendored BILLZ 1 docs no longer apply.
+Photo import from Billz rows was added later in billz-v3 (`docs/features/billz-v3.md`).
 
 ## Why the pivot
 
