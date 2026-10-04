@@ -1,9 +1,9 @@
 ---
 feature: catalog-sync-v1 — API-driven storefront catalog (seamless Billz→CMS→storefront)
-status: approved
+status: allowed
 budget:
   iterations_allowed: 2         # user-granted 04.10.2026
-  iterations_used: 0
+  iterations_used: 1            # round 1 + lightweight §5 rework, counted as one by the court
   usd_at_start: 12.55
 created: 04.10.2026
 ---
