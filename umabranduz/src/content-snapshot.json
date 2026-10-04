@@ -1,2173 +1,2653 @@
 {
-  "version": "2026-08-16T14:23:10.489Z",
-  "products": [
-    {
-      "id": "uma-sequin-dress",
-      "categorySlug": "dresses",
-      "cat": "Платья",
-      "price": 1100000,
-      "oldPrice": 1200000,
-      "sale": true,
-      "tag": "Sale",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/e5d3f6eb2e3d.webp",
-        "http://localhost:3001/media/a5f3a84d84a4.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/e5d3f6eb2e3d.webp",
-        "http://localhost:3001/media/thumbs/a5f3a84d84a4.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Платье с пайетками",
-          "color": "Серый / чернильный",
-          "material": "100% полиэстер",
-          "desc": "Платье миди, полностью расшитое пайетками. Приталенный силуэт и выразительная фактура для вечернего образа."
+    "version": "2026-10-04T18:02:56.741Z",
+    "products": [
+        {
+            "id": "uma-sequin-dress",
+            "categorySlug": "dresses",
+            "cat": "\u041f\u043b\u0430\u0442\u044c\u044f",
+            "price": 1150000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": null,
+            "online": false,
+            "outOfStock": false,
+            "stock": 23,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/e5d3f6eb2e3d.webp",
+                "https://uma.findex.uz/media/a5f3a84d84a4.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/e5d3f6eb2e3d.webp",
+                "https://uma.findex.uz/media/thumbs/a5f3a84d84a4.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u041f\u043b\u0430\u0442\u044c\u0435 \u0441 \u043f\u0430\u0439\u0435\u0442\u043a\u0430\u043c\u0438",
+                    "color": "\u0421\u0435\u0440\u044b\u0439 / \u0447\u0435\u0440\u043d\u0438\u043b\u044c\u043d\u044b\u0439",
+                    "material": "100% \u043f\u043e\u043b\u0438\u044d\u0441\u0442\u0435\u0440",
+                    "desc": "\u041f\u043b\u0430\u0442\u044c\u0435 \u043c\u0438\u0434\u0438, \u043f\u043e\u043b\u043d\u043e\u0441\u0442\u044c\u044e \u0440\u0430\u0441\u0448\u0438\u0442\u043e\u0435 \u043f\u0430\u0439\u0435\u0442\u043a\u0430\u043c\u0438. \u041f\u0440\u0438\u0442\u0430\u043b\u0435\u043d\u043d\u044b\u0439 \u0441\u0438\u043b\u0443\u044d\u0442 \u0438 \u0432\u044b\u0440\u0430\u0437\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u0444\u0430\u043a\u0442\u0443\u0440\u0430 \u0434\u043b\u044f \u0432\u0435\u0447\u0435\u0440\u043d\u0435\u0433\u043e \u043e\u0431\u0440\u0430\u0437\u0430."
+                },
+                "uz": {
+                    "name": "Payetkali ko\u2018ylak",
+                    "color": "Kulrang / siyoh rang",
+                    "material": "100% poliester",
+                    "desc": "To\u2018liq payetkalar bilan bezatilgan midi ko\u2018ylak. Kechki obraz uchun belga yopishgan siluet va ifodali tekstura."
+                },
+                "en": {
+                    "name": "Sequin dress",
+                    "color": "Grey / ink",
+                    "material": "100% polyester",
+                    "desc": "A midi dress fully embellished with sequins. A fitted silhouette and expressive texture for an evening look."
+                }
+            }
         },
-        "uz": {
-          "name": "Payetkali ko‘ylak",
-          "color": "Kulrang / siyoh rang",
-          "material": "100% poliester",
-          "desc": "To‘liq payetkalar bilan bezatilgan midi ko‘ylak. Kechki obraz uchun belga yopishgan siluet va ifodali tekstura."
+        {
+            "id": "uma-maxi-ikat",
+            "categorySlug": "dresses",
+            "cat": "\u041f\u043b\u0430\u0442\u044c\u044f",
+            "price": 739000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 21,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [
+                "XL",
+                "XS"
+            ],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/6f20415a841c.webp",
+                "https://uma.findex.uz/media/06069f3f4bd1.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/6f20415a841c.webp",
+                "https://uma.findex.uz/media/thumbs/06069f3f4bd1.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u041c\u0430\u043a\u0441\u0438-\u043f\u043b\u0430\u0442\u044c\u0435 \u0441\u043e \u0441\u0431\u043e\u0440\u043d\u044b\u043c\u0438 \u0440\u0443\u043a\u0430\u0432\u0430\u043c\u0438",
+                    "color": "\u0421\u043f\u043e\u043a\u043e\u0439\u043d\u044b\u0439 \u0444\u0438\u043e\u043b\u0435\u0442\u043e\u0432\u044b\u0439",
+                    "material": "95% \u043f\u043e\u043b\u0438\u044d\u0441\u0442\u0435\u0440, 5% \u0441\u043f\u0430\u043d\u0434\u0435\u043a\u0441",
+                    "desc": "\u041c\u0430\u043a\u0441\u0438-\u043f\u043b\u0430\u0442\u044c\u0435 \u0441 \u0443\u0437\u043e\u0440\u043e\u043c \u0438\u043a\u0430\u0442 \u0438 \u0441\u043e\u0431\u0440\u0430\u043d\u043d\u044b\u043c\u0438 \u0434\u043b\u0438\u043d\u043d\u044b\u043c\u0438 \u0440\u0443\u043a\u0430\u0432\u0430\u043c\u0438."
+                },
+                "uz": {
+                    "name": "Yig\u2018ma yengli maxi ko\u2018ylak",
+                    "color": "Sokin binafsha",
+                    "material": "95% poliester, 5% spandeks",
+                    "desc": "Ikat naqshli va uzun yig\u2018ma yengli maxi ko\u2018ylak."
+                },
+                "en": {
+                    "name": "Maxi dress with gathered sleeves",
+                    "color": "Soft violet",
+                    "material": "95% polyester, 5% spandex",
+                    "desc": "A maxi dress in an ikat pattern with long gathered sleeves."
+                }
+            }
         },
-        "en": {
-          "name": "Sequin dress",
-          "color": "Grey / ink",
-          "material": "100% polyester",
-          "desc": "A midi dress fully embellished with sequins. A fitted silhouette and expressive texture for an evening look."
+        {
+            "id": "uma-guipure-pants",
+            "categorySlug": "trousers",
+            "cat": "\u0411\u0440\u044e\u043a\u0438",
+            "price": 519000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": null,
+            "online": false,
+            "outOfStock": false,
+            "stock": 1,
+            "sizeGuide": "eu",
+            "sizeValues": [
+                "32",
+                "34",
+                "36",
+                "38",
+                "40",
+                "42",
+                "44",
+                "46"
+            ],
+            "colorVariants": [
+                "#171717",
+                "#786e64",
+                "#b58d82"
+            ],
+            "unavailableSizes": [
+                "40",
+                "44",
+                "46"
+            ],
+            "lowStockSizes": {
+                "42": 2
+            },
+            "images": [
+                "https://uma.findex.uz/media/3bb24e0219ab.webp",
+                "https://uma.findex.uz/media/44c3ce1f10f3.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/3bb24e0219ab.webp",
+                "https://uma.findex.uz/media/thumbs/44c3ce1f10f3.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0413\u0438\u043f\u044e\u0440\u043e\u0432\u044b\u0435 \u0431\u0440\u044e\u043a\u0438",
+                    "color": "\u0427\u0451\u0440\u043d\u044b\u0439",
+                    "material": "90% \u043d\u0435\u0439\u043b\u043e\u043d, 10% \u0441\u043f\u0430\u043d\u0434\u0435\u043a\u0441",
+                    "desc": "\u0413\u0438\u043f\u044e\u0440\u043e\u0432\u044b\u0435 \u0431\u0440\u044e\u043a\u0438 \u043f\u0440\u044f\u043c\u043e\u0433\u043e \u0441\u0438\u043b\u0443\u044d\u0442\u0430 \u043d\u0430 \u043c\u043e\u043b\u043d\u0438\u0438."
+                },
+                "uz": {
+                    "name": "Gipyur shimlar",
+                    "color": "Qora",
+                    "material": "90% neylon, 10% spandeks",
+                    "desc": "Fermuarli, to\u2018g\u2018ri siluetdagi gipyur shimlar."
+                },
+                "en": {
+                    "name": "Guipure trousers",
+                    "color": "Black",
+                    "material": "90% nylon, 10% spandex",
+                    "desc": "Straight-cut guipure trousers with a zip fastening."
+                }
+            }
+        },
+        {
+            "id": "uma-heart-bag",
+            "categorySlug": "bags",
+            "cat": "\u0421\u0443\u043c\u043a\u0438",
+            "price": 649000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": null,
+            "online": false,
+            "outOfStock": false,
+            "stock": 57,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/a19a0e34a6aa.webp",
+                "https://uma.findex.uz/media/082307096e3d.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/a19a0e34a6aa.webp",
+                "https://uma.findex.uz/media/thumbs/082307096e3d.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0421\u0443\u043c\u043a\u0430-\u0441\u0435\u0440\u0434\u0446\u0435 \u0441 \u043f\u0440\u0438\u043d\u0442\u043e\u043c \u0438\u043a\u0430\u0442",
+                    "color": "\u0427\u0451\u0440\u043d\u044b\u0439 / \u0444\u0438\u043e\u043b\u0435\u0442\u043e\u0432\u044b\u0439",
+                    "material": "\u041f\u043e\u043b\u0438\u0443\u0440\u0435\u0442\u0430\u043d \u0438 \u043f\u043e\u043b\u0438\u044d\u0441\u0442\u0435\u0440",
+                    "desc": "\u0424\u0438\u0433\u0443\u0440\u043d\u0430\u044f \u0441\u0443\u043c\u043a\u0430 \u0441 \u043e\u0440\u043d\u0430\u043c\u0435\u043d\u0442\u043e\u043c \u0438\u043a\u0430\u0442 \u0438 \u043f\u043b\u0435\u0447\u0435\u0432\u044b\u043c \u0440\u0435\u043c\u043d\u0451\u043c."
+                },
+                "uz": {
+                    "name": "Ikat naqshli yurak-sumka",
+                    "color": "Qora / binafsha",
+                    "material": "Poliuretan va poliester",
+                    "desc": "Ikat naqshli va yelkaga taqiladigan kamarli shaklli sumka."
+                },
+                "en": {
+                    "name": "Heart bag with ikat print",
+                    "color": "Black / violet",
+                    "material": "Polyurethane and polyester",
+                    "desc": "A shaped bag with an ikat ornament and shoulder strap."
+                }
+            }
+        },
+        {
+            "id": "uma-zarhal-scarf",
+            "categorySlug": "accessories",
+            "cat": "\u0410\u043a\u0441\u0435\u0441\u0441\u0443\u0430\u0440\u044b",
+            "price": 300000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": null,
+            "online": true,
+            "outOfStock": false,
+            "stock": 20,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/751839b5f0f3.webp",
+                "https://uma.findex.uz/media/aa312e96eb7a.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/751839b5f0f3.webp",
+                "https://uma.findex.uz/media/thumbs/aa312e96eb7a.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0421\u0430\u0442\u0438\u043d\u043e\u0432\u044b\u0439 \u0448\u0430\u0440\u0444 \u00ab\u0417\u043e\u043b\u043e\u0442\u043e\u0439 \u043b\u0435\u0432\u00bb",
+                    "color": "\u041a\u0440\u0430\u0441\u043d\u044b\u0439",
+                    "material": "100% \u043f\u043e\u043b\u0438\u044d\u0441\u0442\u0435\u0440",
+                    "desc": "\u0421\u0430\u0442\u0438\u043d\u043e\u0432\u044b\u0439 \u0448\u0430\u0440\u0444 \u0441 \u0444\u0438\u0440\u043c\u0435\u043d\u043d\u044b\u043c \u043e\u0440\u043d\u0430\u043c\u0435\u043d\u0442\u043e\u043c \u00ab\u0417\u043e\u043b\u043e\u0442\u043e\u0439 \u043b\u0435\u0432\u00bb."
+                },
+                "uz": {
+                    "name": "\u00abOltin sher\u00bb satin sharf",
+                    "color": "Qizil",
+                    "material": "100% poliester",
+                    "desc": "\u00abOltin sher\u00bb imzo naqshli satin sharf."
+                },
+                "en": {
+                    "name": "\u201cGolden Lion\u201d satin scarf",
+                    "color": "Red",
+                    "material": "100% polyester",
+                    "desc": "A satin scarf with the signature \u201cGolden Lion\u201d ornament."
+                }
+            }
+        },
+        {
+            "id": "uma-zarhal-ring",
+            "categorySlug": "accessories",
+            "cat": "\u0410\u043a\u0441\u0435\u0441\u0441\u0443\u0430\u0440\u044b",
+            "price": 399000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "Online Exclusive",
+            "online": true,
+            "outOfStock": false,
+            "stock": 29,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/fd3776ad6477.webp",
+                "https://uma.findex.uz/media/df1e741c2733.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/fd3776ad6477.webp",
+                "https://uma.findex.uz/media/thumbs/df1e741c2733.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u041a\u043e\u043b\u044c\u0446\u043e \u00ab\u0417\u043e\u043b\u043e\u0442\u043e\u0439 \u043b\u0435\u0432\u00bb",
+                    "color": "\u0417\u043e\u043b\u043e\u0442\u043e\u0439",
+                    "material": "\u041b\u0430\u0442\u0443\u043d\u044c",
+                    "desc": "\u0424\u0438\u0433\u0443\u0440\u043d\u043e\u0435 \u043a\u043e\u043b\u044c\u0446\u043e \u0438\u0437 \u043b\u0430\u0442\u0443\u043d\u0438 \u0432 \u0437\u043e\u043b\u043e\u0442\u043e\u043c \u043e\u0442\u0442\u0435\u043d\u043a\u0435."
+                },
+                "uz": {
+                    "name": "\u00abOltin sher\u00bb uzugi",
+                    "color": "Oltin rang",
+                    "material": "Latun",
+                    "desc": "Oltin tusdagi latundan yasalgan shaklli uzuk."
+                },
+                "en": {
+                    "name": "\u201cGolden Lion\u201d ring",
+                    "color": "Gold",
+                    "material": "Brass",
+                    "desc": "A sculptural brass ring in a golden finish."
+                }
+            }
+        },
+        {
+            "id": "barg-glass-set",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 2080000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 4,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/0240e1da582b.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/0240e1da582b.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u041d\u0430\u0431\u043e\u0440 \u00ab\u041b\u0438\u0441\u0442\u00bb",
+                    "color": "\u041f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0439 \u0441 \u0437\u0435\u043b\u0451\u043d\u044b\u043c",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u0413\u0440\u0430\u0444\u0438\u043d \u0438 \u0434\u0432\u0430 \u0441\u0442\u0430\u043a\u0430\u043d\u0430 \u0441 \u0437\u0435\u043b\u0451\u043d\u044b\u043c \u043b\u0438\u0441\u0442\u043e\u043c \u0432\u043d\u0443\u0442\u0440\u0438."
+                },
+                "uz": {
+                    "name": "\u00abBarg\u00bb to\u2018plami",
+                    "color": "Yashil bargli shaffof",
+                    "material": "Shisha",
+                    "desc": "Ichida yashil bargi bo\u2018lgan grafin va ikkita stakan."
+                },
+                "en": {
+                    "name": "Leaf glass set",
+                    "color": "Clear with green",
+                    "material": "Glass",
+                    "desc": "Carafe and two tumblers with a green leaf inside."
+                }
+            }
+        },
+        {
+            "id": "keramika-halqa",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 471000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 24,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/18acaaaac06c.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/18acaaaac06c.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430-\u043a\u043e\u043b\u044c\u0446\u043e",
+                    "color": "\u0411\u0435\u043b\u044b\u0439",
+                    "material": "\u041a\u0435\u0440\u0430\u043c\u0438\u043a\u0430",
+                    "desc": "\u041a\u0440\u0443\u0433\u043b\u0430\u044f \u0432\u0430\u0437\u0430 \u0441 \u043e\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435\u043c \u043f\u043e \u0446\u0435\u043d\u0442\u0440\u0443."
+                },
+                "uz": {
+                    "name": "Halqa vaza",
+                    "color": "Oq",
+                    "material": "Keramika",
+                    "desc": "Markazida teshigi bor dumaloq vaza."
+                },
+                "en": {
+                    "name": "Ring vase",
+                    "color": "White",
+                    "material": "Ceramic",
+                    "desc": "Round vase with an opening at the centre."
+                }
+            }
+        },
+        {
+            "id": "keramika-relyef",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 643000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 11,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/25430c9d99e8.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/25430c9d99e8.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0420\u0435\u043b\u044c\u0435\u0444\u043d\u0430\u044f \u0432\u0430\u0437\u0430",
+                    "color": "\u0411\u0435\u043b\u044b\u0439",
+                    "material": "\u041a\u0435\u0440\u0430\u043c\u0438\u043a\u0430",
+                    "desc": "\u0412\u0438\u0442\u0430\u044f \u0432\u0430\u0437\u0430 \u0441 \u0442\u043e\u0447\u0435\u0447\u043d\u044b\u043c \u0440\u0435\u043b\u044c\u0435\u0444\u043e\u043c."
+                },
+                "uz": {
+                    "name": "Relyefli vaza",
+                    "color": "Oq",
+                    "material": "Keramika",
+                    "desc": "Nuqtali relyefli buralgan vaza."
+                },
+                "en": {
+                    "name": "Textured vase",
+                    "color": "White",
+                    "material": "Ceramic",
+                    "desc": "Twisted vase with a dotted texture."
+                }
+            }
+        },
+        {
+            "id": "keramika-qovoq",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 655000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 12,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/7045e6c09693.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/7045e6c09693.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430 \u00ab\u0422\u044b\u043a\u0432\u0430\u00bb",
+                    "color": "\u0411\u0435\u043b\u044b\u0439",
+                    "material": "\u041a\u0435\u0440\u0430\u043c\u0438\u043a\u0430",
+                    "desc": "\u041f\u0440\u0438\u0437\u0435\u043c\u0438\u0441\u0442\u0430\u044f \u0432\u0430\u0437\u0430 \u0438\u0437 \u0434\u0432\u0443\u0445 \u043e\u043a\u0440\u0443\u0433\u043b\u044b\u0445 \u044f\u0440\u0443\u0441\u043e\u0432."
+                },
+                "uz": {
+                    "name": "\u00abQovoq\u00bb vaza",
+                    "color": "Oq",
+                    "material": "Keramika",
+                    "desc": "Ikki yumaloq qavatli past vaza."
+                },
+                "en": {
+                    "name": "Pumpkin vase",
+                    "color": "White",
+                    "material": "Ceramic",
+                    "desc": "Low vase made of two rounded tiers."
+                }
+            }
+        },
+        {
+            "id": "keramika-uzum",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 689000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 10,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/9cc333066470.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/9cc333066470.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430 \u0441 \u0432\u0438\u043d\u043e\u0433\u0440\u0430\u0434\u043d\u044b\u043c \u0440\u0435\u043b\u044c\u0435\u0444\u043e\u043c",
+                    "color": "\u0411\u0435\u043b\u044b\u0439",
+                    "material": "\u041a\u0435\u0440\u0430\u043c\u0438\u043a\u0430",
+                    "desc": "\u0412\u0430\u0437\u0430 \u0441 \u0440\u0435\u043b\u044c\u0435\u0444\u043e\u043c \u0432 \u0432\u0438\u0434\u0435 \u0432\u0438\u043d\u043e\u0433\u0440\u0430\u0434\u043d\u044b\u0445 \u0433\u0440\u043e\u0437\u0434\u0435\u0439."
+                },
+                "uz": {
+                    "name": "\u00abUzum\u00bb vaza",
+                    "color": "Oq",
+                    "material": "Keramika",
+                    "desc": "Uzum boshlari shaklidagi relyefli vaza."
+                },
+                "en": {
+                    "name": "Grape relief vase",
+                    "color": "White",
+                    "material": "Ceramic",
+                    "desc": "Vase with a grape-cluster relief."
+                }
+            }
+        },
+        {
+            "id": "konfet-malaya",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 695000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 6,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/191ab46343c9.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/191ab46343c9.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430 \u00ab\u041a\u043e\u043d\u0444\u0435\u0442\u0430\u00bb, \u043c\u0430\u043b\u0430\u044f",
+                    "color": "\u041f\u0435\u0440\u0441\u0438\u043a\u043e\u0432\u044b\u0439 \u0441 \u0447\u0451\u0440\u043d\u044b\u043c",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u041a\u0440\u0443\u0433\u043b\u0430\u044f \u043f\u043e\u043b\u043e\u0441\u0430\u0442\u0430\u044f \u0432\u0430\u0437\u0430, 18 \u0441\u043c."
+                },
+                "uz": {
+                    "name": "\u00abKonfet\u00bb vaza, kichik",
+                    "color": "Shaftoli rang, qora chiziqli",
+                    "material": "Shisha",
+                    "desc": "Dumaloq chiziqli vaza, 18 sm."
+                },
+                "en": {
+                    "name": "Candy vase, small",
+                    "color": "Peach with black",
+                    "material": "Glass",
+                    "desc": "Round striped vase, 18 cm."
+                }
+            }
+        },
+        {
+            "id": "konfet-bolshaya",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 1094000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 8,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/0045a9522c29.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/0045a9522c29.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430 \u00ab\u041a\u043e\u043d\u0444\u0435\u0442\u0430\u00bb, \u0431\u043e\u043b\u044c\u0448\u0430\u044f",
+                    "color": "\u041f\u0435\u0440\u0441\u0438\u043a\u043e\u0432\u044b\u0439 \u0441 \u0447\u0451\u0440\u043d\u044b\u043c",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u041f\u043e\u043b\u043e\u0441\u0430\u0442\u0430\u044f \u0432\u0430\u0437\u0430, 30 \u0441\u043c."
+                },
+                "uz": {
+                    "name": "\u00abKonfet\u00bb vaza, katta",
+                    "color": "Shaftoli rang, qora chiziqli",
+                    "material": "Shisha",
+                    "desc": "Chiziqli vaza, 30 sm."
+                },
+                "en": {
+                    "name": "Candy vase, large",
+                    "color": "Peach with black",
+                    "material": "Glass",
+                    "desc": "Striped vase, 30 cm."
+                }
+            }
+        },
+        {
+            "id": "konfet-cherno-belaya",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 1138000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 4,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/3748a4e74fc7.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/3748a4e74fc7.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430 \u00ab\u041a\u043e\u043d\u0444\u0435\u0442\u0430\u00bb, \u0447\u0451\u0440\u043d\u043e-\u0431\u0435\u043b\u0430\u044f",
+                    "color": "\u0411\u0435\u043b\u044b\u0439 \u0441 \u0447\u0451\u0440\u043d\u044b\u043c",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u041d\u0438\u0437\u043a\u0430\u044f \u043f\u043e\u043b\u043e\u0441\u0430\u0442\u0430\u044f \u0432\u0430\u0437\u0430."
+                },
+                "uz": {
+                    "name": "\u00abKonfet\u00bb vaza, oq-qora",
+                    "color": "Oq-qora",
+                    "material": "Shisha",
+                    "desc": "Past chiziqli vaza."
+                },
+                "en": {
+                    "name": "Candy vase, black and white",
+                    "color": "White with black",
+                    "material": "Glass",
+                    "desc": "Low striped vase."
+                }
+            }
+        },
+        {
+            "id": "konfet-kapli",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 798000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 8,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/0f3224139d57.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/0f3224139d57.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430 \u00ab\u041a\u043e\u043d\u0444\u0435\u0442\u0430\u00bb \u0441 \u043a\u0430\u043f\u043b\u044f\u043c\u0438",
+                    "color": "\u041f\u0435\u0440\u0441\u0438\u043a\u043e\u0432\u044b\u0439 \u0441 \u0447\u0451\u0440\u043d\u044b\u043c",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u0412\u0430\u0437\u0430 \u0441 \u0447\u0451\u0440\u043d\u044b\u043c\u0438 \u043a\u0430\u043f\u043b\u044f\u043c\u0438, 34 \u0441\u043c."
+                },
+                "uz": {
+                    "name": "\u00abKonfet\u00bb vaza, tomchili",
+                    "color": "Shaftoli rang, qora tomchili",
+                    "material": "Shisha",
+                    "desc": "Qora tomchili vaza, 34 sm."
+                },
+                "en": {
+                    "name": "Candy vase with drops",
+                    "color": "Peach with black",
+                    "material": "Glass",
+                    "desc": "Vase with black drops, 34 cm."
+                }
+            }
+        },
+        {
+            "id": "vaza-serebristaya-rebra",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 906000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 11,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/b0fb6e6a361e.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/b0fb6e6a361e.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0421\u0435\u0440\u0435\u0431\u0440\u0438\u0441\u0442\u0430\u044f \u0432\u0430\u0437\u0430 \u0441 \u0440\u0451\u0431\u0440\u0430\u043c\u0438",
+                    "color": "\u0421\u0435\u0440\u0435\u0431\u0440\u0438\u0441\u0442\u044b\u0439",
+                    "material": "\u041a\u0435\u0440\u0430\u043c\u0438\u043a\u0430, \u0437\u0435\u0440\u043a\u0430\u043b\u044c\u043d\u043e\u0435 \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u0435",
+                    "desc": "\u041f\u0440\u044f\u043c\u043e\u0443\u0433\u043e\u043b\u044c\u043d\u0430\u044f \u0432\u0430\u0437\u0430 \u0441 \u0432\u0435\u0440\u0442\u0438\u043a\u0430\u043b\u044c\u043d\u044b\u043c \u0440\u0435\u043b\u044c\u0435\u0444\u043e\u043c, 34 \u0441\u043c."
+                },
+                "uz": {
+                    "name": "Kumushrang qirrali vaza",
+                    "color": "Kumushrang",
+                    "material": "Keramika, oynali qoplama",
+                    "desc": "Vertikal relyefli to\u2018rtburchak vaza, 34 sm."
+                },
+                "en": {
+                    "name": "Silver ribbed vase",
+                    "color": "Silver",
+                    "material": "Mirror-glazed ceramic",
+                    "desc": "Rectangular vase with vertical ribbing, 34 cm."
+                }
+            }
+        },
+        {
+            "id": "vaza-serebristaya-volna",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 740000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 9,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/657ebfefbbd3.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/657ebfefbbd3.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0421\u0435\u0440\u0435\u0431\u0440\u0438\u0441\u0442\u0430\u044f \u0432\u0430\u0437\u0430 \u00ab\u0412\u043e\u043b\u043d\u0430\u00bb",
+                    "color": "\u0421\u0435\u0440\u0435\u0431\u0440\u0438\u0441\u0442\u044b\u0439",
+                    "material": "\u041a\u0435\u0440\u0430\u043c\u0438\u043a\u0430, \u0437\u0435\u0440\u043a\u0430\u043b\u044c\u043d\u043e\u0435 \u043f\u043e\u043a\u0440\u044b\u0442\u0438\u0435",
+                    "desc": "\u0412\u0438\u0442\u0430\u044f \u0437\u0435\u0440\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0432\u0430\u0437\u0430, 29,5 \u0441\u043c."
+                },
+                "uz": {
+                    "name": "Kumushrang \u00abTo\u2018lqin\u00bb vaza",
+                    "color": "Kumushrang",
+                    "material": "Keramika, oynali qoplama",
+                    "desc": "Buralgan oynali vaza, 29,5 sm."
+                },
+                "en": {
+                    "name": "Silver wave vase",
+                    "color": "Silver",
+                    "material": "Mirror-glazed ceramic",
+                    "desc": "Twisted mirror-finish vase, 29.5 cm."
+                }
+            }
+        },
+        {
+            "id": "lagan-vaza",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 578000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 12,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/c1f14b1e038b.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/c1f14b1e038b.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430-\u043b\u044f\u0433\u0430\u043d",
+                    "color": "\u0414\u044b\u043c\u0447\u0430\u0442\u044b\u0439 \u0441 \u043b\u0430\u0442\u0443\u043d\u044c\u044e",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e, \u043c\u0435\u0442\u0430\u043b\u043b",
+                    "desc": "\u0427\u0430\u0448\u0430 \u0438\u0437 \u0434\u044b\u043c\u0447\u0430\u0442\u043e\u0433\u043e \u0441\u0442\u0435\u043a\u043b\u0430 \u043d\u0430 \u043b\u0430\u0442\u0443\u043d\u043d\u043e\u043c \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0438."
+                },
+                "uz": {
+                    "name": "Lagan vaza",
+                    "color": "Tutunrang, latun",
+                    "material": "Shisha, metall",
+                    "desc": "Latun asosli tutunrang shisha kosa."
+                },
+                "en": {
+                    "name": "Lagan bowl",
+                    "color": "Smoked with brass",
+                    "material": "Glass, metal",
+                    "desc": "Smoked-glass bowl on a brass base."
+                }
+            }
+        },
+        {
+            "id": "marmar-vaza",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 944000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 6,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/861f721584a7.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/861f721584a7.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430 \u00ab\u041c\u0430\u0440\u043c\u0430\u0440\u00bb",
+                    "color": "\u0414\u044b\u043c\u0447\u0430\u0442\u044b\u0439, \u043f\u043e\u0434 \u043c\u0440\u0430\u043c\u043e\u0440",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u0412\u0430\u0437\u0430 \u0441 \u043c\u0440\u0430\u043c\u043e\u0440\u043d\u044b\u043c \u0443\u0437\u043e\u0440\u043e\u043c."
+                },
+                "uz": {
+                    "name": "\u00abMarmar\u00bb vaza",
+                    "color": "Tutunrang, marmar naqshli",
+                    "material": "Shisha",
+                    "desc": "Marmar naqshli vaza."
+                },
+                "en": {
+                    "name": "Marble vase",
+                    "color": "Smoked marble",
+                    "material": "Glass",
+                    "desc": "Vase with a marble pattern."
+                }
+            }
+        },
+        {
+            "id": "serdsa-glass-set",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 2080000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 4,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/338fe989bcbc.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/338fe989bcbc.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u041d\u0430\u0431\u043e\u0440 \u00ab\u0421\u0435\u0440\u0434\u0446\u0435\u00bb",
+                    "color": "\u041f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0439 \u0441 \u043a\u0440\u0430\u0441\u043d\u044b\u043c",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u0413\u0440\u0430\u0444\u0438\u043d \u0438 \u0434\u0432\u0430 \u0441\u0442\u0430\u043a\u0430\u043d\u0430 \u0441 \u043a\u0440\u0430\u0441\u043d\u044b\u043c \u0441\u0435\u0440\u0434\u0446\u0435\u043c \u0432\u043d\u0443\u0442\u0440\u0438."
+                },
+                "uz": {
+                    "name": "\u00abYurak\u00bb to\u2018plami",
+                    "color": "Qizil yurakli shaffof",
+                    "material": "Shisha",
+                    "desc": "Ichida qizil yuragi bo\u2018lgan grafin va ikkita stakan."
+                },
+                "en": {
+                    "name": "Heart glass set",
+                    "color": "Clear with red",
+                    "material": "Glass",
+                    "desc": "Carafe and two tumblers with a red heart inside."
+                }
+            }
+        },
+        {
+            "id": "vaza-dymchataya-polosa",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 1322000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 4,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/c0e4a354150a.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/c0e4a354150a.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0414\u044b\u043c\u0447\u0430\u0442\u0430\u044f \u0432\u0430\u0437\u0430 \u0441 \u043f\u043e\u043b\u043e\u0441\u043e\u0439",
+                    "color": "\u0414\u044b\u043c\u0447\u0430\u0442\u044b\u0439 \u0441 \u043a\u043e\u0440\u0438\u0447\u043d\u0435\u0432\u044b\u043c",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u0412\u0430\u0437\u0430 \u0438\u0437 \u0434\u044b\u043c\u0447\u0430\u0442\u043e\u0433\u043e \u0441\u0442\u0435\u043a\u043b\u0430 \u0441 \u043a\u043e\u0440\u0438\u0447\u043d\u0435\u0432\u043e\u0439 \u043f\u043e\u043b\u043e\u0441\u043e\u0439."
+                },
+                "uz": {
+                    "name": "Tutunrang chiziqli vaza",
+                    "color": "Tutunrang, jigarrang chiziqli",
+                    "material": "Shisha",
+                    "desc": "Jigarrang chiziqli tutunrang shisha vaza."
+                },
+                "en": {
+                    "name": "Smoked vase with stripe",
+                    "color": "Smoked with brown",
+                    "material": "Glass",
+                    "desc": "Smoked-glass vase with a brown stripe."
+                }
+            }
+        },
+        {
+            "id": "vaza-seraya-kruglaya",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 750000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 8,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/6c46fb58bcad.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/6c46fb58bcad.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0421\u0435\u0440\u0430\u044f \u043a\u0440\u0443\u0433\u043b\u0430\u044f \u0432\u0430\u0437\u0430",
+                    "color": "\u0421\u0435\u0440\u044b\u0439",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u041e\u043a\u0440\u0443\u0433\u043b\u0430\u044f \u0432\u0430\u0437\u0430 \u0441 \u0441\u043e\u0442\u043e\u0432\u043e\u0439 \u0444\u0430\u043a\u0442\u0443\u0440\u043e\u0439."
+                },
+                "uz": {
+                    "name": "Kulrang dumaloq vaza",
+                    "color": "Kulrang",
+                    "material": "Shisha",
+                    "desc": "Katakchali faktura bilan dumaloq vaza."
+                },
+                "en": {
+                    "name": "Grey round vase",
+                    "color": "Grey",
+                    "material": "Glass",
+                    "desc": "Rounded vase with a honeycomb texture."
+                }
+            }
+        },
+        {
+            "id": "vaza-seraya-relyef",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 720000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 12,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/341ae0333a63.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/341ae0333a63.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0421\u0435\u0440\u0430\u044f \u0440\u0435\u043b\u044c\u0435\u0444\u043d\u0430\u044f \u0432\u0430\u0437\u0430",
+                    "color": "\u0421\u0435\u0440\u044b\u0439",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u0412\u0430\u0437\u0430 \u0441 \u043f\u0443\u0437\u044b\u0440\u044c\u043a\u043e\u0432\u043e\u0439 \u0444\u0430\u043a\u0442\u0443\u0440\u043e\u0439."
+                },
+                "uz": {
+                    "name": "Kulrang relyefli vaza",
+                    "color": "Kulrang",
+                    "material": "Shisha",
+                    "desc": "Pufakchali fakturali vaza."
+                },
+                "en": {
+                    "name": "Grey textured vase",
+                    "color": "Grey",
+                    "material": "Glass",
+                    "desc": "Vase with a bubbled texture."
+                }
+            }
+        },
+        {
+            "id": "vaza-kapli-bolshaya",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 1424000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 15,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/e63d145d6d70.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/e63d145d6d70.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430 \u00ab\u041a\u0430\u043f\u043b\u0438\u00bb, \u0431\u043e\u043b\u044c\u0448\u0430\u044f",
+                    "color": "\u042f\u043d\u0442\u0430\u0440\u043d\u044b\u0439",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u0412\u0430\u0437\u0430 \u0441 \u0432\u043e\u0437\u0434\u0443\u0448\u043d\u044b\u043c\u0438 \u043a\u0430\u043f\u043b\u044f\u043c\u0438 \u0432 \u0441\u0442\u0435\u043a\u043b\u0435."
+                },
+                "uz": {
+                    "name": "\u00abTomchi\u00bb vaza, katta",
+                    "color": "Qahrabo rang",
+                    "material": "Shisha",
+                    "desc": "Shisha ichida havo tomchilari bo\u2018lgan vaza."
+                },
+                "en": {
+                    "name": "Tomchi vase, large",
+                    "color": "Amber",
+                    "material": "Glass",
+                    "desc": "Vase with air drops set in the glass."
+                }
+            }
+        },
+        {
+            "id": "vaza-kapli-malaya",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 1010000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 9,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/4e400e2ed1d0.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/4e400e2ed1d0.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430 \u00ab\u041a\u0430\u043f\u043b\u0438\u00bb, \u043c\u0430\u043b\u0430\u044f",
+                    "color": "\u041f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0439",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u041c\u0430\u043b\u0430\u044f \u0432\u0430\u0437\u0430 \u0441 \u0432\u043e\u0437\u0434\u0443\u0448\u043d\u044b\u043c\u0438 \u043a\u0430\u043f\u043b\u044f\u043c\u0438."
+                },
+                "uz": {
+                    "name": "\u00abTomchi\u00bb vaza, kichik",
+                    "color": "Shaffof",
+                    "material": "Shisha",
+                    "desc": "Havo tomchilari bo\u2018lgan kichik vaza."
+                },
+                "en": {
+                    "name": "Tomchi vase, small",
+                    "color": "Clear",
+                    "material": "Glass",
+                    "desc": "Small vase with air drops."
+                }
+            }
+        },
+        {
+            "id": "vaza-vinograd",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 581000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 11,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/d285415270f9.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/d285415270f9.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0412\u0430\u0437\u0430 \u00ab\u0412\u0438\u043d\u043e\u0433\u0440\u0430\u0434\u00bb",
+                    "color": "\u0427\u0451\u0440\u043d\u044b\u0439",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u0413\u043b\u044f\u043d\u0446\u0435\u0432\u0430\u044f \u0432\u0430\u0437\u0430 \u0432 \u0444\u043e\u0440\u043c\u0435 \u0433\u0440\u043e\u0437\u0434\u0438, 24,5 \u0441\u043c."
+                },
+                "uz": {
+                    "name": "\u00abUzum\u00bb shaklidagi vaza",
+                    "color": "Qora",
+                    "material": "Shisha",
+                    "desc": "Uzum boshi shaklidagi yaltiroq vaza, 24,5 sm."
+                },
+                "en": {
+                    "name": "Grape vase",
+                    "color": "Black",
+                    "material": "Glass",
+                    "desc": "Glossy cluster-shaped vase, 24.5 cm."
+                }
+            }
+        },
+        {
+            "id": "vaza-zelenaya-polosa",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 880000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 8,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/f1fcffe6aab4.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/f1fcffe6aab4.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0417\u0435\u043b\u0451\u043d\u0430\u044f \u0432\u0430\u0437\u0430 \u0432 \u043f\u043e\u043b\u043e\u0441\u043a\u0443",
+                    "color": "\u0421\u0432\u0435\u0442\u043b\u043e-\u0437\u0435\u043b\u0451\u043d\u044b\u0439",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u0412\u0430\u0437\u0430 \u0441 \u0432\u0438\u0442\u044b\u043c\u0438 \u043f\u043e\u043b\u043e\u0441\u0430\u043c\u0438."
+                },
+                "uz": {
+                    "name": "Yashil chiziqli vaza",
+                    "color": "Och yashil",
+                    "material": "Shisha",
+                    "desc": "Buralgan chiziqli vaza."
+                },
+                "en": {
+                    "name": "Green striped vase",
+                    "color": "Light green",
+                    "material": "Glass",
+                    "desc": "Vase with swirled stripes."
+                }
+            }
+        },
+        {
+            "id": "vaza-zelenaya-volna",
+            "categorySlug": "decor",
+            "cat": "\u0414\u0435\u043a\u043e\u0440",
+            "price": 714000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 8,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/9ca52b1ab607.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/9ca52b1ab607.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0417\u0435\u043b\u0451\u043d\u0430\u044f \u0432\u0430\u0437\u0430 \u00ab\u0412\u043e\u043b\u043d\u0430\u00bb",
+                    "color": "\u0421\u0432\u0435\u0442\u043b\u043e-\u0437\u0435\u043b\u0451\u043d\u044b\u0439",
+                    "material": "\u0421\u0442\u0435\u043a\u043b\u043e",
+                    "desc": "\u0412\u0430\u0437\u0430 \u0441 \u0432\u043e\u043b\u043d\u0438\u0441\u0442\u044b\u043c \u0440\u0435\u043b\u044c\u0435\u0444\u043e\u043c."
+                },
+                "uz": {
+                    "name": "Yashil \u00abTo\u2018lqin\u00bb vaza",
+                    "color": "Och yashil",
+                    "material": "Shisha",
+                    "desc": "To\u2018lqinsimon relyefli vaza."
+                },
+                "en": {
+                    "name": "Green wave vase",
+                    "color": "Light green",
+                    "material": "Glass",
+                    "desc": "Vase with a wavy relief."
+                }
+            }
+        },
+        {
+            "id": "tufli-ikat",
+            "categorySlug": "shoes",
+            "cat": "\u041e\u0431\u0443\u0432\u044c",
+            "price": 899000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 15,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/ce5b2ebf8061.webp",
+                "https://uma.findex.uz/media/e76d7cdac3f3.webp",
+                "https://uma.findex.uz/media/3a3c935ddd04.webp",
+                "https://uma.findex.uz/media/77f82f13fbbc.webp",
+                "https://uma.findex.uz/media/1fa2659a75fb.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/ce5b2ebf8061.webp",
+                "https://uma.findex.uz/media/thumbs/e76d7cdac3f3.webp",
+                "https://uma.findex.uz/media/thumbs/3a3c935ddd04.webp",
+                "https://uma.findex.uz/media/thumbs/77f82f13fbbc.webp",
+                "https://uma.findex.uz/media/thumbs/1fa2659a75fb.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u0422\u0443\u0444\u043b\u0438 \u0441 \u043f\u0440\u0438\u043d\u0442\u043e\u043c \u0438\u043a\u0430\u0442",
+                    "color": "\u0413\u043e\u043b\u0443\u0431\u043e\u0439",
+                    "material": "\u0414\u0435\u043d\u0438\u043c",
+                    "desc": "\u041e\u0441\u0442\u0440\u043e\u043d\u043e\u0441\u044b\u0435 \u0442\u0443\u0444\u043b\u0438 \u0441 \u0440\u0435\u043c\u0435\u0448\u043a\u043e\u043c, \u0434\u0435\u043d\u0438\u043c \u0441 \u043f\u0440\u0438\u043d\u0442\u043e\u043c \u0438\u043a\u0430\u0442."
+                },
+                "uz": {
+                    "name": "Ikat naqshli tufli",
+                    "color": "Havorang",
+                    "material": "Denim",
+                    "desc": "Tasmali uchli tufli, ikat naqshli denim."
+                },
+                "en": {
+                    "name": "Ikat print pumps",
+                    "color": "Light blue",
+                    "material": "Denim",
+                    "desc": "Pointed pumps with an ankle strap in ikat-print denim."
+                }
+            }
+        },
+        {
+            "id": "kurtka-ekokozha",
+            "categorySlug": "outerwear",
+            "cat": "\u0412\u0435\u0440\u0445\u043d\u044f\u044f \u043e\u0434\u0435\u0436\u0434\u0430",
+            "price": 1645000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 28,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/54e0de606267.webp",
+                "https://uma.findex.uz/media/700472f07b48.webp",
+                "https://uma.findex.uz/media/9bab74dd3723.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/54e0de606267.webp",
+                "https://uma.findex.uz/media/thumbs/700472f07b48.webp",
+                "https://uma.findex.uz/media/thumbs/9bab74dd3723.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u041a\u0443\u0440\u0442\u043a\u0430 \u0438\u0437 \u044d\u043a\u043e\u043a\u043e\u0436\u0438",
+                    "color": "\u0427\u0451\u0440\u043d\u044b\u0439",
+                    "material": "\u042d\u043a\u043e\u043a\u043e\u0436\u0430",
+                    "desc": "\u0423\u0442\u0435\u043f\u043b\u0451\u043d\u043d\u0430\u044f \u043a\u0443\u0440\u0442\u043a\u0430 \u0438\u0437 \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0439 \u043a\u043e\u0436\u0438."
+                },
+                "uz": {
+                    "name": "Sun\u2019iy charm kurtka",
+                    "color": "Qora",
+                    "material": "Sun\u2019iy charm",
+                    "desc": "Sun\u2019iy charmdan issiq kurtka."
+                },
+                "en": {
+                    "name": "Faux leather jacket",
+                    "color": "Black",
+                    "material": "Faux leather",
+                    "desc": "Padded jacket in faux leather."
+                }
+            }
+        },
+        {
+            "id": "kovush-baletki",
+            "categorySlug": "shoes",
+            "cat": "\u041e\u0431\u0443\u0432\u044c",
+            "price": 875000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 10,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/955adb9a750c.webp",
+                "https://uma.findex.uz/media/756ba44e981c.webp",
+                "https://uma.findex.uz/media/e234d7bd2615.webp",
+                "https://uma.findex.uz/media/91826cbc598c.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/955adb9a750c.webp",
+                "https://uma.findex.uz/media/thumbs/756ba44e981c.webp",
+                "https://uma.findex.uz/media/thumbs/e234d7bd2615.webp",
+                "https://uma.findex.uz/media/thumbs/91826cbc598c.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u041e\u0441\u0442\u0440\u043e\u043d\u043e\u0441\u044b\u0435 \u0431\u0430\u043b\u0435\u0442\u043a\u0438",
+                    "color": "\u0427\u0451\u0440\u043d\u044b\u0439",
+                    "material": "\u041b\u0430\u043a\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u0430\u044f \u043a\u043e\u0436\u0430",
+                    "desc": "\u0411\u0430\u043b\u0435\u0442\u043a\u0438 \u0441 \u043e\u0441\u0442\u0440\u044b\u043c \u043d\u043e\u0441\u043e\u043c, \u0431\u0435\u0437 \u0437\u0430\u0441\u0442\u0451\u0436\u0435\u043a."
+                },
+                "uz": {
+                    "name": "Uchli balet tuflisi",
+                    "color": "Qora",
+                    "material": "Lok charm",
+                    "desc": "Uchli uchli, tasmasiz kovush."
+                },
+                "en": {
+                    "name": "Pointed flats",
+                    "color": "Black",
+                    "material": "Patent leather",
+                    "desc": "Pointed-toe flats, slip-on."
+                }
+            }
+        },
+        {
+            "id": "kurtka-pahta-print",
+            "categorySlug": "outerwear",
+            "cat": "\u0412\u0435\u0440\u0445\u043d\u044f\u044f \u043e\u0434\u0435\u0436\u0434\u0430",
+            "price": 2145000,
+            "oldPrice": null,
+            "sale": false,
+            "tag": "New",
+            "online": false,
+            "outOfStock": false,
+            "stock": 25,
+            "sizeGuide": null,
+            "sizeValues": null,
+            "colorVariants": null,
+            "unavailableSizes": [],
+            "lowStockSizes": {},
+            "images": [
+                "https://uma.findex.uz/media/8b6809e6fff2.webp",
+                "https://uma.findex.uz/media/f2d057821460.webp",
+                "https://uma.findex.uz/media/ce29498f5367.webp",
+                "https://uma.findex.uz/media/bf34234741c4.webp",
+                "https://uma.findex.uz/media/5eb0f8780653.webp"
+            ],
+            "thumbs": [
+                "https://uma.findex.uz/media/thumbs/8b6809e6fff2.webp",
+                "https://uma.findex.uz/media/thumbs/f2d057821460.webp",
+                "https://uma.findex.uz/media/thumbs/ce29498f5367.webp",
+                "https://uma.findex.uz/media/thumbs/bf34234741c4.webp",
+                "https://uma.findex.uz/media/thumbs/5eb0f8780653.webp"
+            ],
+            "i18n": {
+                "ru": {
+                    "name": "\u041a\u0443\u0440\u0442\u043a\u0430 \u0441 \u043f\u0440\u0438\u043d\u0442\u043e\u043c \u00ab\u041f\u0430\u0445\u0442\u0430\u00bb",
+                    "color": "\u0422\u0451\u043c\u043d\u043e-\u0441\u0438\u043d\u0438\u0439",
+                    "material": "\u041f\u043b\u0430\u0449\u0435\u0432\u0430\u044f \u0442\u043a\u0430\u043d\u044c",
+                    "desc": "\u0423\u0442\u0435\u043f\u043b\u0451\u043d\u043d\u0430\u044f \u043a\u0443\u0440\u0442\u043a\u0430 \u0441 \u043f\u0440\u0438\u043d\u0442\u043e\u043c \u0446\u0432\u0435\u0442\u043a\u043e\u0432 \u0445\u043b\u043e\u043f\u043a\u0430."
+                },
+                "uz": {
+                    "name": "\u00abPaxta\u00bb printli kurtka",
+                    "color": "To\u2018q ko\u2018k",
+                    "material": "Plash matosi",
+                    "desc": "Paxta guli printli issiq kurtka."
+                },
+                "en": {
+                    "name": "Paxta print jacket",
+                    "color": "Navy",
+                    "material": "Shell fabric",
+                    "desc": "Padded jacket with a cotton-flower print."
+                }
+            }
         }
-      }
-    },
-    {
-      "id": "uma-maxi-ikat",
-      "categorySlug": "dresses",
-      "cat": "Платья",
-      "price": 739000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "New",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [
-        "XL",
-        "XS"
-      ],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/6f20415a841c.webp",
-        "http://localhost:3001/media/06069f3f4bd1.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/6f20415a841c.webp",
-        "http://localhost:3001/media/thumbs/06069f3f4bd1.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Макси-платье со сборными рукавами",
-          "color": "Спокойный фиолетовый",
-          "material": "95% полиэстер, 5% спандекс",
-          "desc": "Макси-платье с узором икат и собранными длинными рукавами."
+    ],
+    "categories": [
+        {
+            "slug": "dresses",
+            "nameRu": "\u041f\u043b\u0430\u0442\u044c\u044f",
+            "nameUz": "Ko\u02bbylaklar",
+            "nameEn": "Dresses",
+            "sortOrder": 0
         },
-        "uz": {
-          "name": "Yig‘ma yengli maxi ko‘ylak",
-          "color": "Sokin binafsha",
-          "material": "95% poliester, 5% spandeks",
-          "desc": "Ikat naqshli va uzun yig‘ma yengli maxi ko‘ylak."
+        {
+            "slug": "trousers",
+            "nameRu": "\u0411\u0440\u044e\u043a\u0438",
+            "nameUz": "Shimlar",
+            "nameEn": "Trousers",
+            "sortOrder": 1
         },
-        "en": {
-          "name": "Maxi dress with gathered sleeves",
-          "color": "Soft violet",
-          "material": "95% polyester, 5% spandex",
-          "desc": "A maxi dress in an ikat pattern with long gathered sleeves."
+        {
+            "slug": "blouses",
+            "nameRu": "\u0411\u043b\u0443\u0437\u044b",
+            "nameUz": "Ko\u02bbylaklar",
+            "nameEn": "Shirts",
+            "sortOrder": 2
+        },
+        {
+            "slug": "skirts",
+            "nameRu": "\u042e\u0431\u043a\u0438",
+            "nameUz": "Yubkalar",
+            "nameEn": "Skirts",
+            "sortOrder": 3
+        },
+        {
+            "slug": "tops",
+            "nameRu": "\u0422\u043e\u043f\u044b",
+            "nameUz": "Toplar",
+            "nameEn": "Tops",
+            "sortOrder": 4
+        },
+        {
+            "slug": "jackets",
+            "nameRu": "\u0416\u0430\u043a\u0435\u0442\u044b",
+            "nameUz": "Trikotaj kiyimlar",
+            "nameEn": "Knitwear",
+            "sortOrder": 5
+        },
+        {
+            "slug": "outerwear",
+            "nameRu": "\u0412\u0435\u0440\u0445\u043d\u044f\u044f \u043e\u0434\u0435\u0436\u0434\u0430",
+            "nameUz": "Kiyimlar",
+            "nameEn": "Clothing",
+            "sortOrder": 6
+        },
+        {
+            "slug": "accessories",
+            "nameRu": "\u0410\u043a\u0441\u0435\u0441\u0441\u0443\u0430\u0440\u044b",
+            "nameUz": "Aksessuarlar",
+            "nameEn": "Accessories",
+            "sortOrder": 7
+        },
+        {
+            "slug": "bags",
+            "nameRu": "\u0421\u0443\u043c\u043a\u0438",
+            "nameUz": "Sumkalar",
+            "nameEn": "Bags",
+            "sortOrder": 8
+        },
+        {
+            "slug": "shoes",
+            "nameRu": "\u041e\u0431\u0443\u0432\u044c",
+            "nameUz": "Poyabzallar",
+            "nameEn": "Shoes",
+            "sortOrder": 9
+        },
+        {
+            "slug": "decor",
+            "nameRu": "\u0414\u0435\u043a\u043e\u0440",
+            "nameUz": "Dekor",
+            "nameEn": "Decor",
+            "sortOrder": 10
         }
-      }
-    },
-    {
-      "id": "uma-guipure-pants",
-      "categorySlug": "trousers",
-      "cat": "Брюки",
-      "price": 519000,
-      "oldPrice": 690000,
-      "sale": true,
-      "tag": "Sale",
-      "online": false,
-      "outOfStock": false,
-      "stock": 4,
-      "sizeGuide": "eu",
-      "sizeValues": [
-        "32",
-        "34",
-        "36",
-        "38",
-        "40",
-        "42",
-        "44",
-        "46"
-      ],
-      "colorVariants": [
-        "#171717",
-        "#786e64",
-        "#b58d82"
-      ],
-      "unavailableSizes": [
-        "40",
-        "44",
-        "46"
-      ],
-      "lowStockSizes": {
-        "42": 2
-      },
-      "images": [
-        "http://localhost:3001/media/3bb24e0219ab.webp",
-        "http://localhost:3001/media/44c3ce1f10f3.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/3bb24e0219ab.webp",
-        "http://localhost:3001/media/thumbs/44c3ce1f10f3.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Гипюровые брюки",
-          "color": "Чёрный",
-          "material": "90% нейлон, 10% спандекс",
-          "desc": "Гипюровые брюки прямого силуэта на молнии."
+    ],
+    "pages": [
+        {
+            "slug": "about",
+            "i18n": {
+                "ru": {
+                    "eyebrow": "\u041e \u0431\u0440\u0435\u043d\u0434\u0435",
+                    "heading": "\u041c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u0430\u044f \u043c\u043e\u0434\u0430 \u0441 \u0443\u0437\u0431\u0435\u043a\u0441\u043a\u0438\u043c \u0430\u043a\u0446\u0435\u043d\u0442\u043e\u043c!",
+                    "body": "UMA \u043e\u0431\u044a\u0435\u0434\u0438\u043d\u044f\u0435\u0442 \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u043e \u0438 \u0434\u0438\u0437\u0430\u0439\u043d, \u0447\u0435\u0440\u043f\u0430\u044f \u0432\u0434\u043e\u0445\u043d\u043e\u0432\u0435\u043d\u0438\u0435 \u0438\u0437 \u043a\u0443\u043b\u044c\u0442\u0443\u0440\u043d\u043e\u0433\u043e \u043d\u0430\u0441\u043b\u0435\u0434\u0438\u044f \u0423\u0437\u0431\u0435\u043a\u0438\u0441\u0442\u0430\u043d\u0430. \u041a\u0430\u0436\u0434\u0430\u044f \u043a\u043e\u043b\u043b\u0435\u043a\u0446\u0438\u044f \u0440\u0430\u0441\u0441\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442 \u0441\u0432\u043e\u044e \u0438\u0441\u0442\u043e\u0440\u0438\u044e."
+                },
+                "uz": {
+                    "eyebrow": "BRAND HAQIDA",
+                    "heading": "O\u02bbzbekona ruhdagi xalqaro moda",
+                    "body": "UMA san\u02bcat va dizaynni O\u02bbzbekiston madaniy merosidan ilhomlanib birlashtiradi. Har bir kolleksiya o\u02bbz hikoyasini so\u02bbzlaydi."
+                },
+                "en": {
+                    "eyebrow": "ABOUT UMA",
+                    "heading": "International fashion with an Uzbek accent",
+                    "body": "UMA brings together art and design, drawing inspiration from the cultural heritage of Uzbekistan. Every collection tells its own story."
+                }
+            }
         },
-        "uz": {
-          "name": "Gipyur shimlar",
-          "color": "Qora",
-          "material": "90% neylon, 10% spandeks",
-          "desc": "Fermuarli, to‘g‘ri siluetdagi gipyur shimlar."
+        {
+            "slug": "delivery",
+            "i18n": {
+                "ru": {
+                    "eyebrow": "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430",
+                    "heading": "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u043f\u043e \u0423\u0437\u0431\u0435\u043a\u0438\u0441\u0442\u0430\u043d\u0443",
+                    "body": "\u0421\u0440\u043e\u043a \u0438 \u0441\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u043e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u044e\u0442\u0441\u044f \u043f\u0440\u0438 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0438. \u0417\u0430\u043a\u0430\u0437\u044b \u043e\u0442 1 500 000 UZS \u0434\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u044e\u0442\u0441\u044f \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e."
+                },
+                "uz": {
+                    "eyebrow": "YETKAZIB BERISH",
+                    "heading": "O\u02bbzbekiston bo\u2018ylab yetkazib berish",
+                    "body": "Muddat va narx buyurtmani rasmiylashtirishda ko\u2018rsatiladi. 1 500 000 UZS dan yuqori buyurtmalar bepul yetkaziladi."
+                },
+                "en": {
+                    "eyebrow": "DELIVERY",
+                    "heading": "Delivery across Uzbekistan",
+                    "body": "The delivery date and price are shown at checkout. Orders over 1,500,000 UZS receive free delivery."
+                }
+            }
         },
-        "en": {
-          "name": "Guipure trousers",
-          "color": "Black",
-          "material": "90% nylon, 10% spandex",
-          "desc": "Straight-cut guipure trousers with a zip fastening."
+        {
+            "slug": "returns",
+            "i18n": {
+                "ru": {
+                    "eyebrow": "\u0412\u043e\u0437\u0432\u0440\u0430\u0442",
+                    "heading": "\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0438 \u043e\u0431\u043c\u0435\u043d",
+                    "body": "\u0422\u043e\u0432\u0430\u0440 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442\u0441\u044f \u043a \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u0443 \u0432 \u0442\u0435\u0447\u0435\u043d\u0438\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043d\u044b\u0445 \u0441\u0440\u043e\u043a\u043e\u0432 \u043f\u0440\u0438 \u0441\u043e\u0445\u0440\u0430\u043d\u0435\u043d\u0438\u0438 \u043f\u0435\u0440\u0432\u043e\u043d\u0430\u0447\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u044f."
+                },
+                "uz": {
+                    "eyebrow": "QAYTARISH",
+                    "heading": "Qaytarish va almashtirish",
+                    "body": "Mahsulot belgilangan muddat ichida dastlabki holati saqlangan bo\u2018lsa, qaytarish uchun qabul qilinadi."
+                },
+                "en": {
+                    "eyebrow": "RETURNS",
+                    "heading": "Returns and exchanges",
+                    "body": "Items can be returned within the stated period when kept in their original condition."
+                }
+            }
+        },
+        {
+            "slug": "payment",
+            "i18n": {
+                "ru": {
+                    "eyebrow": "\u041e\u043f\u043b\u0430\u0442\u0430",
+                    "heading": "\u0423\u0434\u043e\u0431\u043d\u0430\u044f \u043e\u043f\u043b\u0430\u0442\u0430",
+                    "body": "Uzcard, Humo, Visa \u0438 Mastercard."
+                },
+                "uz": {
+                    "eyebrow": "TO\u02bbLOV",
+                    "heading": "Qulay to\u02bblov",
+                    "body": "Uzcard, Humo, Visa va Mastercard."
+                },
+                "en": {
+                    "eyebrow": "PAYMENT",
+                    "heading": "Simple payment",
+                    "body": "Uzcard, Humo, Visa and Mastercard."
+                }
+            }
+        },
+        {
+            "slug": "contact",
+            "i18n": {
+                "ru": {
+                    "eyebrow": "\u041a\u041e\u041d\u0422\u0410\u041a\u0422\u042b",
+                    "heading": "\u041c\u044b \u0440\u044f\u0434\u043e\u043c, \u043a\u043e\u0433\u0434\u0430 \u044d\u0442\u043e \u043d\u0443\u0436\u043d\u043e.",
+                    "body": "\u041f\u043e\u043c\u043e\u0436\u0435\u043c \u0441 \u0432\u044b\u0431\u043e\u0440\u043e\u043c, \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435\u043c \u0437\u0430\u043a\u0430\u0437\u0430, \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u043e\u0439, \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u043e\u043c \u0438 \u0441\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u0447\u0435\u0441\u0442\u0432\u043e\u043c."
+                },
+                "uz": {
+                    "eyebrow": "KONTAKTLAR",
+                    "heading": "Har doim yoningizdamiz",
+                    "body": "Tanlash, buyurtma, yetkazish, qaytarish va hamkorlik bo\u2018yicha yordam beramiz."
+                },
+                "en": {
+                    "eyebrow": "CONTACT",
+                    "heading": "We are here when you need us",
+                    "body": "We can help with selecting items, ordering, delivery, returns and collaborations."
+                }
+            }
         }
-      }
-    },
-    {
-      "id": "uma-heart-bag",
-      "categorySlug": "bags",
-      "cat": "Сумки",
-      "price": 454000,
-      "oldPrice": 590000,
-      "sale": true,
-      "tag": "Sale",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/a19a0e34a6aa.webp",
-        "http://localhost:3001/media/082307096e3d.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/a19a0e34a6aa.webp",
-        "http://localhost:3001/media/thumbs/082307096e3d.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Сумка-сердце с принтом икат",
-          "color": "Чёрный / фиолетовый",
-          "material": "Полиуретан и полиэстер",
-          "desc": "Фигурная сумка с орнаментом икат и плечевым ремнём."
+    ],
+    "uiStrings": {
+        "Age": {
+            "ru": "\u0412\u043e\u0437\u0440\u0430\u0441\u0442",
+            "uz": "Yosh",
+            "en": "Age"
         },
-        "uz": {
-          "name": "Ikat naqshli yurak-sumka",
-          "color": "Qora / binafsha",
-          "material": "Poliuretan va poliester",
-          "desc": "Ikat naqshli va yelkaga taqiladigan kamarli shaklli sumka."
+        "Female": {
+            "ru": "\u0416\u0435\u043d\u0441\u043a\u0438\u0439",
+            "uz": "Ayol",
+            "en": "Female"
         },
-        "en": {
-          "name": "Heart bag with ikat print",
-          "color": "Black / violet",
-          "material": "Polyurethane and polyester",
-          "desc": "A shaped bag with an ikat ornament and shoulder strap."
+        "Gender": {
+            "ru": "\u041f\u043e\u043b",
+            "uz": "Jins",
+            "en": "Gender"
+        },
+        "Height": {
+            "ru": "\u0420\u043e\u0441\u0442",
+            "uz": "Bo\u2018y",
+            "en": "Height"
+        },
+        "Male": {
+            "ru": "\u041c\u0443\u0436\u0441\u043a\u043e\u0439",
+            "uz": "Erkak",
+            "en": "Male"
+        },
+        "Prefer not to say": {
+            "ru": "\u041d\u0435 \u0443\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c",
+            "uz": "Ko\u2018rsatmaslik",
+            "en": "Prefer not to say"
+        },
+        "Weight": {
+            "ru": "\u0412\u0435\u0441",
+            "uz": "Vazn",
+            "en": "Weight"
+        },
+        "about": {
+            "ru": "\u041e \u043d\u0430\u0441",
+            "uz": "Biz haqimizda",
+            "en": "About us"
+        },
+        "accessories": {
+            "ru": "\u0410\u043a\u0441\u0435\u0441\u0441\u0443\u0430\u0440\u044b",
+            "uz": "Aksessuarlar",
+            "en": "Accessories"
+        },
+        "account": {
+            "ru": "\u0410\u043a\u043a\u0430\u0443\u043d\u0442",
+            "uz": "Hisob",
+            "en": "Account"
+        },
+        "addToBag": {
+            "ru": "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0432 \u043a\u043e\u0440\u0437\u0438\u043d\u0443",
+            "uz": "Savatga qo\u2018shish",
+            "en": "Add to bag"
+        },
+        "addedToBag": {
+            "ru": "\u0414\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u043e \u0432 \u043a\u043e\u0440\u0437\u0438\u043d\u0443",
+            "uz": "Savatga qo\u2018shildi",
+            "en": "Added to bag"
+        },
+        "address": {
+            "ru": "\u0423\u043b\u0438\u0446\u0430 \u0438 \u043d\u043e\u043c\u0435\u0440 \u0434\u043e\u043c\u0430",
+            "uz": "Ko\u2018cha va uy raqami",
+            "en": "Street name and number"
+        },
+        "all": {
+            "ru": "\u0412\u0441\u0435",
+            "uz": "Barchasi",
+            "en": "All"
+        },
+        "apply": {
+            "ru": "\u041f\u0440\u0438\u043c\u0435\u043d\u0438\u0442\u044c",
+            "uz": "Qo\u2018llash",
+            "en": "Apply"
+        },
+        "auSizes": {
+            "ru": "\ud83c\udde6\ud83c\uddfa \u0410\u0432\u0441\u0442\u0440\u0430\u043b\u0438\u0439\u0441\u043a\u0438\u0435 \u0440\u0430\u0437\u043c\u0435\u0440\u044b",
+            "uz": "\ud83c\udde6\ud83c\uddfa Avstraliya o\u2018lchamlari",
+            "en": "\ud83c\udde6\ud83c\uddfa Australian sizes"
+        },
+        "available": {
+            "ru": "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430",
+            "uz": "Yetkazib berish mavjud",
+            "en": "Delivery available"
+        },
+        "average": {
+            "ru": "\u0421\u0440\u0435\u0434\u043d\u044f\u044f",
+            "uz": "O\u2018rtacha",
+            "en": "Average"
+        },
+        "bag": {
+            "ru": "\u041a\u043e\u0440\u0437\u0438\u043d\u0430",
+            "uz": "Savat",
+            "en": "Bag"
+        },
+        "bags": {
+            "ru": "\u0421\u0443\u043c\u043a\u0438",
+            "uz": "Sumkalar",
+            "en": "Bags"
+        },
+        "bandSize": {
+            "ru": "\u041e\u0431\u0445\u0432\u0430\u0442 \u043f\u043e\u0434 \u0433\u0440\u0443\u0434\u044c\u044e",
+            "uz": "Ko\u2018krak osti aylanasi",
+            "en": "Band size"
+        },
+        "beSizes": {
+            "ru": "\ud83c\udde7\ud83c\uddea \u0411\u0435\u043b\u044c\u0433\u0438\u0439\u0441\u043a\u0438\u0435 \u0440\u0430\u0437\u043c\u0435\u0440\u044b",
+            "uz": "\ud83c\udde7\ud83c\uddea Belgiya o\u2018lchamlari",
+            "en": "\ud83c\udde7\ud83c\uddea Belgian sizes"
+        },
+        "braLead": {
+            "ru": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0440\u0430\u0437\u043c\u0435\u0440 \u0434\u043b\u044f \u0435\u0449\u0451 \u0431\u043e\u043b\u0435\u0435 \u0442\u043e\u0447\u043d\u043e\u0439 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438.",
+            "uz": "Yanada aniq tavsiya uchun o\u2018lchamingizni tanlang.",
+            "en": "Choose your size for a more accurate recommendation."
+        },
+        "braTitle": {
+            "ru": "\u0420\u0430\u0437\u043c\u0435\u0440 \u0431\u044e\u0441\u0442\u0433\u0430\u043b\u044c\u0442\u0435\u0440\u0430",
+            "uz": "Byustgalter o\u2018lchami",
+            "en": "Bra size"
+        },
+        "cabinet": {
+            "ru": "\u041b\u0438\u0447\u043d\u044b\u0439 \u043a\u0430\u0431\u0438\u043d\u0435\u0442",
+            "uz": "Shaxsiy kabinet",
+            "en": "My account"
+        },
+        "cancelOrder": {
+            "ru": "\u041e\u0442\u043c\u0435\u043d\u0438\u0442\u044c \u0437\u0430\u043a\u0430\u0437",
+            "uz": "Buyurtmani bekor qilish",
+            "en": "Cancel order"
+        },
+        "cancelReason": {
+            "ru": "\u041f\u0440\u0438\u0447\u0438\u043d\u0430 \u043e\u0442\u043c\u0435\u043d\u044b",
+            "uz": "Bekor qilish sababi",
+            "en": "Cancellation reason"
+        },
+        "cardPayment": {
+            "ru": "\u0411\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u043e\u0439 \u043a\u0430\u0440\u0442\u043e\u0439",
+            "uz": "Bank kartasi",
+            "en": "Pay by card"
+        },
+        "care": {
+            "ru": "\u0423\u0445\u043e\u0434",
+            "uz": "Parvarish",
+            "en": "Care"
+        },
+        "cartTitle": {
+            "ru": "\u041a\u043e\u0440\u0437\u0438\u043d\u0430",
+            "uz": "Savat",
+            "en": "Bag"
+        },
+        "catalog": {
+            "ru": "\u041a\u0410\u0422\u0410\u041b\u041e\u0413",
+            "uz": "KATALOG",
+            "en": "CATALOGUE"
+        },
+        "checkout": {
+            "ru": "\u041e\u0444\u043e\u0440\u043c\u0438\u0442\u044c \u0437\u0430\u043a\u0430\u0437",
+            "uz": "Buyurtmani rasmiylashtirish",
+            "en": "Checkout"
+        },
+        "checkoutStep": {
+            "ru": "\u041e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435 \u00b7 \u0448\u0430\u0433 1 \u0438\u0437 2",
+            "uz": "Rasmiylashtirish \u00b7 1-qadam, 2 dan",
+            "en": "Checkout \u00b7 step 1 of 2"
+        },
+        "chestCm": {
+            "ru": "\u0413\u0440\u0443\u0434\u044c, \u0441\u043c",
+            "uz": "Ko\u2018krak, sm",
+            "en": "Chest, cm"
+        },
+        "chooseSize": {
+            "ru": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0440\u0430\u0437\u043c\u0435\u0440",
+            "uz": "O\u2018lchamni tanlang",
+            "en": "Choose size"
+        },
+        "city": {
+            "ru": "\u0413\u043e\u0440\u043e\u0434",
+            "uz": "Shahar",
+            "en": "City"
+        },
+        "close": {
+            "ru": "\u0417\u0430\u043a\u0440\u044b\u0442\u044c",
+            "uz": "Yopish",
+            "en": "Close"
+        },
+        "clothing": {
+            "ru": "\u041e\u0434\u0435\u0436\u0434\u0430",
+            "uz": "Kiyimlar",
+            "en": "Clothing"
+        },
+        "cm": {
+            "ru": "\u0441\u043c",
+            "uz": "sm",
+            "en": "cm"
+        },
+        "colour": {
+            "ru": "\u0426\u0432\u0435\u0442",
+            "uz": "Rang",
+            "en": "Colour"
+        },
+        "confirmCancellation": {
+            "ru": "\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044c \u043e\u0442\u043c\u0435\u043d\u0443",
+            "uz": "Bekor qilishni tasdiqlash",
+            "en": "Confirm cancellation"
+        },
+        "confirmOrder": {
+            "ru": "\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044c \u0437\u0430\u043a\u0430\u0437",
+            "uz": "Buyurtmani tasdiqlash",
+            "en": "Confirm order"
+        },
+        "contacts": {
+            "ru": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b",
+            "uz": "Kontaktlar",
+            "en": "Contact"
+        },
+        "continue": {
+            "ru": "\u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u044c",
+            "uz": "Davom etish",
+            "en": "Continue"
+        },
+        "continueShopping": {
+            "ru": "\u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u044c \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u2192",
+            "uz": "Xaridni davom ettirish \u2192",
+            "en": "Continue shopping \u2192"
+        },
+        "country": {
+            "ru": "\u0423\u0437\u0431\u0435\u043a\u0438\u0441\u0442\u0430\u043d",
+            "uz": "O\u02bbzbekiston",
+            "en": "Uzbekistan"
+        },
+        "cupSize": {
+            "ru": "\u0420\u0430\u0437\u043c\u0435\u0440 \u0447\u0430\u0448\u043a\u0438",
+            "uz": "Chashka o\u2018lchami",
+            "en": "Cup size"
+        },
+        "delivery": {
+            "ru": "\u0421\u043b\u0443\u0436\u0431\u0430 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
+            "uz": "Yetkazib berish",
+            "en": "Delivery"
+        },
+        "deliveryMethod": {
+            "ru": "\u0421\u043f\u043e\u0441\u043e\u0431 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
+            "uz": "Yetkazib berish usuli",
+            "en": "Delivery method"
+        },
+        "deliveryPayment": {
+            "ru": "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0438 \u043e\u043f\u043b\u0430\u0442\u0430",
+            "uz": "Yetkazib berish va to\u02bblov",
+            "en": "Delivery & payment"
+        },
+        "deliveryUz": {
+            "ru": "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u043f\u043e \u0423\u0437\u0431\u0435\u043a\u0438\u0441\u0442\u0430\u043d\u0443",
+            "uz": "O\u02bbzbekiston bo\u2018ylab yetkazib berish",
+            "en": "Delivery across Uzbekistan"
+        },
+        "details": {
+            "ru": "\u0414\u0435\u0442\u0430\u043b\u0438",
+            "uz": "Tafsilotlar",
+            "en": "Details"
+        },
+        "diameterMm": {
+            "ru": "\u0414\u0438\u0430\u043c\u0435\u0442\u0440, \u043c\u043c",
+            "uz": "Diametr, mm",
+            "en": "Diameter, mm"
+        },
+        "dresses": {
+            "ru": "\u041f\u043b\u0430\u0442\u044c\u044f",
+            "uz": "Ko\u02bbylaklar",
+            "en": "Dresses"
+        },
+        "editData": {
+            "ru": "\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u0434\u0430\u043d\u043d\u044b\u0435",
+            "uz": "Ma\u2019lumotlarni o\u2018zgartirish",
+            "en": "Edit details"
+        },
+        "emptyBag": {
+            "ru": "\u041a\u043e\u0440\u0437\u0438\u043d\u0430 \u043f\u0443\u0441\u0442\u0430",
+            "uz": "Savat bo\u2018sh",
+            "en": "Your bag is empty"
+        },
+        "emptyFavourites": {
+            "ru": "\u041f\u043e\u043a\u0430 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u0441\u043e\u0445\u0440\u0430\u043d\u0435\u043d\u043e",
+            "uz": "Hali hech narsa saqlanmagan",
+            "en": "Nothing saved yet"
+        },
+        "enterPromo": {
+            "ru": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u043e\u043c\u043e\u043a\u043e\u0434",
+            "uz": "Promokodni kiriting",
+            "en": "Enter discount code"
+        },
+        "esSizes": {
+            "ru": "\ud83c\uddea\ud83c\uddf8 \u0418\u0441\u043f\u0430\u043d\u0441\u043a\u0438\u0435 \u0440\u0430\u0437\u043c\u0435\u0440\u044b",
+            "uz": "\ud83c\uddea\ud83c\uddf8 Ispaniya o\u2018lchamlari",
+            "en": "\ud83c\uddea\ud83c\uddf8 Spanish sizes"
+        },
+        "estimatedDate": {
+            "ru": "\u041e\u0436\u0438\u0434\u0430\u0435\u043c\u0430\u044f \u0434\u0430\u0442\u0430",
+            "uz": "Kutilayotgan sana",
+            "en": "Estimated date"
+        },
+        "euSizes": {
+            "ru": "\ud83c\uddea\ud83c\uddfa \u0415\u0432\u0440\u043e\u043f\u0435\u0439\u0441\u043a\u0438\u0435 \u0440\u0430\u0437\u043c\u0435\u0440\u044b",
+            "uz": "\ud83c\uddea\ud83c\uddfa Yevropa o\u2018lchamlari",
+            "en": "\ud83c\uddea\ud83c\uddfa European sizes"
+        },
+        "evening": {
+            "ru": "\u0412\u0435\u0447\u0435\u0440\u043d\u0438\u0435 \u043e\u0431\u0440\u0430\u0437\u044b \u2192",
+            "uz": "Kechki obrazlar \u2192",
+            "en": "Evening looks \u2192"
+        },
+        "favourites": {
+            "ru": "\u0418\u0437\u0431\u0440\u0430\u043d\u043d\u043e\u0435",
+            "uz": "Sevimlilar",
+            "en": "Favourites"
+        },
+        "filters": {
+            "ru": "\u0424\u0438\u043b\u044c\u0442\u0440\u044b \u0438 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430",
+            "uz": "Filtr va saralash",
+            "en": "Filter & sort"
+        },
+        "findSize": {
+            "ru": "\u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u0440\u0430\u0437\u043c\u0435\u0440",
+            "uz": "O\u2018lchamni tanlash",
+            "en": "Find your size"
+        },
+        "finderLead": {
+            "ru": "\u0417\u0430\u043f\u043e\u043b\u043d\u0438\u0442\u0435 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u0432 \u2014 \u044d\u0442\u043e \u0437\u0430\u0439\u043c\u0451\u0442 \u043c\u0435\u043d\u044c\u0448\u0435 \u043c\u0438\u043d\u0443\u0442\u044b.",
+            "uz": "Bir nechta ma\u2019lumotni kiriting \u2014 bu bir daqiqadan kam vaqt oladi.",
+            "en": "Enter a few details \u2014 it takes less than a minute."
+        },
+        "finderPersonal": {
+            "ru": "\u041f\u0415\u0420\u0421\u041e\u041d\u0410\u041b\u042c\u041d\u0410\u042f \u0420\u0415\u041a\u041e\u041c\u0415\u041d\u0414\u0410\u0426\u0418\u042f",
+            "uz": "SHAXSIY TAVSIYA",
+            "en": "PERSONAL RECOMMENDATION"
+        },
+        "finderTitle": {
+            "ru": "\u041f\u043e\u0434\u0431\u0435\u0440\u0451\u043c \u0432\u0430\u0448 \u0440\u0430\u0437\u043c\u0435\u0440",
+            "uz": "Sizga mos o\u2018lchamni topamiz",
+            "en": "Find your size"
+        },
+        "firstName": {
+            "ru": "\u0418\u043c\u044f",
+            "uz": "Ism",
+            "en": "First name"
+        },
+        "fitAffects": {
+            "ru": "\u041f\u0440\u0435\u0434\u043f\u043e\u0447\u0442\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043f\u043e\u0441\u0430\u0434\u043a\u0430 \u0432\u043b\u0438\u044f\u0435\u0442 \u043d\u0430 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440.",
+            "uz": "Afzal o\u2018tirish tavsiya etilgan o\u2018lchamga ta\u2019sir qiladi.",
+            "en": "Your preferred fit affects the recommended size."
+        },
+        "fitLead": {
+            "ru": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435, \u043a\u0430\u043a \u0432\u0430\u043c \u043a\u043e\u043c\u0444\u043e\u0440\u0442\u043d\u0435\u0435 \u043d\u043e\u0441\u0438\u0442\u044c \u043e\u0434\u0435\u0436\u0434\u0443.",
+            "uz": "Kiyim sizga qanday qulay turishini tanlang.",
+            "en": "Choose how you prefer your clothes to fit."
+        },
+        "fitTitle": {
+            "ru": "\u041f\u0440\u0435\u0434\u043f\u043e\u0447\u0442\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043f\u043e\u0441\u0430\u0434\u043a\u0430",
+            "uz": "Afzal ko\u2018rgan o\u2018tirish",
+            "en": "Your preferred fit"
+        },
+        "follow": {
+            "ru": "\u041f\u043e\u0434\u043f\u0438\u0448\u0438\u0442\u0435\u0441\u044c \u043d\u0430 \u043d\u0430\u0441",
+            "uz": "Bizga obuna bo\u02bbling",
+            "en": "Follow us"
+        },
+        "footCm": {
+            "ru": "\u0421\u0442\u043e\u043f\u0430, \u0441\u043c",
+            "uz": "Oyoq uzunligi, sm",
+            "en": "Foot length, cm"
+        },
+        "frSizes": {
+            "ru": "\ud83c\uddeb\ud83c\uddf7 \u0424\u0440\u0430\u043d\u0446\u0443\u0437\u0441\u043a\u0438\u0435 \u0440\u0430\u0437\u043c\u0435\u0440\u044b",
+            "uz": "\ud83c\uddeb\ud83c\uddf7 Fransiya o\u2018lchamlari",
+            "en": "\ud83c\uddeb\ud83c\uddf7 French sizes"
+        },
+        "free": {
+            "ru": "\u0411\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e",
+            "uz": "Bepul",
+            "en": "Free"
+        },
+        "garmentFit": {
+            "ru": "\u041f\u043e\u0441\u0430\u0434\u043a\u0430 \u0438\u0437\u0434\u0435\u043b\u0438\u044f",
+            "uz": "Kiyim o\u2018tirishi",
+            "en": "Garment fit"
+        },
+        "guestLead": {
+            "ru": "\u041e\u0442\u043a\u0440\u043e\u0439\u0442\u0435 \u0438\u043a\u043e\u043d\u043a\u0443 \u043f\u0440\u043e\u0444\u0438\u043b\u044f, \u0447\u0442\u043e\u0431\u044b \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u044c \u0447\u0435\u0440\u0435\u0437 Telegram \u0438\u043b\u0438 Google.",
+            "uz": "Telegram yoki Google orqali davom etish uchun profil belgisini oching.",
+            "en": "Open the profile icon to continue with Telegram or Google."
+        },
+        "guestTitle": {
+            "ru": "\u0412\u044b \u0432\u043e\u0448\u043b\u0438 \u043a\u0430\u043a \u0433\u043e\u0441\u0442\u044c",
+            "uz": "Siz mehmon sifatida kirdingiz",
+            "en": "You are browsing as a guest"
+        },
+        "help": {
+            "ru": "\u041d\u0443\u0436\u043d\u0430 \u043f\u043e\u043c\u043e\u0449\u044c?",
+            "uz": "Yordam kerakmi?",
+            "en": "Need help?"
+        },
+        "hero": {
+            "ru": "\u0422\u0438\u0445\u0430\u044f \u0441\u0438\u043b\u0430",
+            "uz": "Nafis kuch",
+            "en": "Quiet power"
+        },
+        "heroCollection": {
+            "ru": "\u041d\u041e\u0412\u041e\u0415 \u041d\u0410\u0427\u0410\u041b\u041e",
+            "uz": "YANGI BOSQICH",
+            "en": "THE RESET"
+        },
+        "heroEm": {
+            "ru": "\u0436\u0435\u043d\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0441\u0442\u0438",
+            "uz": "ayollik",
+            "en": "of femininity"
+        },
+        "heroSeason": {
+            "ru": "\u041f\u0420\u0415-\u0424\u041e\u041b\u041b 2026",
+            "uz": "PRE-FALL 2026",
+            "en": "PRE-FALL 2026"
+        },
+        "heroShop": {
+            "ru": "\u0412 \u041a\u0410\u0422\u0410\u041b\u041e\u0413",
+            "uz": "KATALOGGA O\u2018TISH",
+            "en": "SHOP NOW"
+        },
+        "hipsCm": {
+            "ru": "\u0411\u0451\u0434\u0440\u0430, \u0441\u043c",
+            "uz": "Son, sm",
+            "en": "Hips, cm"
+        },
+        "hipsLead": {
+            "ru": "\u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u0444\u043e\u0440\u043c\u0443 \u0431\u0451\u0434\u0435\u0440 \u0434\u043b\u044f \u0442\u043e\u0447\u043d\u043e\u0439 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438",
+            "uz": "Aniq tavsiya uchun son shaklini tanlang",
+            "en": "Choose your hip shape for a more accurate recommendation."
+        },
+        "hipsTitle": {
+            "ru": "\u0411\u0451\u0434\u0440\u0430 \u0438 \u043f\u043e\u0441\u0430\u0434\u043a\u0430",
+            "uz": "Sonlar va o\u2018tirish",
+            "en": "Your hips and thighs"
+        },
+        "home": {
+            "ru": "\u0413\u043b\u0430\u0432\u043d\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430",
+            "uz": "Bosh sahifa",
+            "en": "Home"
+        },
+        "hours": {
+            "ru": "\u0427\u0430\u0441\u044b \u0440\u0430\u0431\u043e\u0442\u044b",
+            "uz": "Ish vaqti",
+            "en": "Opening hours"
+        },
+        "inStock": {
+            "ru": "\u0412 \u043d\u0430\u043b\u0438\u0447\u0438\u0438",
+            "uz": "Mavjud",
+            "en": "In stock"
+        },
+        "itSizes": {
+            "ru": "\ud83c\uddee\ud83c\uddf9 \u0418\u0442\u0430\u043b\u044c\u044f\u043d\u0441\u043a\u0438\u0435 \u0440\u0430\u0437\u043c\u0435\u0440\u044b",
+            "uz": "\ud83c\uddee\ud83c\uddf9 Italiya o\u2018lchamlari",
+            "en": "\ud83c\uddee\ud83c\uddf9 Italian sizes"
+        },
+        "items": {
+            "ru": "\u0442\u043e\u0432\u0430\u0440\u043e\u0432",
+            "uz": "mahsulot",
+            "en": "items"
+        },
+        "jeans": {
+            "ru": "\u0414\u0436\u0438\u043d\u0441\u044b",
+            "uz": "Jinsilar",
+            "en": "Jeans"
+        },
+        "jewellery": {
+            "ru": "\u0423\u043a\u0440\u0430\u0448\u0435\u043d\u0438\u044f",
+            "uz": "Taqinchoqlar",
+            "en": "Jewellery"
+        },
+        "keepOrder": {
+            "ru": "\u041e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u043a\u0430\u0437",
+            "uz": "Buyurtmani saqlash",
+            "en": "Keep order"
+        },
+        "kg": {
+            "ru": "\u043a\u0433",
+            "uz": "kg",
+            "en": "kg"
+        },
+        "knitwear": {
+            "ru": "\u0412\u044f\u0437\u0430\u043d\u0430\u044f \u043e\u0434\u0435\u0436\u0434\u0430",
+            "uz": "Trikotaj kiyimlar",
+            "en": "Knitwear"
+        },
+        "language": {
+            "ru": "\u0420\u0435\u0433\u0438\u043e\u043d \u0438 \u044f\u0437\u044b\u043a",
+            "uz": "Hudud va til",
+            "en": "Region and language"
+        },
+        "lastName": {
+            "ru": "\u0424\u0430\u043c\u0438\u043b\u0438\u044f",
+            "uz": "Familiya",
+            "en": "Last name"
+        },
+        "left": {
+            "ru": "\u041e\u0441\u0442\u0430\u043b\u043e\u0441\u044c",
+            "uz": "Qoldi",
+            "en": "Left"
+        },
+        "legsLead": {
+            "ru": "\u042d\u0442\u043e \u043f\u043e\u043c\u043e\u0436\u0435\u0442 \u043f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u0443\u044e \u0434\u043b\u0438\u043d\u0443 \u0438\u0437\u0434\u0435\u043b\u0438\u044f",
+            "uz": "Bu kiyimning to\u2018g\u2018ri uzunligini tanlashga yordam beradi",
+            "en": "This helps us choose the right garment length."
+        },
+        "legsTitle": {
+            "ru": "\u0414\u043b\u0438\u043d\u0430 \u043d\u043e\u0433",
+            "uz": "Oyoq uzunligi",
+            "en": "Your legs"
+        },
+        "linen": {
+            "ru": "\u041b\u0451\u043d \u0438 \u0445\u043b\u043e\u043f\u043e\u043a \u2192",
+            "uz": "Zig\u2018ir va paxta \u2192",
+            "en": "Linen and cotton \u2192"
+        },
+        "longer": {
+            "ru": "\u0414\u043b\u0438\u043d\u043d\u0435\u0435",
+            "uz": "Uzunroq",
+            "en": "Longer"
+        },
+        "looser": {
+            "ru": "\u0411\u043e\u043b\u0435\u0435 \u0441\u0432\u043e\u0431\u043e\u0434\u043d\u0430\u044f",
+            "uz": "Erkinroq",
+            "en": "Looser"
+        },
+        "manifest": {
+            "ru": "\u041c\u0410\u041d\u0418\u0424\u0415\u0421\u0422 UMA",
+            "uz": "UMA MANIFESTI",
+            "en": "UMA MANIFEST"
+        },
+        "material": {
+            "ru": "\u041c\u0430\u0442\u0435\u0440\u0438\u0430\u043b",
+            "uz": "Material",
+            "en": "Material"
+        },
+        "medium": {
+            "ru": "\u0421\u0440\u0435\u0434\u043d\u044f\u044f",
+            "uz": "O\u2018rtacha",
+            "en": "Average"
+        },
+        "menu": {
+            "ru": "\u041c\u0435\u043d\u044e",
+            "uz": "Menyu",
+            "en": "Menu"
+        },
+        "more": {
+            "ru": "\u041f\u043e\u0434\u0440\u043e\u0431\u043d\u0435\u0435 \u2192",
+            "uz": "Batafsil \u2192",
+            "en": "Learn more \u2192"
+        },
+        "narrow": {
+            "ru": "\u0423\u0437\u043a\u0438\u0435",
+            "uz": "Tor",
+            "en": "Narrower"
+        },
+        "new": {
+            "ru": "\u041d\u043e\u0432\u0438\u043d\u043a\u0438",
+            "uz": "Yangi mahsulotlar",
+            "en": "New arrivals"
+        },
+        "newBadge": {
+            "ru": "New",
+            "uz": "Yangi",
+            "en": "New"
+        },
+        "newCollection": {
+            "ru": "\u041d\u043e\u0432\u0430\u044f \u043a\u043e\u043b\u043b\u0435\u043a\u0446\u0438\u044f",
+            "uz": "Yangi kolleksiya",
+            "en": "New collection"
+        },
+        "news": {
+            "ru": "\u041d\u043e\u0432\u043e\u0441\u0442\u0438",
+            "uz": "Yangiliklar",
+            "en": "News"
+        },
+        "next": {
+            "ru": "\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0435\u0435 \u0444\u043e\u0442\u043e",
+            "uz": "Keyingi surat",
+            "en": "Next image"
+        },
+        "nextSlide": {
+            "ru": "\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u0431\u0430\u043d\u043d\u0435\u0440",
+            "uz": "Keyingi banner",
+            "en": "Next banner"
+        },
+        "noOrders": {
+            "ru": "\u0417\u0430\u043a\u0430\u0437\u043e\u0432 \u043f\u043e\u043a\u0430 \u043d\u0435\u0442",
+            "uz": "Hozircha buyurtmalar yo\u2018q",
+            "en": "No orders yet"
+        },
+        "noOrdersLead": {
+            "ru": "\u041f\u043e\u0441\u043b\u0435 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u044f \u0437\u0434\u0435\u0441\u044c \u043f\u043e\u044f\u0432\u044f\u0442\u0441\u044f \u0441\u043e\u0441\u0442\u0430\u0432 \u0438 \u0441\u0442\u0430\u0442\u0443\u0441 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438.",
+            "uz": "Buyurtma rasmiylashtirilgandan so\u2018ng uning tarkibi va holati shu yerda ko\u2018rinadi.",
+            "en": "Your order details and delivery status will appear here after checkout."
+        },
+        "notice": {
+            "ru": "\u0411\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u0430\u044f \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u043e\u0442 1 500 000 \u0441\u0443\u043c",
+            "uz": "1 500 000 so\u02bbmdan bepul yetkazib berish",
+            "en": "Free delivery from 1,500,000 UZS"
+        },
+        "notificationOn": {
+            "ru": "\u0423\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435 \u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
+            "uz": "Bildirishnoma yoqildi",
+            "en": "Notification enabled"
+        },
+        "notify": {
+            "ru": "\u0421\u043e\u043e\u0431\u0449\u0438\u0442\u044c \u043e \u043f\u043e\u0441\u0442\u0443\u043f\u043b\u0435\u043d\u0438\u0438",
+            "uz": "Kelganda xabar bering",
+            "en": "Notify me when available"
+        },
+        "oneSize": {
+            "ru": "\u0415\u0434\u0438\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440",
+            "uz": "Yagona o\u2018lcham",
+            "en": "One size"
+        },
+        "online": {
+            "ru": "\u041e\u043d\u043b\u0430\u0439\u043d-\u044d\u043a\u0441\u043a\u043b\u044e\u0437\u0438\u0432",
+            "uz": "Onlayn eksklyuziv",
+            "en": "Online exclusive"
+        },
+        "openBag": {
+            "ru": "\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043a\u043e\u0440\u0437\u0438\u043d\u0443",
+            "uz": "Savatni ochish",
+            "en": "View bag"
+        },
+        "openCollection": {
+            "ru": "\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043a\u043e\u043b\u043b\u0435\u043a\u0446\u0438\u044e \u2192",
+            "uz": "Kolleksiyani ochish \u2192",
+            "en": "Open collection \u2192"
+        },
+        "orderHistory": {
+            "ru": "\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u0437\u0430\u043a\u0430\u0437\u043e\u0432",
+            "uz": "Buyurtmalar tarixi",
+            "en": "Order history"
+        },
+        "orderHistoryLead": {
+            "ru": "\u041e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u043d\u044b\u0435 \u0437\u0430\u043a\u0430\u0437\u044b \u0438 \u0430\u043a\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u0439 \u0441\u0442\u0430\u0442\u0443\u0441 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438.",
+            "uz": "Rasmiylashtirilgan buyurtmalar va ularning yetkazib berish holati.",
+            "en": "Placed orders and their current delivery status."
+        },
+        "orderSummary": {
+            "ru": "\u0421\u043e\u0441\u0442\u0430\u0432 \u0437\u0430\u043a\u0430\u0437\u0430",
+            "uz": "Buyurtma tarkibi",
+            "en": "Order summary"
+        },
+        "orderValue": {
+            "ru": "\u0421\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u0437\u0430\u043a\u0430\u0437\u0430",
+            "uz": "Buyurtma qiymati",
+            "en": "Order value"
+        },
+        "orders": {
+            "ru": "\u041c\u043e\u0438 \u0437\u0430\u043a\u0430\u0437\u044b",
+            "uz": "Buyurtmalarim",
+            "en": "My orders"
+        },
+        "outOfStock": {
+            "ru": "\u041d\u0435\u0442 \u0432 \u043d\u0430\u043b\u0438\u0447\u0438\u0438",
+            "uz": "Mavjud emas",
+            "en": "Out of stock"
+        },
+        "payment": {
+            "ru": "\u041e\u043f\u043b\u0430\u0442\u0430",
+            "uz": "To\u02bblov",
+            "en": "Payment"
+        },
+        "phone": {
+            "ru": "\u041d\u043e\u043c\u0435\u0440 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430",
+            "uz": "Telefon raqami",
+            "en": "Phone number"
+        },
+        "photo": {
+            "ru": "\u0424\u043e\u0442\u043e",
+            "uz": "Surat",
+            "en": "Image"
+        },
+        "polo": {
+            "ru": "\u041f\u043e\u043b\u043e",
+            "uz": "Polo",
+            "en": "Polo shirts"
+        },
+        "postalCode": {
+            "ru": "\u041f\u043e\u0447\u0442\u043e\u0432\u044b\u0439 \u0438\u043d\u0434\u0435\u043a\u0441",
+            "uz": "Pochta indeksi",
+            "en": "Postal code"
+        },
+        "previous": {
+            "ru": "\u041f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0435\u0435 \u0444\u043e\u0442\u043e",
+            "uz": "Oldingi surat",
+            "en": "Previous image"
+        },
+        "previousSlide": {
+            "ru": "\u041f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0438\u0439 \u0431\u0430\u043d\u043d\u0435\u0440",
+            "uz": "Oldingi banner",
+            "en": "Previous banner"
+        },
+        "privacy": {
+            "ru": "\u0414\u0430\u043d\u043d\u044b\u0435 \u0441\u043e\u0445\u0440\u0430\u043d\u044f\u044e\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u0432 \u0432\u0430\u0448\u0435\u043c \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0435",
+            "uz": "Ma\u2019lumotlar faqat brauzeringizda saqlanadi",
+            "en": "Your details are stored only in this browser"
+        },
+        "productInfo": {
+            "ru": "\u041f\u043e\u0434\u0440\u043e\u0431\u043d\u0430\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e \u0442\u043e\u0432\u0430\u0440\u0435 \u0438 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438 \u043f\u043e \u0443\u0445\u043e\u0434\u0443.",
+            "uz": "Mahsulot haqida batafsil ma\u02bclumot va parvarish bo\u2018yicha tavsiyalar.",
+            "en": "Detailed product information and care recommendations."
+        },
+        "promo": {
+            "ru": "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u043f\u0440\u043e\u043c\u043e\u043a\u043e\u0434",
+            "uz": "Promokod qo\u2018shish",
+            "en": "Add discount code"
+        },
+        "quickAdd": {
+            "ru": "\u0411\u044b\u0441\u0442\u0440\u043e \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u044c",
+            "uz": "Tez qo\u2018shish",
+            "en": "Quick add"
+        },
+        "quickAddTitle": {
+            "ru": "\u0411\u044b\u0441\u0442\u0440\u043e\u0435 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u0435",
+            "uz": "Tez qo\u2018shish",
+            "en": "Quick add"
+        },
+        "readyToAdd": {
+            "ru": "\u0413\u043e\u0442\u043e\u0432\u043e \u043a \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u044e",
+            "uz": "Qo\u2018shishga tayyor",
+            "en": "Ready to add"
+        },
+        "recent": {
+            "ru": "\u041d\u0435\u0434\u0430\u0432\u043d\u043e \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u043d\u043d\u044b\u0435",
+            "uz": "Yaqinda ko\u2018rilganlar",
+            "en": "Recently viewed"
+        },
+        "recipient": {
+            "ru": "\u0414\u0430\u043d\u043d\u044b\u0435 \u043f\u043e\u043b\u0443\u0447\u0430\u0442\u0435\u043b\u044f",
+            "uz": "Qabul qiluvchi ma\u02bclumotlari",
+            "en": "Recipient details"
+        },
+        "recommendation": {
+            "ru": "\u0412\u0410\u0428\u0410 \u0420\u0415\u041a\u041e\u041c\u0415\u041d\u0414\u0410\u0426\u0418\u042f",
+            "uz": "SIZNING TAVSIYANGIZ",
+            "en": "YOUR RECOMMENDATION"
+        },
+        "recommendedLead": {
+            "ru": "\u0421 \u0432\u044b\u0441\u043e\u043a\u043e\u0439 \u0432\u0435\u0440\u043e\u044f\u0442\u043d\u043e\u0441\u0442\u044c\u044e \u044d\u0442\u043e\u0442 \u0440\u0430\u0437\u043c\u0435\u0440 \u043f\u043e\u0434\u043e\u0439\u0434\u0451\u0442 \u0432\u0430\u043c.",
+            "uz": "Bu o\u2018lcham sizga mos kelish ehtimoli yuqori.",
+            "en": "There is a high chance this size will fit you well."
+        },
+        "recommendedSize": {
+            "ru": "\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440",
+            "uz": "Sizga tavsiya etilgan o\u2018lcham",
+            "en": "Your recommended size"
+        },
+        "related": {
+            "ru": "\u041f\u043e\u0445\u043e\u0436\u0438\u0435 \u0442\u043e\u0432\u0430\u0440\u044b",
+            "uz": "O\u2018xshash mahsulotlar",
+            "en": "You may also like"
+        },
+        "remove": {
+            "ru": "\u0423\u0434\u0430\u043b\u0438\u0442\u044c",
+            "uz": "Olib tashlash",
+            "en": "Remove"
+        },
+        "resetProfile": {
+            "ru": "\u0421\u0431\u0440\u043e\u0441\u0438\u0442\u044c \u043f\u0440\u043e\u0444\u0438\u043b\u044c",
+            "uz": "Profilni tiklash",
+            "en": "Reset profile"
+        },
+        "returns": {
+            "ru": "\u0412\u043e\u0437\u0432\u0440\u0430\u0442",
+            "uz": "Qaytarish",
+            "en": "Returns"
+        },
+        "sale": {
+            "ru": "\u0420\u0430\u0441\u043f\u0440\u043e\u0434\u0430\u0436\u0430",
+            "uz": "Chegirmalar",
+            "en": "Sale"
+        },
+        "scarves": {
+            "ru": "\u0428\u0430\u0440\u0444\u044b",
+            "uz": "Sharf va ro\u02bbmollar",
+            "en": "Scarves"
+        },
+        "search": {
+            "ru": "\u041f\u043e\u0438\u0441\u043a",
+            "uz": "Qidiruv",
+            "en": "Search"
+        },
+        "selectedForYou": {
+            "ru": "\u0412\u044b\u0431\u0440\u0430\u043d\u043e \u0434\u043b\u044f \u0432\u0430\u0441",
+            "uz": "Siz uchun tanlangan",
+            "en": "Selected for you"
+        },
+        "services": {
+            "ru": "\u041e\u0431\u0449\u0438\u0435 \u0443\u0441\u043b\u0443\u0433\u0438",
+            "uz": "Xizmatlar",
+            "en": "Services"
+        },
+        "settings": {
+            "ru": "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438",
+            "uz": "Sozlamalar",
+            "en": "Settings"
+        },
+        "shirts": {
+            "ru": "\u0420\u0443\u0431\u0430\u0448\u043a\u0438",
+            "uz": "Ko\u02bbylaklar",
+            "en": "Shirts"
+        },
+        "shoeSize": {
+            "ru": "\u0420\u0430\u0437\u043c\u0435\u0440 \u043e\u0431\u0443\u0432\u0438",
+            "uz": "Poyabzal o\u2018lchami",
+            "en": "Shoe size"
+        },
+        "shoes": {
+            "ru": "\u041e\u0431\u0443\u0432\u044c",
+            "uz": "Poyabzallar",
+            "en": "Shoes"
+        },
+        "shorter": {
+            "ru": "\u041a\u043e\u0440\u043e\u0447\u0435",
+            "uz": "Qisqaroq",
+            "en": "Shorter"
+        },
+        "shouldersLead": {
+            "ru": "\u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u0448\u0438\u0440\u0438\u043d\u0443 \u043f\u043b\u0435\u0447 \u0434\u043b\u044f \u0431\u043e\u043b\u0435\u0435 \u0442\u043e\u0447\u043d\u043e\u0439 \u043f\u043e\u0441\u0430\u0434\u043a\u0438",
+            "uz": "Aniqroq o\u2018tirish uchun yelka kengligini tanlang",
+            "en": "Choose your shoulder width for a more accurate fit."
+        },
+        "shouldersTitle": {
+            "ru": "\u0412\u0430\u0448\u0438 \u043f\u043b\u0435\u0447\u0438",
+            "uz": "Yelkalaringiz",
+            "en": "Your shoulders"
+        },
+        "signOut": {
+            "ru": "\u0412\u044b\u0439\u0442\u0438 \u0438\u0437 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0430",
+            "uz": "Shaxsiy kabinetdan chiqish",
+            "en": "Sign out"
+        },
+        "size": {
+            "ru": "\u0420\u0430\u0437\u043c\u0435\u0440",
+            "uz": "O\u2018lcham",
+            "en": "Size"
+        },
+        "sizeGuide": {
+            "ru": "\u0422\u0430\u0431\u043b\u0438\u0446\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u0432",
+            "uz": "O\u2018lchamlar jadvali",
+            "en": "Size guide"
+        },
+        "sizeGuideLead": {
+            "ru": "\u0415\u0441\u043b\u0438 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u0441\u044f \u043c\u0435\u0436\u0434\u0443 \u0434\u0432\u0443\u043c\u044f \u0440\u0430\u0437\u043c\u0435\u0440\u0430\u043c\u0438, \u0432\u044b\u0431\u0438\u0440\u0430\u0439\u0442\u0435 \u0431\u043e\u043b\u044c\u0448\u0438\u0439 \u0434\u043b\u044f \u0431\u043e\u043b\u0435\u0435 \u0441\u0432\u043e\u0431\u043e\u0434\u043d\u043e\u0439 \u043f\u043e\u0441\u0430\u0434\u043a\u0438.",
+            "uz": "Agar o\u2018lchamingiz ikki o\u2018lcham oralig\u2018ida bo\u2018lsa, erkinroq turishi uchun kattaroq o\u2018lchamni tanlang.",
+            "en": "If your measurement is between two sizes, choose the larger size for a looser fit."
+        },
+        "sizeGuideTitle": {
+            "ru": "\u0422\u0430\u0431\u043b\u0438\u0446\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u0432",
+            "uz": "O\u2018lchamlar jadvali",
+            "en": "Size guide"
+        },
+        "sizeHelp": {
+            "ru": "\u041f\u043e\u043c\u043e\u0449\u044c \u0441 \u0432\u044b\u0431\u043e\u0440\u043e\u043c",
+            "uz": "O\u2018lcham bo\u2018yicha yordam",
+            "en": "Size help"
+        },
+        "skirts": {
+            "ru": "\u042e\u0431\u043a\u0438",
+            "uz": "Yubkalar",
+            "en": "Skirts"
+        },
+        "slim": {
+            "ru": "\u0421\u0442\u0440\u043e\u0439\u043d\u0430\u044f",
+            "uz": "Nozik",
+            "en": "Slimmer"
+        },
+        "socialMedia": {
+            "ru": "\u0421\u043e\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0441\u0435\u0442\u0438",
+            "uz": "Ijtimoiy tarmoqlar",
+            "en": "Social media"
+        },
+        "standardDelivery": {
+            "ru": "\u0421\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u0430\u044f \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0430",
+            "uz": "Standart yetkazib berish",
+            "en": "Standard delivery"
+        },
+        "statement": {
+            "ru": "\u041e\u0434\u0435\u0436\u0434\u0430, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043d\u0435 \u043f\u0435\u0440\u0435\u043a\u0440\u0438\u043a\u0438\u0432\u0430\u0435\u0442 \u0436\u0435\u043d\u0449\u0438\u043d\u0443, \u0430 \u043f\u043e\u043c\u043e\u0433\u0430\u0435\u0442 \u0435\u0439 \u0437\u0432\u0443\u0447\u0430\u0442\u044c.",
+            "uz": "Ayolni to\u2018sib qo\u2018ymaydigan, balki uning ovozini yanada yorqin qiladigan kiyimlar.",
+            "en": "Clothes that do not speak over a woman, but help her voice be heard."
+        },
+        "tighter": {
+            "ru": "\u0411\u043e\u043b\u0435\u0435 \u043f\u0440\u0438\u043b\u0435\u0433\u0430\u044e\u0449\u0430\u044f",
+            "uz": "Yopishiqroq",
+            "en": "Tighter"
+        },
+        "tops": {
+            "ru": "\u0422\u043e\u043f\u044b",
+            "uz": "Toplar",
+            "en": "Tops"
+        },
+        "total": {
+            "ru": "\u0418\u0442\u043e\u0433\u043e",
+            "uz": "Jami",
+            "en": "Total"
+        },
+        "trousers": {
+            "ru": "\u0411\u0440\u044e\u043a\u0438",
+            "uz": "Shimlar",
+            "en": "Trousers"
+        },
+        "tshirts": {
+            "ru": "\u0424\u0443\u0442\u0431\u043e\u043b\u043a\u0438",
+            "uz": "Futbolkalar",
+            "en": "T-shirts"
+        },
+        "ukSizes": {
+            "ru": "\ud83c\uddec\ud83c\udde7 \u0411\u0440\u0438\u0442\u0430\u043d\u0441\u043a\u0438\u0435 \u0440\u0430\u0437\u043c\u0435\u0440\u044b",
+            "uz": "\ud83c\uddec\ud83c\udde7 Britaniya o\u2018lchamlari",
+            "en": "\ud83c\uddec\ud83c\udde7 British sizes"
+        },
+        "usSizes": {
+            "ru": "\ud83c\uddfa\ud83c\uddf8 \u0410\u043c\u0435\u0440\u0438\u043a\u0430\u043d\u0441\u043a\u0438\u0435 \u0440\u0430\u0437\u043c\u0435\u0440\u044b",
+            "uz": "\ud83c\uddfa\ud83c\uddf8 Amerika o\u2018lchamlari",
+            "en": "\ud83c\uddfa\ud83c\uddf8 American sizes"
+        },
+        "viewAll": {
+            "ru": "\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432\u0441\u0451 \u2192",
+            "uz": "Barchasini ko\u2018rish \u2192",
+            "en": "View all \u2192"
+        },
+        "viewCollection": {
+            "ru": "\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u043a\u043e\u043b\u043b\u0435\u043a\u0446\u0438\u044e",
+            "uz": "Kolleksiyani ko\u2018rish",
+            "en": "View collection"
+        },
+        "viewNew": {
+            "ru": "\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u043d\u043e\u0432\u0438\u043d\u043a\u0438",
+            "uz": "Yangiliklarni ko\u2018rish",
+            "en": "View new arrivals"
+        },
+        "waistCm": {
+            "ru": "\u0422\u0430\u043b\u0438\u044f, \u0441\u043c",
+            "uz": "Bel, sm",
+            "en": "Waist, cm"
+        },
+        "waistLead": {
+            "ru": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0444\u043e\u0440\u043c\u0443 \u0442\u0430\u043b\u0438\u0438 \u0434\u043b\u044f \u0431\u043e\u043b\u0435\u0435 \u0442\u043e\u0447\u043d\u043e\u0439 \u043f\u043e\u0441\u0430\u0434\u043a\u0438",
+            "uz": "Aniq tavsiya uchun bel shaklini tanlang",
+            "en": "Choose your waist shape for a more accurate recommendation."
+        },
+        "waistTitle": {
+            "ru": "\u0412\u0430\u0448\u0430 \u0442\u0430\u043b\u0438\u044f",
+            "uz": "Belingiz",
+            "en": "Your waist"
+        },
+        "weekdays": {
+            "ru": "\u041f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a \u2014 \u041f\u044f\u0442\u043d\u0438\u0446\u0430",
+            "uz": "Dushanba \u2014 Juma",
+            "en": "Monday \u2014 Friday"
+        },
+        "weekend": {
+            "ru": "\u0421\u0443\u0431\u0431\u043e\u0442\u0430 \u2014 \u0412\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u044c\u0435",
+            "uz": "Shanba \u2014 Yakshanba",
+            "en": "Saturday \u2014 Sunday"
+        },
+        "wide": {
+            "ru": "\u0428\u0438\u0440\u043e\u043a\u0430\u044f",
+            "uz": "Keng",
+            "en": "Wider"
+        },
+        "women": {
+            "ru": "\u0416\u0435\u043d\u0449\u0438\u043d\u0430\u043c",
+            "uz": "Ayollar uchun",
+            "en": "Women"
+        },
+        "youMayLike": {
+            "ru": "\u0412\u0430\u043c \u043c\u043e\u0436\u0435\u0442 \u043f\u043e\u043d\u0440\u0430\u0432\u0438\u0442\u044c\u0441\u044f",
+            "uz": "Sizga yoqishi mumkin",
+            "en": "You may also like"
+        },
+        "yourBag": {
+            "ru": "\u0412\u0430\u0448\u0430 \u043a\u043e\u0440\u0437\u0438\u043d\u0430",
+            "uz": "Sizning savatingiz",
+            "en": "Your bag"
+        },
+        "yourBagCaps": {
+            "ru": "\u0412\u0410\u0428\u0410 \u041a\u041e\u0420\u0417\u0418\u041d\u0410",
+            "uz": "SIZNING SAVATINGIZ",
+            "en": "YOUR BAG"
+        },
+        "zoom": {
+            "ru": "\u0423\u0432\u0435\u043b\u0438\u0447\u0438\u0442\u044c",
+            "uz": "Kattalashtirish",
+            "en": "Zoom"
         }
-      }
-    },
-    {
-      "id": "uma-zarhal-scarf",
-      "categorySlug": "accessories",
-      "cat": "Аксессуары",
-      "price": 300000,
-      "oldPrice": 390000,
-      "sale": true,
-      "tag": "Sale",
-      "online": true,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/751839b5f0f3.webp",
-        "http://localhost:3001/media/aa312e96eb7a.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/751839b5f0f3.webp",
-        "http://localhost:3001/media/thumbs/aa312e96eb7a.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Сатиновый шарф «Золотой лев»",
-          "color": "Красный",
-          "material": "100% полиэстер",
-          "desc": "Сатиновый шарф с фирменным орнаментом «Золотой лев»."
-        },
-        "uz": {
-          "name": "«Oltin sher» satin sharf",
-          "color": "Qizil",
-          "material": "100% poliester",
-          "desc": "«Oltin sher» imzo naqshli satin sharf."
-        },
-        "en": {
-          "name": "“Golden Lion” satin scarf",
-          "color": "Red",
-          "material": "100% polyester",
-          "desc": "A satin scarf with the signature “Golden Lion” ornament."
-        }
-      }
-    },
-    {
-      "id": "uma-zarhal-ring",
-      "categorySlug": "accessories",
-      "cat": "Аксессуары",
-      "price": 396000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "Online Exclusive",
-      "online": true,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/fd3776ad6477.webp",
-        "http://localhost:3001/media/df1e741c2733.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/fd3776ad6477.webp",
-        "http://localhost:3001/media/thumbs/df1e741c2733.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Кольцо «Золотой лев»",
-          "color": "Золотой",
-          "material": "Латунь",
-          "desc": "Фигурное кольцо из латуни в золотом оттенке."
-        },
-        "uz": {
-          "name": "«Oltin sher» uzugi",
-          "color": "Oltin rang",
-          "material": "Latun",
-          "desc": "Oltin tusdagi latundan yasalgan shaklli uzuk."
-        },
-        "en": {
-          "name": "“Golden Lion” ring",
-          "color": "Gold",
-          "material": "Brass",
-          "desc": "A sculptural brass ring in a golden finish."
-        }
-      }
-    },
-    {
-      "id": "navo",
-      "categorySlug": "dresses",
-      "cat": "Платья",
-      "price": 1290000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "New",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/c69cb79fedf2.webp",
-        "http://localhost:3001/media/077f410df942.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/c69cb79fedf2.webp",
-        "http://localhost:3001/media/thumbs/077f410df942.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Платье Navo",
-          "color": "Молочный",
-          "material": "100% лён",
-          "desc": "Платье миди с мягкой линией талии и выразительным объёмом."
-        },
-        "uz": {
-          "name": "Navo ko‘ylagi",
-          "color": "Sutli oq",
-          "material": "100% zig‘ir",
-          "desc": "Yumshoq bel chizig‘i va ifodali hajmga ega midi ko‘ylak."
-        },
-        "en": {
-          "name": "Navo dress",
-          "color": "Milky white",
-          "material": "100% linen",
-          "desc": "A midi dress with a soft waistline and expressive volume."
-        }
-      }
-    },
-    {
-      "id": "sabo",
-      "categorySlug": "jackets",
-      "cat": "Жакеты",
-      "price": 1580000,
-      "oldPrice": 1890000,
-      "sale": true,
-      "tag": "Sale",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/dec7253ac6eb.webp",
-        "http://localhost:3001/media/292a19d08894.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/dec7253ac6eb.webp",
-        "http://localhost:3001/media/thumbs/292a19d08894.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Жакет Sabo",
-          "color": "Графит",
-          "material": "Шерсть и вискоза",
-          "desc": "Структурный однобортный жакет свободного кроя."
-        },
-        "uz": {
-          "name": "Sabo jaketi",
-          "color": "Grafit",
-          "material": "Jun va viskoza",
-          "desc": "Erkin bichimli, strukturali bir bortli jaket."
-        },
-        "en": {
-          "name": "Sabo blazer",
-          "color": "Graphite",
-          "material": "Wool and viscose",
-          "desc": "A structured single-breasted blazer in a relaxed cut."
-        }
-      }
-    },
-    {
-      "id": "mavj",
-      "categorySlug": "blouses",
-      "cat": "Блузы",
-      "price": 760000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "New",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/59e9a5d2be1b.webp",
-        "http://localhost:3001/media/32218a2eff50.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/59e9a5d2be1b.webp",
-        "http://localhost:3001/media/thumbs/32218a2eff50.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Блуза Mavj",
-          "color": "Белый",
-          "material": "100% хлопок",
-          "desc": "Воздушная блуза со сборками и длинными манжетами."
-        },
-        "uz": {
-          "name": "Mavj bluzasi",
-          "color": "Oq",
-          "material": "100% paxta",
-          "desc": "Yig‘ma detallari va uzun manjetli yengil bluzka."
-        },
-        "en": {
-          "name": "Mavj blouse",
-          "color": "White",
-          "material": "100% cotton",
-          "desc": "An airy blouse with gathered details and long cuffs."
-        }
-      }
-    },
-    {
-      "id": "sahar",
-      "categorySlug": "outerwear",
-      "cat": "Верхняя одежда",
-      "price": 1890000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "New",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/233a5d53ccc2.webp",
-        "http://localhost:3001/media/9e365b8132c9.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/233a5d53ccc2.webp",
-        "http://localhost:3001/media/thumbs/9e365b8132c9.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Тренч Sahar",
-          "color": "Каменный",
-          "material": "Хлопок",
-          "desc": "Свободный тренч с поясом и глубокими карманами."
-        },
-        "uz": {
-          "name": "Sahar trenchi",
-          "color": "Tosh rang",
-          "material": "Paxta",
-          "desc": "Belbog‘li va chuqur cho‘ntakli erkin trench."
-        },
-        "en": {
-          "name": "Sahar trench coat",
-          "color": "Stone",
-          "material": "Cotton",
-          "desc": "A relaxed trench coat with a belt and deep pockets."
-        }
-      }
-    },
-    {
-      "id": "lale",
-      "categorySlug": "bags",
-      "cat": "Сумки",
-      "price": 990000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "New",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/a19a0e34a6aa.webp",
-        "http://localhost:3001/media/9e07929435e1.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/a19a0e34a6aa.webp",
-        "http://localhost:3001/media/thumbs/9e07929435e1.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Сумка Lale",
-          "color": "Кремовый",
-          "material": "Натуральная кожа",
-          "desc": "Структурная сумка с короткой ручкой."
-        },
-        "uz": {
-          "name": "Lale sumkasi",
-          "color": "Krem rang",
-          "material": "Tabiiy teri",
-          "desc": "Qisqa tutqichli, strukturali sumka."
-        },
-        "en": {
-          "name": "Lale bag",
-          "color": "Cream",
-          "material": "Genuine leather",
-          "desc": "A structured bag with a short handle."
-        }
-      }
-    },
-    {
-      "id": "malika",
-      "categorySlug": "shoes",
-      "cat": "Обувь",
-      "price": 880000,
-      "oldPrice": 1150000,
-      "sale": true,
-      "tag": "Sale",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [
-        "36",
-        "41"
-      ],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/f4cc3aead452.webp",
-        "http://localhost:3001/media/cbed3c2dcdec.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/f4cc3aead452.webp",
-        "http://localhost:3001/media/thumbs/cbed3c2dcdec.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Мюли Malika",
-          "color": "Молочный",
-          "material": "Натуральная кожа",
-          "desc": "Минималистичные кожаные мюли на устойчивом каблуке."
-        },
-        "uz": {
-          "name": "Malika myulilari",
-          "color": "Sutli oq",
-          "material": "Tabiiy teri",
-          "desc": "Barqaror poshnali minimalistik charm myulilar."
-        },
-        "en": {
-          "name": "Malika mules",
-          "color": "Milky white",
-          "material": "Genuine leather",
-          "desc": "Minimalist leather mules with a stable heel."
-        }
-      }
-    },
-    {
-      "id": "dilnoza-midi",
-      "categorySlug": "dresses",
-      "cat": "Платья",
-      "price": 1080000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "New",
-      "online": true,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/eb73788c0982.webp",
-        "http://localhost:3001/media/a506aff4d28f.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/eb73788c0982.webp",
-        "http://localhost:3001/media/thumbs/a506aff4d28f.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Платье Dilnoza",
-          "color": "Гранатовый",
-          "material": "Вискоза и шёлк",
-          "desc": "Платье миди с мягкой драпировкой и акцентной линией талии."
-        },
-        "uz": {
-          "name": "Dilnoza ko‘ylagi",
-          "color": "Anor rang",
-          "material": "Viskoza va ipak",
-          "desc": "Yumshoq drapirovka va bel chizig‘i aksentli midi ko‘ylak."
-        },
-        "en": {
-          "name": "Dilnoza dress",
-          "color": "Pomegranate",
-          "material": "Viscose and silk",
-          "desc": "A midi dress with soft draping and an accent waistline."
-        }
-      }
-    },
-    {
-      "id": "rayhon-skirt",
-      "categorySlug": "skirts",
-      "cat": "Юбки",
-      "price": 690000,
-      "oldPrice": 890000,
-      "sale": true,
-      "tag": "Sale",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/f0180c52af0a.webp",
-        "http://localhost:3001/media/652dd441687d.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/f0180c52af0a.webp",
-        "http://localhost:3001/media/thumbs/652dd441687d.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Юбка Rayhon",
-          "color": "Ночной синий",
-          "material": "Вискоза",
-          "desc": "Струящаяся юбка миди с высокой посадкой и чистой линией пояса."
-        },
-        "uz": {
-          "name": "Rayhon yubkasi",
-          "color": "Tungi ko‘k",
-          "material": "Viskoza",
-          "desc": "Baland belli va toza bel chizig‘iga ega oqimli midi yubka."
-        },
-        "en": {
-          "name": "Rayhon skirt",
-          "color": "Midnight blue",
-          "material": "Viscose",
-          "desc": "A fluid high-waisted midi skirt with a clean waistband."
-        }
-      }
-    },
-    {
-      "id": "nilufar-top",
-      "categorySlug": "tops",
-      "cat": "Топы",
-      "price": 520000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "New",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/a468d4506f14.webp",
-        "http://localhost:3001/media/32218a2eff50.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/a468d4506f14.webp",
-        "http://localhost:3001/media/thumbs/32218a2eff50.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Топ Nilufar",
-          "color": "Слоновая кость",
-          "material": "Лён и хлопок",
-          "desc": "Лаконичный льняной топ с архитектурными линиями и мягкой посадкой."
-        },
-        "uz": {
-          "name": "Nilufar topi",
-          "color": "Fil suyagi rang",
-          "material": "Zig‘ir va paxta",
-          "desc": "Arxitekturaviy chiziqlar va yumshoq o‘tirishga ega lakonik zig‘ir top."
-        },
-        "en": {
-          "name": "Nilufar top",
-          "color": "Ivory",
-          "material": "Linen and cotton",
-          "desc": "A concise linen top with architectural lines and a soft fit."
-        }
-      }
-    },
-    {
-      "id": "samarqand-belt",
-      "categorySlug": "accessories",
-      "cat": "Аксессуары",
-      "price": 340000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "New",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/1802a7210cd1.webp",
-        "http://localhost:3001/media/64929710a85f.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/1802a7210cd1.webp",
-        "http://localhost:3001/media/thumbs/64929710a85f.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Ремень Samarqand",
-          "color": "Карамельный",
-          "material": "Натуральная кожа",
-          "desc": "Кожаный ремень с лаконичной металлической пряжкой."
-        },
-        "uz": {
-          "name": "Samarqand kamari",
-          "color": "Karamel rang",
-          "material": "Tabiiy teri",
-          "desc": "Lakonik metall to‘qali charm kamar."
-        },
-        "en": {
-          "name": "Samarqand belt",
-          "color": "Caramel",
-          "material": "Genuine leather",
-          "desc": "A leather belt with a concise metal buckle."
-        }
-      }
-    },
-    {
-      "id": "bukhara-earrings",
-      "categorySlug": "accessories",
-      "cat": "Аксессуары",
-      "price": 420000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "Online Exclusive",
-      "online": true,
-      "outOfStock": true,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/3ce243ed0199.webp",
-        "http://localhost:3001/media/70471e985069.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/3ce243ed0199.webp",
-        "http://localhost:3001/media/thumbs/70471e985069.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Серьги Bukhara",
-          "color": "Золотой",
-          "material": "Латунь",
-          "desc": "Скульптурные серьги с мягким блеском и восточным характером."
-        },
-        "uz": {
-          "name": "Buxoro ziraklari",
-          "color": "Oltin rang",
-          "material": "Latun",
-          "desc": "Yumshoq jilva va sharqona xarakterga ega haykaltaroshlik uslubidagi ziraklar."
-        },
-        "en": {
-          "name": "Bukhara earrings",
-          "color": "Gold",
-          "material": "Brass",
-          "desc": "Sculptural earrings with a soft sheen and an eastern character."
-        }
-      }
-    },
-    {
-      "id": "zarafshan-tote",
-      "categorySlug": "bags",
-      "cat": "Сумки",
-      "price": 1120000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "New",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/c79131ee75f4.webp",
-        "http://localhost:3001/media/3d3c8f9abb35.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/c79131ee75f4.webp",
-        "http://localhost:3001/media/thumbs/3d3c8f9abb35.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Сумка Zarafshan",
-          "color": "Коньячный",
-          "material": "Натуральная кожа",
-          "desc": "Вместительная кожаная сумка с короткими ручками и съёмным ремнём."
-        },
-        "uz": {
-          "name": "Zarafshon sumkasi",
-          "color": "Konyak rang",
-          "material": "Tabiiy teri",
-          "desc": "Qisqa tutqichli va yechib olinadigan kamarli sig‘imli charm sumka."
-        },
-        "en": {
-          "name": "Zarafshan bag",
-          "color": "Cognac",
-          "material": "Genuine leather",
-          "desc": "A roomy leather bag with short handles and a detachable strap."
-        }
-      }
-    },
-    {
-      "id": "nigora-mini",
-      "categorySlug": "bags",
-      "cat": "Сумки",
-      "price": 780000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "Online Exclusive",
-      "online": true,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/daca9a9f6dbd.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/daca9a9f6dbd.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Мини-сумка Nigora",
-          "color": "Чёрный",
-          "material": "Натуральная кожа",
-          "desc": "Компактная сумка чёткой формы для самых необходимых вещей."
-        },
-        "uz": {
-          "name": "Nigora mini-sumkasi",
-          "color": "Qora",
-          "material": "Tabiiy teri",
-          "desc": "Eng kerakli buyumlar uchun aniq shakldagi ixcham sumka."
-        },
-        "en": {
-          "name": "Nigora mini bag",
-          "color": "Black",
-          "material": "Genuine leather",
-          "desc": "A compact, sharply shaped bag for everyday essentials."
-        }
-      }
-    },
-    {
-      "id": "zebo-slingback",
-      "categorySlug": "shoes",
-      "cat": "Обувь",
-      "price": 1050000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "New",
-      "online": false,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/cbed3c2dcdec.webp",
-        "http://localhost:3001/media/ee1f58a5a4c7.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/cbed3c2dcdec.webp",
-        "http://localhost:3001/media/thumbs/ee1f58a5a4c7.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Туфли Zebo",
-          "color": "Чёрный",
-          "material": "Натуральная кожа",
-          "desc": "Туфли с открытой пяткой, тонким ремешком и устойчивым каблуком."
-        },
-        "uz": {
-          "name": "Zebo tuflilari",
-          "color": "Qora",
-          "material": "Tabiiy teri",
-          "desc": "Ochiq tovonli, ingichka tasma va barqaror poshnali tuflilar."
-        },
-        "en": {
-          "name": "Zebo slingback shoes",
-          "color": "Black",
-          "material": "Genuine leather",
-          "desc": "Slingback shoes with a slim strap and a stable heel."
-        }
-      }
-    },
-    {
-      "id": "sadaf-loafers",
-      "categorySlug": "shoes",
-      "cat": "Обувь",
-      "price": 980000,
-      "oldPrice": null,
-      "sale": false,
-      "tag": "New",
-      "online": true,
-      "outOfStock": false,
-      "stock": null,
-      "sizeGuide": null,
-      "sizeValues": null,
-      "colorVariants": null,
-      "unavailableSizes": [],
-      "lowStockSizes": {},
-      "images": [
-        "http://localhost:3001/media/00410f5a0244.webp",
-        "http://localhost:3001/media/8d9a6f60f48b.webp"
-      ],
-      "thumbs": [
-        "http://localhost:3001/media/thumbs/00410f5a0244.webp",
-        "http://localhost:3001/media/thumbs/8d9a6f60f48b.webp"
-      ],
-      "i18n": {
-        "ru": {
-          "name": "Лоферы Sadaf",
-          "color": "Бордовый",
-          "material": "Натуральная кожа",
-          "desc": "Мягкие кожаные лоферы с современной вытянутой формой."
-        },
-        "uz": {
-          "name": "Sadaf loferlari",
-          "color": "Bordo",
-          "material": "Tabiiy teri",
-          "desc": "Zamonaviy cho‘ziq shakldagi yumshoq charm loferlar."
-        },
-        "en": {
-          "name": "Sadaf loafers",
-          "color": "Burgundy",
-          "material": "Genuine leather",
-          "desc": "Soft leather loafers with a modern elongated shape."
-        }
-      }
-    }
-  ],
-  "categories": [
-    {
-      "slug": "dresses",
-      "nameRu": "Платья",
-      "nameUz": "Koʻylaklar",
-      "nameEn": "Dresses",
-      "sortOrder": 0
-    },
-    {
-      "slug": "trousers",
-      "nameRu": "Брюки",
-      "nameUz": "Shimlar",
-      "nameEn": "Trousers",
-      "sortOrder": 1
-    },
-    {
-      "slug": "blouses",
-      "nameRu": "Блузы",
-      "nameUz": "Koʻylaklar",
-      "nameEn": "Shirts",
-      "sortOrder": 2
-    },
-    {
-      "slug": "skirts",
-      "nameRu": "Юбки",
-      "nameUz": "Yubkalar",
-      "nameEn": "Skirts",
-      "sortOrder": 3
-    },
-    {
-      "slug": "tops",
-      "nameRu": "Топы",
-      "nameUz": "Toplar",
-      "nameEn": "Tops",
-      "sortOrder": 4
-    },
-    {
-      "slug": "jackets",
-      "nameRu": "Жакеты",
-      "nameUz": "Trikotaj kiyimlar",
-      "nameEn": "Knitwear",
-      "sortOrder": 5
-    },
-    {
-      "slug": "outerwear",
-      "nameRu": "Верхняя одежда",
-      "nameUz": "Kiyimlar",
-      "nameEn": "Clothing",
-      "sortOrder": 6
-    },
-    {
-      "slug": "accessories",
-      "nameRu": "Аксессуары",
-      "nameUz": "Aksessuarlar",
-      "nameEn": "Accessories",
-      "sortOrder": 7
-    },
-    {
-      "slug": "bags",
-      "nameRu": "Сумки",
-      "nameUz": "Sumkalar",
-      "nameEn": "Bags",
-      "sortOrder": 8
-    },
-    {
-      "slug": "shoes",
-      "nameRu": "Обувь",
-      "nameUz": "Poyabzallar",
-      "nameEn": "Shoes",
-      "sortOrder": 9
-    }
-  ],
-  "pages": [
-    {
-      "slug": "about",
-      "i18n": {
-        "ru": {
-          "eyebrow": "О бренде",
-          "heading": "Международная мода с узбекским акцентом!",
-          "body": "UMA объединяет искусство и дизайн, черпая вдохновение из культурного наследия Узбекистана. Каждая коллекция рассказывает свою историю!"
-        },
-        "uz": {
-          "eyebrow": "BRAND HAQIDA",
-          "heading": "Oʻzbekona ruhdagi xalqaro moda",
-          "body": "UMA sanʼat va dizaynni Oʻzbekiston madaniy merosidan ilhomlanib birlashtiradi. Har bir kolleksiya oʻz hikoyasini soʻzlaydi."
-        },
-        "en": {
-          "eyebrow": "ABOUT UMA",
-          "heading": "International fashion with an Uzbek accent",
-          "body": "UMA brings together art and design, drawing inspiration from the cultural heritage of Uzbekistan. Every collection tells its own story."
-        }
-      }
-    },
-    {
-      "slug": "delivery",
-      "i18n": {
-        "ru": {
-          "eyebrow": "Доставка",
-          "heading": "Доставка по Узбекистану",
-          "body": "Срок и стоимость отображаются при оформлении. Заказы от 1 500 000 UZS доставляются бесплатно."
-        },
-        "uz": {
-          "eyebrow": "YETKAZIB BERISH",
-          "heading": "Oʻzbekiston bo‘ylab yetkazib berish",
-          "body": "Muddat va narx buyurtmani rasmiylashtirishda ko‘rsatiladi. 1 500 000 UZS dan yuqori buyurtmalar bepul yetkaziladi."
-        },
-        "en": {
-          "eyebrow": "DELIVERY",
-          "heading": "Delivery across Uzbekistan",
-          "body": "The delivery date and price are shown at checkout. Orders over 1,500,000 UZS receive free delivery."
-        }
-      }
-    },
-    {
-      "slug": "returns",
-      "i18n": {
-        "ru": {
-          "eyebrow": "Возврат",
-          "heading": "Возврат и обмен",
-          "body": "Товар принимается к возврату в течение установленных сроков при сохранении первоначального состояния."
-        },
-        "uz": {
-          "eyebrow": "QAYTARISH",
-          "heading": "Qaytarish va almashtirish",
-          "body": "Mahsulot belgilangan muddat ichida dastlabki holati saqlangan bo‘lsa, qaytarish uchun qabul qilinadi."
-        },
-        "en": {
-          "eyebrow": "RETURNS",
-          "heading": "Returns and exchanges",
-          "body": "Items can be returned within the stated period when kept in their original condition."
-        }
-      }
-    },
-    {
-      "slug": "payment",
-      "i18n": {
-        "ru": {
-          "eyebrow": "Оплата",
-          "heading": "Удобная оплата",
-          "body": "Uzcard, Humo, Visa и Mastercard."
-        },
-        "uz": {
-          "eyebrow": "TOʻLOV",
-          "heading": "Qulay toʻlov",
-          "body": "Uzcard, Humo, Visa va Mastercard."
-        },
-        "en": {
-          "eyebrow": "PAYMENT",
-          "heading": "Simple payment",
-          "body": "Uzcard, Humo, Visa and Mastercard."
-        }
-      }
-    },
-    {
-      "slug": "contact",
-      "i18n": {
-        "ru": {
-          "eyebrow": "КОНТАКТЫ",
-          "heading": "Мы рядом, когда это нужно.",
-          "body": "Поможем с выбором, оформлением заказа, доставкой, возвратом и сотрудничеством."
-        },
-        "uz": {
-          "eyebrow": "KONTAKTLAR",
-          "heading": "Har doim yoningizdamiz",
-          "body": "Tanlash, buyurtma, yetkazish, qaytarish va hamkorlik bo‘yicha yordam beramiz."
-        },
-        "en": {
-          "eyebrow": "CONTACT",
-          "heading": "We are here when you need us",
-          "body": "We can help with selecting items, ordering, delivery, returns and collaborations."
-        }
-      }
-    }
-  ],
-  "uiStrings": {
-    "Age": {
-      "ru": "Возраст",
-      "uz": "Yosh",
-      "en": "Age"
-    },
-    "Female": {
-      "ru": "Женский",
-      "uz": "Ayol",
-      "en": "Female"
-    },
-    "Gender": {
-      "ru": "Пол",
-      "uz": "Jins",
-      "en": "Gender"
-    },
-    "Height": {
-      "ru": "Рост",
-      "uz": "Bo‘y",
-      "en": "Height"
-    },
-    "Male": {
-      "ru": "Мужской",
-      "uz": "Erkak",
-      "en": "Male"
-    },
-    "Prefer not to say": {
-      "ru": "Не указывать",
-      "uz": "Ko‘rsatmaslik",
-      "en": "Prefer not to say"
-    },
-    "Weight": {
-      "ru": "Вес",
-      "uz": "Vazn",
-      "en": "Weight"
-    },
-    "about": {
-      "ru": "О нас",
-      "uz": "Biz haqimizda",
-      "en": "About us"
-    },
-    "accessories": {
-      "ru": "Аксессуары",
-      "uz": "Aksessuarlar",
-      "en": "Accessories"
-    },
-    "account": {
-      "ru": "Аккаунт",
-      "uz": "Hisob",
-      "en": "Account"
-    },
-    "addToBag": {
-      "ru": "Добавить в корзину",
-      "uz": "Savatga qo‘shish",
-      "en": "Add to bag"
-    },
-    "addedToBag": {
-      "ru": "Добавлено в корзину",
-      "uz": "Savatga qo‘shildi",
-      "en": "Added to bag"
-    },
-    "address": {
-      "ru": "Улица и номер дома",
-      "uz": "Ko‘cha va uy raqami",
-      "en": "Street name and number"
-    },
-    "all": {
-      "ru": "Все",
-      "uz": "Barchasi",
-      "en": "All"
-    },
-    "apply": {
-      "ru": "Применить",
-      "uz": "Qo‘llash",
-      "en": "Apply"
-    },
-    "auSizes": {
-      "ru": "🇦🇺 Австралийские размеры",
-      "uz": "🇦🇺 Avstraliya o‘lchamlari",
-      "en": "🇦🇺 Australian sizes"
-    },
-    "available": {
-      "ru": "Доставка доступна",
-      "uz": "Yetkazib berish mavjud",
-      "en": "Delivery available"
-    },
-    "average": {
-      "ru": "Средняя",
-      "uz": "O‘rtacha",
-      "en": "Average"
-    },
-    "bag": {
-      "ru": "Корзина",
-      "uz": "Savat",
-      "en": "Bag"
-    },
-    "bags": {
-      "ru": "Сумки",
-      "uz": "Sumkalar",
-      "en": "Bags"
-    },
-    "bandSize": {
-      "ru": "Обхват под грудью",
-      "uz": "Ko‘krak osti aylanasi",
-      "en": "Band size"
-    },
-    "beSizes": {
-      "ru": "🇧🇪 Бельгийские размеры",
-      "uz": "🇧🇪 Belgiya o‘lchamlari",
-      "en": "🇧🇪 Belgian sizes"
-    },
-    "braLead": {
-      "ru": "Выберите размер для ещё более точной рекомендации.",
-      "uz": "Yanada aniq tavsiya uchun o‘lchamingizni tanlang.",
-      "en": "Choose your size for a more accurate recommendation."
-    },
-    "braTitle": {
-      "ru": "Размер бюстгальтера",
-      "uz": "Byustgalter o‘lchami",
-      "en": "Bra size"
-    },
-    "cabinet": {
-      "ru": "Личный кабинет",
-      "uz": "Shaxsiy kabinet",
-      "en": "My account"
-    },
-    "cancelOrder": {
-      "ru": "Отменить заказ",
-      "uz": "Buyurtmani bekor qilish",
-      "en": "Cancel order"
-    },
-    "cancelReason": {
-      "ru": "Причина отмены",
-      "uz": "Bekor qilish sababi",
-      "en": "Cancellation reason"
-    },
-    "cardPayment": {
-      "ru": "Банковской картой",
-      "uz": "Bank kartasi",
-      "en": "Pay by card"
-    },
-    "care": {
-      "ru": "Уход",
-      "uz": "Parvarish",
-      "en": "Care"
-    },
-    "cartTitle": {
-      "ru": "Корзина",
-      "uz": "Savat",
-      "en": "Bag"
-    },
-    "catalog": {
-      "ru": "КАТАЛОГ",
-      "uz": "KATALOG",
-      "en": "CATALOGUE"
-    },
-    "checkout": {
-      "ru": "Оформить заказ",
-      "uz": "Buyurtmani rasmiylashtirish",
-      "en": "Checkout"
-    },
-    "checkoutStep": {
-      "ru": "Оформление · шаг 1 из 2",
-      "uz": "Rasmiylashtirish · 1-qadam, 2 dan",
-      "en": "Checkout · step 1 of 2"
-    },
-    "chestCm": {
-      "ru": "Грудь, см",
-      "uz": "Ko‘krak, sm",
-      "en": "Chest, cm"
-    },
-    "chooseSize": {
-      "ru": "Выберите размер",
-      "uz": "O‘lchamni tanlang",
-      "en": "Choose size"
-    },
-    "city": {
-      "ru": "Город",
-      "uz": "Shahar",
-      "en": "City"
-    },
-    "close": {
-      "ru": "Закрыть",
-      "uz": "Yopish",
-      "en": "Close"
-    },
-    "clothing": {
-      "ru": "Одежда",
-      "uz": "Kiyimlar",
-      "en": "Clothing"
-    },
-    "cm": {
-      "ru": "см",
-      "uz": "sm",
-      "en": "cm"
-    },
-    "colour": {
-      "ru": "Цвет",
-      "uz": "Rang",
-      "en": "Colour"
-    },
-    "confirmCancellation": {
-      "ru": "Подтвердить отмену",
-      "uz": "Bekor qilishni tasdiqlash",
-      "en": "Confirm cancellation"
-    },
-    "confirmOrder": {
-      "ru": "Подтвердить заказ",
-      "uz": "Buyurtmani tasdiqlash",
-      "en": "Confirm order"
-    },
-    "contacts": {
-      "ru": "Контакты",
-      "uz": "Kontaktlar",
-      "en": "Contact"
-    },
-    "continue": {
-      "ru": "Продолжить",
-      "uz": "Davom etish",
-      "en": "Continue"
-    },
-    "continueShopping": {
-      "ru": "Продолжить покупки →",
-      "uz": "Xaridni davom ettirish →",
-      "en": "Continue shopping →"
-    },
-    "country": {
-      "ru": "Узбекистан",
-      "uz": "Oʻzbekiston",
-      "en": "Uzbekistan"
-    },
-    "cupSize": {
-      "ru": "Размер чашки",
-      "uz": "Chashka o‘lchami",
-      "en": "Cup size"
-    },
-    "delivery": {
-      "ru": "Служба доставки",
-      "uz": "Yetkazib berish",
-      "en": "Delivery"
-    },
-    "deliveryMethod": {
-      "ru": "Способ доставки",
-      "uz": "Yetkazib berish usuli",
-      "en": "Delivery method"
-    },
-    "deliveryPayment": {
-      "ru": "Доставка и оплата",
-      "uz": "Yetkazib berish va toʻlov",
-      "en": "Delivery & payment"
-    },
-    "deliveryUz": {
-      "ru": "Доставка по Узбекистану",
-      "uz": "Oʻzbekiston bo‘ylab yetkazib berish",
-      "en": "Delivery across Uzbekistan"
-    },
-    "details": {
-      "ru": "Детали",
-      "uz": "Tafsilotlar",
-      "en": "Details"
-    },
-    "diameterMm": {
-      "ru": "Диаметр, мм",
-      "uz": "Diametr, mm",
-      "en": "Diameter, mm"
-    },
-    "dresses": {
-      "ru": "Платья",
-      "uz": "Koʻylaklar",
-      "en": "Dresses"
-    },
-    "editData": {
-      "ru": "Изменить данные",
-      "uz": "Ma’lumotlarni o‘zgartirish",
-      "en": "Edit details"
-    },
-    "emptyBag": {
-      "ru": "Корзина пуста",
-      "uz": "Savat bo‘sh",
-      "en": "Your bag is empty"
-    },
-    "emptyFavourites": {
-      "ru": "Пока ничего не сохранено",
-      "uz": "Hali hech narsa saqlanmagan",
-      "en": "Nothing saved yet"
-    },
-    "enterPromo": {
-      "ru": "Введите промокод",
-      "uz": "Promokodni kiriting",
-      "en": "Enter discount code"
-    },
-    "esSizes": {
-      "ru": "🇪🇸 Испанские размеры",
-      "uz": "🇪🇸 Ispaniya o‘lchamlari",
-      "en": "🇪🇸 Spanish sizes"
-    },
-    "estimatedDate": {
-      "ru": "Ожидаемая дата",
-      "uz": "Kutilayotgan sana",
-      "en": "Estimated date"
-    },
-    "euSizes": {
-      "ru": "🇪🇺 Европейские размеры",
-      "uz": "🇪🇺 Yevropa o‘lchamlari",
-      "en": "🇪🇺 European sizes"
-    },
-    "evening": {
-      "ru": "Вечерние образы →",
-      "uz": "Kechki obrazlar →",
-      "en": "Evening looks →"
-    },
-    "favourites": {
-      "ru": "Избранное",
-      "uz": "Sevimlilar",
-      "en": "Favourites"
-    },
-    "filters": {
-      "ru": "Фильтры и сортировка",
-      "uz": "Filtr va saralash",
-      "en": "Filter & sort"
-    },
-    "findSize": {
-      "ru": "Подобрать размер",
-      "uz": "O‘lchamni tanlash",
-      "en": "Find your size"
-    },
-    "finderLead": {
-      "ru": "Заполните несколько параметров — это займёт меньше минуты.",
-      "uz": "Bir nechta ma’lumotni kiriting — bu bir daqiqadan kam vaqt oladi.",
-      "en": "Enter a few details — it takes less than a minute."
-    },
-    "finderPersonal": {
-      "ru": "ПЕРСОНАЛЬНАЯ РЕКОМЕНДАЦИЯ",
-      "uz": "SHAXSIY TAVSIYA",
-      "en": "PERSONAL RECOMMENDATION"
-    },
-    "finderTitle": {
-      "ru": "Подберём ваш размер",
-      "uz": "Sizga mos o‘lchamni topamiz",
-      "en": "Find your size"
-    },
-    "firstName": {
-      "ru": "Имя",
-      "uz": "Ism",
-      "en": "First name"
-    },
-    "fitAffects": {
-      "ru": "Предпочтительная посадка влияет на рекомендуемый размер.",
-      "uz": "Afzal o‘tirish tavsiya etilgan o‘lchamga ta’sir qiladi.",
-      "en": "Your preferred fit affects the recommended size."
-    },
-    "fitLead": {
-      "ru": "Выберите, как вам комфортнее носить одежду.",
-      "uz": "Kiyim sizga qanday qulay turishini tanlang.",
-      "en": "Choose how you prefer your clothes to fit."
-    },
-    "fitTitle": {
-      "ru": "Предпочтительная посадка",
-      "uz": "Afzal ko‘rgan o‘tirish",
-      "en": "Your preferred fit"
-    },
-    "follow": {
-      "ru": "Подпишитесь на нас",
-      "uz": "Bizga obuna boʻling",
-      "en": "Follow us"
-    },
-    "footCm": {
-      "ru": "Стопа, см",
-      "uz": "Oyoq uzunligi, sm",
-      "en": "Foot length, cm"
-    },
-    "frSizes": {
-      "ru": "🇫🇷 Французские размеры",
-      "uz": "🇫🇷 Fransiya o‘lchamlari",
-      "en": "🇫🇷 French sizes"
-    },
-    "free": {
-      "ru": "Бесплатно",
-      "uz": "Bepul",
-      "en": "Free"
-    },
-    "garmentFit": {
-      "ru": "Посадка изделия",
-      "uz": "Kiyim o‘tirishi",
-      "en": "Garment fit"
-    },
-    "guestLead": {
-      "ru": "Откройте иконку профиля, чтобы продолжить через Telegram или Google.",
-      "uz": "Telegram yoki Google orqali davom etish uchun profil belgisini oching.",
-      "en": "Open the profile icon to continue with Telegram or Google."
-    },
-    "guestTitle": {
-      "ru": "Вы вошли как гость",
-      "uz": "Siz mehmon sifatida kirdingiz",
-      "en": "You are browsing as a guest"
-    },
-    "help": {
-      "ru": "Нужна помощь?",
-      "uz": "Yordam kerakmi?",
-      "en": "Need help?"
-    },
-    "hero": {
-      "ru": "Тихая сила",
-      "uz": "Nafis kuch",
-      "en": "Quiet power"
-    },
-    "heroCollection": {
-      "ru": "НОВОЕ НАЧАЛО",
-      "uz": "YANGI BOSQICH",
-      "en": "THE RESET"
-    },
-    "heroEm": {
-      "ru": "женственности",
-      "uz": "ayollik",
-      "en": "of femininity"
-    },
-    "heroSeason": {
-      "ru": "ПРЕ-ФОЛЛ 2026",
-      "uz": "PRE-FALL 2026",
-      "en": "PRE-FALL 2026"
-    },
-    "heroShop": {
-      "ru": "В КАТАЛОГ",
-      "uz": "KATALOGGA O‘TISH",
-      "en": "SHOP NOW"
-    },
-    "hipsCm": {
-      "ru": "Бёдра, см",
-      "uz": "Son, sm",
-      "en": "Hips, cm"
-    },
-    "hipsLead": {
-      "ru": "Укажите форму бёдер для точной рекомендации",
-      "uz": "Aniq tavsiya uchun son shaklini tanlang",
-      "en": "Choose your hip shape for a more accurate recommendation."
-    },
-    "hipsTitle": {
-      "ru": "Бёдра и посадка",
-      "uz": "Sonlar va o‘tirish",
-      "en": "Your hips and thighs"
-    },
-    "home": {
-      "ru": "Главная страница",
-      "uz": "Bosh sahifa",
-      "en": "Home"
-    },
-    "hours": {
-      "ru": "Часы работы",
-      "uz": "Ish vaqti",
-      "en": "Opening hours"
-    },
-    "inStock": {
-      "ru": "В наличии",
-      "uz": "Mavjud",
-      "en": "In stock"
-    },
-    "itSizes": {
-      "ru": "🇮🇹 Итальянские размеры",
-      "uz": "🇮🇹 Italiya o‘lchamlari",
-      "en": "🇮🇹 Italian sizes"
-    },
-    "items": {
-      "ru": "товаров",
-      "uz": "mahsulot",
-      "en": "items"
-    },
-    "jeans": {
-      "ru": "Джинсы",
-      "uz": "Jinsilar",
-      "en": "Jeans"
-    },
-    "jewellery": {
-      "ru": "Украшения",
-      "uz": "Taqinchoqlar",
-      "en": "Jewellery"
-    },
-    "keepOrder": {
-      "ru": "Оставить заказ",
-      "uz": "Buyurtmani saqlash",
-      "en": "Keep order"
-    },
-    "kg": {
-      "ru": "кг",
-      "uz": "kg",
-      "en": "kg"
-    },
-    "knitwear": {
-      "ru": "Вязаная одежда",
-      "uz": "Trikotaj kiyimlar",
-      "en": "Knitwear"
-    },
-    "language": {
-      "ru": "Регион и язык",
-      "uz": "Hudud va til",
-      "en": "Region and language"
-    },
-    "lastName": {
-      "ru": "Фамилия",
-      "uz": "Familiya",
-      "en": "Last name"
-    },
-    "left": {
-      "ru": "Осталось",
-      "uz": "Qoldi",
-      "en": "Left"
-    },
-    "legsLead": {
-      "ru": "Это поможет подобрать правильную длину изделия",
-      "uz": "Bu kiyimning to‘g‘ri uzunligini tanlashga yordam beradi",
-      "en": "This helps us choose the right garment length."
-    },
-    "legsTitle": {
-      "ru": "Длина ног",
-      "uz": "Oyoq uzunligi",
-      "en": "Your legs"
-    },
-    "linen": {
-      "ru": "Лён и хлопок →",
-      "uz": "Zig‘ir va paxta →",
-      "en": "Linen and cotton →"
-    },
-    "longer": {
-      "ru": "Длиннее",
-      "uz": "Uzunroq",
-      "en": "Longer"
-    },
-    "looser": {
-      "ru": "Более свободная",
-      "uz": "Erkinroq",
-      "en": "Looser"
-    },
-    "manifest": {
-      "ru": "МАНИФЕСТ UMA",
-      "uz": "UMA MANIFESTI",
-      "en": "UMA MANIFEST"
-    },
-    "material": {
-      "ru": "Материал",
-      "uz": "Material",
-      "en": "Material"
-    },
-    "medium": {
-      "ru": "Средняя",
-      "uz": "O‘rtacha",
-      "en": "Average"
-    },
-    "menu": {
-      "ru": "Меню",
-      "uz": "Menyu",
-      "en": "Menu"
-    },
-    "more": {
-      "ru": "Подробнее →",
-      "uz": "Batafsil →",
-      "en": "Learn more →"
-    },
-    "narrow": {
-      "ru": "Узкие",
-      "uz": "Tor",
-      "en": "Narrower"
-    },
-    "new": {
-      "ru": "Новинки",
-      "uz": "Yangi mahsulotlar",
-      "en": "New arrivals"
-    },
-    "newBadge": {
-      "ru": "New",
-      "uz": "Yangi",
-      "en": "New"
-    },
-    "newCollection": {
-      "ru": "Новая коллекция",
-      "uz": "Yangi kolleksiya",
-      "en": "New collection"
-    },
-    "news": {
-      "ru": "Новости",
-      "uz": "Yangiliklar",
-      "en": "News"
-    },
-    "next": {
-      "ru": "Следующее фото",
-      "uz": "Keyingi surat",
-      "en": "Next image"
-    },
-    "nextSlide": {
-      "ru": "Следующий баннер",
-      "uz": "Keyingi banner",
-      "en": "Next banner"
-    },
-    "noOrders": {
-      "ru": "Заказов пока нет",
-      "uz": "Hozircha buyurtmalar yo‘q",
-      "en": "No orders yet"
-    },
-    "noOrdersLead": {
-      "ru": "После оформления здесь появятся состав и статус доставки.",
-      "uz": "Buyurtma rasmiylashtirilgandan so‘ng uning tarkibi va holati shu yerda ko‘rinadi.",
-      "en": "Your order details and delivery status will appear here after checkout."
-    },
-    "notice": {
-      "ru": "Бесплатная доставка от 1 500 000 сум",
-      "uz": "1 500 000 soʻmdan bepul yetkazib berish",
-      "en": "Free delivery from 1,500,000 UZS"
-    },
-    "notificationOn": {
-      "ru": "Уведомление включено",
-      "uz": "Bildirishnoma yoqildi",
-      "en": "Notification enabled"
-    },
-    "notify": {
-      "ru": "Сообщить о поступлении",
-      "uz": "Kelganda xabar bering",
-      "en": "Notify me when available"
-    },
-    "oneSize": {
-      "ru": "Единый размер",
-      "uz": "Yagona o‘lcham",
-      "en": "One size"
-    },
-    "online": {
-      "ru": "Онлайн-эксклюзив",
-      "uz": "Onlayn eksklyuziv",
-      "en": "Online exclusive"
-    },
-    "openBag": {
-      "ru": "Открыть корзину",
-      "uz": "Savatni ochish",
-      "en": "View bag"
-    },
-    "openCollection": {
-      "ru": "Открыть коллекцию →",
-      "uz": "Kolleksiyani ochish →",
-      "en": "Open collection →"
-    },
-    "orderHistory": {
-      "ru": "История заказов",
-      "uz": "Buyurtmalar tarixi",
-      "en": "Order history"
-    },
-    "orderHistoryLead": {
-      "ru": "Оформленные заказы и актуальный статус доставки.",
-      "uz": "Rasmiylashtirilgan buyurtmalar va ularning yetkazib berish holati.",
-      "en": "Placed orders and their current delivery status."
-    },
-    "orderSummary": {
-      "ru": "Состав заказа",
-      "uz": "Buyurtma tarkibi",
-      "en": "Order summary"
-    },
-    "orderValue": {
-      "ru": "Стоимость заказа",
-      "uz": "Buyurtma qiymati",
-      "en": "Order value"
-    },
-    "orders": {
-      "ru": "Мои заказы",
-      "uz": "Buyurtmalarim",
-      "en": "My orders"
-    },
-    "outOfStock": {
-      "ru": "Нет в наличии",
-      "uz": "Mavjud emas",
-      "en": "Out of stock"
-    },
-    "payment": {
-      "ru": "Оплата",
-      "uz": "Toʻlov",
-      "en": "Payment"
-    },
-    "phone": {
-      "ru": "Номер телефона",
-      "uz": "Telefon raqami",
-      "en": "Phone number"
-    },
-    "photo": {
-      "ru": "Фото",
-      "uz": "Surat",
-      "en": "Image"
-    },
-    "polo": {
-      "ru": "Поло",
-      "uz": "Polo",
-      "en": "Polo shirts"
-    },
-    "postalCode": {
-      "ru": "Почтовый индекс",
-      "uz": "Pochta indeksi",
-      "en": "Postal code"
-    },
-    "previous": {
-      "ru": "Предыдущее фото",
-      "uz": "Oldingi surat",
-      "en": "Previous image"
-    },
-    "previousSlide": {
-      "ru": "Предыдущий баннер",
-      "uz": "Oldingi banner",
-      "en": "Previous banner"
-    },
-    "privacy": {
-      "ru": "Данные сохраняются только в вашем браузере",
-      "uz": "Ma’lumotlar faqat brauzeringizda saqlanadi",
-      "en": "Your details are stored only in this browser"
-    },
-    "productInfo": {
-      "ru": "Подробная информация о товаре и рекомендации по уходу.",
-      "uz": "Mahsulot haqida batafsil maʼlumot va parvarish bo‘yicha tavsiyalar.",
-      "en": "Detailed product information and care recommendations."
-    },
-    "promo": {
-      "ru": "Добавить промокод",
-      "uz": "Promokod qo‘shish",
-      "en": "Add discount code"
-    },
-    "quickAdd": {
-      "ru": "Быстро добавить",
-      "uz": "Tez qo‘shish",
-      "en": "Quick add"
-    },
-    "quickAddTitle": {
-      "ru": "Быстрое добавление",
-      "uz": "Tez qo‘shish",
-      "en": "Quick add"
-    },
-    "readyToAdd": {
-      "ru": "Готово к добавлению",
-      "uz": "Qo‘shishga tayyor",
-      "en": "Ready to add"
-    },
-    "recent": {
-      "ru": "Недавно просмотренные",
-      "uz": "Yaqinda ko‘rilganlar",
-      "en": "Recently viewed"
-    },
-    "recipient": {
-      "ru": "Данные получателя",
-      "uz": "Qabul qiluvchi maʼlumotlari",
-      "en": "Recipient details"
-    },
-    "recommendation": {
-      "ru": "ВАША РЕКОМЕНДАЦИЯ",
-      "uz": "SIZNING TAVSIYANGIZ",
-      "en": "YOUR RECOMMENDATION"
-    },
-    "recommendedLead": {
-      "ru": "С высокой вероятностью этот размер подойдёт вам.",
-      "uz": "Bu o‘lcham sizga mos kelish ehtimoli yuqori.",
-      "en": "There is a high chance this size will fit you well."
-    },
-    "recommendedSize": {
-      "ru": "Рекомендуемый размер",
-      "uz": "Sizga tavsiya etilgan o‘lcham",
-      "en": "Your recommended size"
-    },
-    "related": {
-      "ru": "Похожие товары",
-      "uz": "O‘xshash mahsulotlar",
-      "en": "You may also like"
-    },
-    "remove": {
-      "ru": "Удалить",
-      "uz": "Olib tashlash",
-      "en": "Remove"
-    },
-    "resetProfile": {
-      "ru": "Сбросить профиль",
-      "uz": "Profilni tiklash",
-      "en": "Reset profile"
-    },
-    "returns": {
-      "ru": "Возврат",
-      "uz": "Qaytarish",
-      "en": "Returns"
-    },
-    "sale": {
-      "ru": "Распродажа",
-      "uz": "Chegirmalar",
-      "en": "Sale"
-    },
-    "scarves": {
-      "ru": "Шарфы",
-      "uz": "Sharf va roʻmollar",
-      "en": "Scarves"
-    },
-    "search": {
-      "ru": "Поиск",
-      "uz": "Qidiruv",
-      "en": "Search"
-    },
-    "selectedForYou": {
-      "ru": "Выбрано для вас",
-      "uz": "Siz uchun tanlangan",
-      "en": "Selected for you"
-    },
-    "services": {
-      "ru": "Общие услуги",
-      "uz": "Xizmatlar",
-      "en": "Services"
     },
     "settings": {
-      "ru": "Настройки",
-      "uz": "Sozlamalar",
-      "en": "Settings"
-    },
-    "shirts": {
-      "ru": "Рубашки",
-      "uz": "Koʻylaklar",
-      "en": "Shirts"
-    },
-    "shoeSize": {
-      "ru": "Размер обуви",
-      "uz": "Poyabzal o‘lchami",
-      "en": "Shoe size"
-    },
-    "shoes": {
-      "ru": "Обувь",
-      "uz": "Poyabzallar",
-      "en": "Shoes"
-    },
-    "shorter": {
-      "ru": "Короче",
-      "uz": "Qisqaroq",
-      "en": "Shorter"
-    },
-    "shouldersLead": {
-      "ru": "Укажите ширину плеч для более точной посадки",
-      "uz": "Aniqroq o‘tirish uchun yelka kengligini tanlang",
-      "en": "Choose your shoulder width for a more accurate fit."
-    },
-    "shouldersTitle": {
-      "ru": "Ваши плечи",
-      "uz": "Yelkalaringiz",
-      "en": "Your shoulders"
-    },
-    "signOut": {
-      "ru": "Выйти из аккаунта",
-      "uz": "Shaxsiy kabinetdan chiqish",
-      "en": "Sign out"
-    },
-    "size": {
-      "ru": "Размер",
-      "uz": "O‘lcham",
-      "en": "Size"
-    },
-    "sizeGuide": {
-      "ru": "Таблица размеров",
-      "uz": "O‘lchamlar jadvali",
-      "en": "Size guide"
-    },
-    "sizeGuideLead": {
-      "ru": "Если значение находится между двумя размерами, выбирайте больший для более свободной посадки.",
-      "uz": "Agar o‘lchamingiz ikki o‘lcham oralig‘ida bo‘lsa, erkinroq turishi uchun kattaroq o‘lchamni tanlang.",
-      "en": "If your measurement is between two sizes, choose the larger size for a looser fit."
-    },
-    "sizeGuideTitle": {
-      "ru": "Таблица размеров",
-      "uz": "O‘lchamlar jadvali",
-      "en": "Size guide"
-    },
-    "sizeHelp": {
-      "ru": "Помощь с выбором",
-      "uz": "O‘lcham bo‘yicha yordam",
-      "en": "Size help"
-    },
-    "skirts": {
-      "ru": "Юбки",
-      "uz": "Yubkalar",
-      "en": "Skirts"
-    },
-    "slim": {
-      "ru": "Стройная",
-      "uz": "Nozik",
-      "en": "Slimmer"
-    },
-    "socialMedia": {
-      "ru": "Социальные сети",
-      "uz": "Ijtimoiy tarmoqlar",
-      "en": "Social media"
-    },
-    "standardDelivery": {
-      "ru": "Стандартная доставка",
-      "uz": "Standart yetkazib berish",
-      "en": "Standard delivery"
-    },
-    "statement": {
-      "ru": "Одежда, которая не перекрикивает женщину, а помогает ей звучать.",
-      "uz": "Ayolni to‘sib qo‘ymaydigan, balki uning ovozini yanada yorqin qiladigan kiyimlar.",
-      "en": "Clothes that do not speak over a woman, but help her voice be heard."
-    },
-    "tighter": {
-      "ru": "Более прилегающая",
-      "uz": "Yopishiqroq",
-      "en": "Tighter"
-    },
-    "tops": {
-      "ru": "Топы",
-      "uz": "Toplar",
-      "en": "Tops"
-    },
-    "total": {
-      "ru": "Итого",
-      "uz": "Jami",
-      "en": "Total"
-    },
-    "trousers": {
-      "ru": "Брюки",
-      "uz": "Shimlar",
-      "en": "Trousers"
-    },
-    "tshirts": {
-      "ru": "Футболки",
-      "uz": "Futbolkalar",
-      "en": "T-shirts"
-    },
-    "ukSizes": {
-      "ru": "🇬🇧 Британские размеры",
-      "uz": "🇬🇧 Britaniya o‘lchamlari",
-      "en": "🇬🇧 British sizes"
-    },
-    "usSizes": {
-      "ru": "🇺🇸 Американские размеры",
-      "uz": "🇺🇸 Amerika o‘lchamlari",
-      "en": "🇺🇸 American sizes"
-    },
-    "viewAll": {
-      "ru": "Смотреть всё →",
-      "uz": "Barchasini ko‘rish →",
-      "en": "View all →"
-    },
-    "viewCollection": {
-      "ru": "Смотреть коллекцию",
-      "uz": "Kolleksiyani ko‘rish",
-      "en": "View collection"
-    },
-    "viewNew": {
-      "ru": "Смотреть новинки",
-      "uz": "Yangiliklarni ko‘rish",
-      "en": "View new arrivals"
-    },
-    "waistCm": {
-      "ru": "Талия, см",
-      "uz": "Bel, sm",
-      "en": "Waist, cm"
-    },
-    "waistLead": {
-      "ru": "Выберите форму талии для более точной посадки",
-      "uz": "Aniq tavsiya uchun bel shaklini tanlang",
-      "en": "Choose your waist shape for a more accurate recommendation."
-    },
-    "waistTitle": {
-      "ru": "Ваша талия",
-      "uz": "Belingiz",
-      "en": "Your waist"
-    },
-    "weekdays": {
-      "ru": "Понедельник — Пятница",
-      "uz": "Dushanba — Juma",
-      "en": "Monday — Friday"
-    },
-    "weekend": {
-      "ru": "Суббота — Воскресенье",
-      "uz": "Shanba — Yakshanba",
-      "en": "Saturday — Sunday"
-    },
-    "wide": {
-      "ru": "Широкая",
-      "uz": "Keng",
-      "en": "Wider"
-    },
-    "women": {
-      "ru": "Женщинам",
-      "uz": "Ayollar uchun",
-      "en": "Women"
-    },
-    "youMayLike": {
-      "ru": "Вам может понравиться",
-      "uz": "Sizga yoqishi mumkin",
-      "en": "You may also like"
-    },
-    "yourBag": {
-      "ru": "Ваша корзина",
-      "uz": "Sizning savatingiz",
-      "en": "Your bag"
-    },
-    "yourBagCaps": {
-      "ru": "ВАША КОРЗИНА",
-      "uz": "SIZNING SAVATINGIZ",
-      "en": "YOUR BAG"
-    },
-    "zoom": {
-      "ru": "Увеличить",
-      "uz": "Kattalashtirish",
-      "en": "Zoom"
+        "commerce": {
+            "freeShipThreshold": 1500000,
+            "flatShipping": 35000
+        },
+        "hero": [
+            {
+                "type": "video",
+                "src": "https://uma.findex.uz/media/c5913deabcd9.mp4"
+            }
+        ],
+        "socialLinks": [
+            {
+                "label": "Instagram",
+                "href": "https://www.instagram.com/uma_uz/"
+            },
+            {
+                "label": "Telegram",
+                "href": "https://t.me/uma_brand_uz"
+            },
+            {
+                "label": "Facebook",
+                "href": "https://www.facebook.com/profile.php?id=61574988260163"
+            },
+            {
+                "label": "YouTube",
+                "href": "https://www.youtube.com/@Uma_uz"
+            },
+            {
+                "label": "Pinterest",
+                "href": "https://www.pinterest.com/umaclothingbrand/"
+            }
+        ]
     }
-  },
-  "settings": {
-    "commerce": {
-      "freeShipThreshold": 1500000,
-      "flatShipping": 35000
-    },
-    "hero": [],
-    "socialLinks": [
-      {
-        "label": "Instagram",
-        "href": "https://www.instagram.com/uma_uz/"
-      },
-      {
-        "label": "Telegram",
-        "href": "https://t.me/uma_brand_uz"
-      },
-      {
-        "label": "Facebook",
-        "href": "https://www.facebook.com/profile.php?id=61574988260163"
-      },
-      {
-        "label": "YouTube",
-        "href": "https://www.youtube.com/@Uma_uz"
-      },
-      {
-        "label": "Pinterest",
-        "href": "https://www.pinterest.com/umaclothingbrand/"
-      }
-    ]
-  }
 }

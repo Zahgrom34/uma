@@ -647,10 +647,11 @@ details.accordion>p{margin:0 0 18px;line-height:1.6}
 .shop-drawer .shopmenu-links{min-width:0}
 .shop-drawer .shopmenu-featured,.shop-drawer .shopmenu-categories{display:flex;flex-direction:column;align-items:stretch}
 .shop-drawer .shopmenu-featured{gap:4px;margin-bottom:20px}
-.shopmenu-tabs{display:flex;align-items:flex-end;gap:28px;margin:0 0 18px;border-bottom:1px solid var(--hairline)}
-.shopmenu-tabs button{position:relative;border:0;background:transparent;padding:0 0 12px;color:var(--ink);cursor:pointer;font:500 24px/1.1 var(--serif)}
+.shopmenu-tabs{display:flex;flex-wrap:wrap;align-items:flex-end;gap:0 18px;margin:0 0 18px;border-bottom:1px solid var(--hairline)}
+.shopmenu-tabs button{position:relative;border:0;background:transparent;padding:0 0 12px;color:var(--ink);cursor:pointer;font:500 20px/1.1 var(--serif);white-space:nowrap}
 .shopmenu-tabs button:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent}
 .shopmenu-tabs button.active:after{background:currentColor}
+@media(max-width:420px){.shopmenu-tabs{gap:0 14px}}
 .shop-drawer .shopmenu-featured button,.shop-drawer .shopmenu-categories button{width:100%;border:0;background:transparent;color:var(--ink);text-align:left;cursor:pointer}
 .shop-drawer .shopmenu-featured button{padding:7px 0;font:500 18px/1.35 var(--serif)}
 .shop-drawer .shopmenu-featured span{margin-left:8px;color:#8b8985;font:11px var(--ui)}

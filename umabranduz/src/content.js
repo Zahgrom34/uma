@@ -11,6 +11,7 @@ export const commerce = { freeShipThreshold: 1500000, flatShipping: 35000 };
 export const uiStrings = {};
 export const heroMedia = [];
 export const socialLinksData = [];
+export const categoriesData = [];
 
 const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:3000').replace(/\/+$/, '');
 const CACHE_KEY = 'uma-content-cache';
@@ -22,6 +23,7 @@ const readCache = () => {
 const toLegacy = p => ({
   id: p.id,
   cat: p.cat,
+  categorySlug: p.categorySlug,
   price: p.price,
   ...(p.oldPrice != null ? { oldPrice: p.oldPrice } : {}),
   ...(p.sale ? { sale: true } : {}),
@@ -70,6 +72,8 @@ export function applyContent(bundle) {
   heroMedia.push(...(bundle.settings.hero || []).map(({ type, src }) => ({ type, src })));
   socialLinksData.length = 0;
   socialLinksData.push(...(bundle.settings.socialLinks || []));
+  categoriesData.length = 0;
+  categoriesData.push(...(bundle.categories || []));
   return bundle;
 }
 
