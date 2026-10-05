@@ -145,9 +145,22 @@ export class BillzService {
       .reduce((sum, m) => sum + (m.active_measurement_value ?? 0), 0);
   }
 
-  /** Pricing of one row: the first selected shop present in shop_prices (or the first entry when [] = all). */
-  private rowPricing(row: BillzProductRow, shopIds: string[], warnings: string[]): RowPricing {
+  /**
+   * Name stem for stem-based grouping (billz-v4 §3.1): the text before the first ' / '
+   * separator, trimmed and case-insensitive; a name without the separator is its own stem.
+   */
+  private rowStem(row: BillzProductRow): string {
+    return normalize((row.name ?? '').split(' / ')[0] ?? '');
+  }
+
+  /**
+   * Pricing of one row: the first selected shop present in shop_prices (or the first entry
+   * when [] = all). `null` when the row carries no shop_prices at all (e.g. a variative
+   * parent row) — such rows neither set nor dispute the group price.
+   */
+  private rowPricing(row: BillzProductRow, shopIds: string[], warnings: string[]): RowPricing | null {
     const entries = row.shop_prices ?? [];
+    if (entries.length === 0) return null;
     const relevant = shopIds.length ? entries.filter((p) => shopIds.includes(p.shop_id)) : entries;
     const pool = relevant.length ? relevant : entries;
     const chosen = shopIds.length ? pool.slice().sort((a, b) => shopIds.indexOf(a.shop_id) - shopIds.indexOf(b.shop_id))[0] : pool[0];
@@ -159,13 +172,35 @@ export class BillzService {
   }
 
   /**
-   * Resolves the variant group for a matched row (billz-v2 §3.3): any variant's sku
-   * matches the whole group; a parent row matches its children; simple rows stand alone.
+   * Resolves the variant group for a matched row: the billz-v2 §3.3 parent resolution
+   * (any variant's sku matches the whole group; a parent row matches its children; simple
+   * rows stand alone) UNION the billz-v4 §3.2 name-stem mates, deduplicated by row id
+   * (sku when the id is absent). The merchant's catalog stores every size/color as its
+   * own single-row parent group, so the stem is what actually ties variants together.
    */
-  private resolveGroup(row: BillzProductRow, children: Map<string, BillzProductRow[]>): BillzProductRow[] {
-    if (row.parent_id) return children.get(row.parent_id) ?? [row];
-    if (row.is_variative) return children.get(row.id) ?? [];
-    return [row];
+  private resolveGroup(
+    row: BillzProductRow,
+    children: Map<string, BillzProductRow[]>,
+    byStem: Map<string, BillzProductRow[]>,
+  ): BillzProductRow[] {
+    const base = row.parent_id
+      ? children.get(row.parent_id) ?? [row]
+      : row.is_variative
+        ? children.get(row.id) ?? []
+        : [row];
+    const stem = this.rowStem(row);
+    const mates = stem ? byStem.get(stem) ?? [] : [];
+    const seen = new Set<string>();
+    const union: BillzProductRow[] = [];
+    for (const r of [...base, ...mates]) {
+      const key = r.id || normalize(r.sku ?? '');
+      if (key) {
+        if (seen.has(key)) continue;
+        seen.add(key);
+      }
+      union.push(r);
+    }
+    return union;
   }
 
   /** Aggregates a variant group: first row's pricing wins, sizes summed, size-less rows count toward the total only. */
@@ -174,12 +209,14 @@ export class BillzService {
     let priced = false;
     for (const row of group) {
       const pricing = this.rowPricing(row, shopIds, warnings);
-      if (!priced) {
-        result.retail = pricing.retail;
-        result.promo = pricing.promo;
-        priced = true;
-      } else if (pricing.retail !== result.retail || pricing.promo !== result.promo) {
-        warnings.push(`Артикул ${(row.sku ?? '').trim()}: строки размеров расходятся в цене, взята цена первой строки`);
+      if (pricing) {
+        if (!priced) {
+          result.retail = pricing.retail;
+          result.promo = pricing.promo;
+          priced = true;
+        } else if (pricing.retail !== result.retail || pricing.promo !== result.promo) {
+          warnings.push(`Артикул ${(row.sku ?? '').trim()}: строки размеров расходятся в цене, взята цена первой строки`);
+        }
       }
       const qty = this.rowQty(row, shopIds);
       result.totalQty += qty;
@@ -230,9 +267,10 @@ export class BillzService {
 
     const rows = await this.fetchRows(settings.secretKey);
 
-    // Index rows by normalized sku and by parent_id (billz-v2 §3.2).
+    // Index rows by normalized sku, by parent_id (billz-v2 §3.2) and by name stem (billz-v4 §3.1).
     const bySkuRow = new Map<string, BillzProductRow>();
     const children = new Map<string, BillzProductRow[]>();
+    const byStem = new Map<string, BillzProductRow[]>();
     for (const row of rows) {
       const key = normalize(row.sku ?? '');
       if (key && !bySkuRow.has(key)) bySkuRow.set(key, row);
@@ -240,6 +278,12 @@ export class BillzService {
         const list = children.get(row.parent_id);
         if (list) list.push(row);
         else children.set(row.parent_id, [row]);
+      }
+      const stem = this.rowStem(row);
+      if (stem) {
+        const mates = byStem.get(stem);
+        if (mates) mates.push(row);
+        else byStem.set(stem, [row]);
       }
     }
 
@@ -278,7 +322,7 @@ export class BillzService {
         unmatchedSkus.push((prods[0].billzSku ?? '').trim());
         continue;
       }
-      const groupRows = this.resolveGroup(row, children);
+      const groupRows = this.resolveGroup(row, children, byStem);
       const group = this.aggregate(groupRows, settings.shopIds, warnings);
       const photoUrls = this.groupPhotoUrls(groupRows);
       if (prods.length > 1) {

@@ -900,6 +900,77 @@ describe('UMA API (e2e smoke)', () => {
     expect(p.mediaIds).toHaveLength(2); // unchanged
   });
 
+  // ---- billz name-stem grouping (contract billz-v4) ------------------------
+
+  // Real-catalog shape: every row is its own single-row parent group; only the name stem
+  // («Sumka paxta / S / oq» → «Sumka paxta») ties sizes and colors together.
+  const STEM_PHOTO_OQ = 'https://uma-test.fra1.digitaloceanspaces.com/products/sumka-oq.png';
+  const STEM_PHOTO_KOK = 'https://uma-test.fra1.digitaloceanspaces.com/products/sumka-kok.png';
+  const stemRow = (
+    id: string,
+    name: string,
+    sku: string,
+    size: string,
+    qty: number,
+    retail: number,
+    photos?: { photo_url: string; sequence: number; is_main: boolean }[],
+  ): BillzProductRow => ({
+    id,
+    parent_id: `par-${id}`, // unique per row — zero multi-row parent groups, like the merchant catalog
+    is_variative: false,
+    name,
+    sku,
+    product_attributes: [{ attribute_name: 'Размер', attribute_value: size }],
+    shop_prices: [{ shop_id: SHOP_A, shop_name: 'UMA ЦУМ', retail_price: retail, retail_currency: 'UZS', promo_price: 0 }],
+    shop_measurement_values: [{ shop_id: SHOP_A, shop_name: 'UMA ЦУМ', active_measurement_value: qty }],
+    ...(photos ? { photos } : {}),
+  });
+
+  it('stem grouping: same-name rows sum sizes across colors, collect photos, warn on price disagreement (billz-v4)', async () => {
+    await auth(request(server()).patch('/api/admin/products/test-dress')).send({
+      billzSku: 'STEM-001',
+      sizes: [
+        { size: 'S', available: false },
+        { size: 'M', available: false },
+      ],
+    });
+    const stemCatalog: BillzProductRow[] = [
+      stemRow('s1', 'Sumka paxta / S / oq', 'STEM-001', 'S', 2, 519000, [{ photo_url: STEM_PHOTO_OQ, sequence: 1, is_main: true }]),
+      stemRow('s2', 'Sumka paxta / M / oq', 'STEM-002', 'M', 1, 519000),
+      stemRow('s3', "Sumka paxta / S / ko'k", 'STEM-003', 'S', 3, 469000, [{ photo_url: STEM_PHOTO_KOK, sequence: 1, is_main: true }]),
+      stemRow('s4', 'Gipyur shim kulrang L', 'OTHER-01', 'S', 9, 100000), // no ' / ' → own stem, stays out of the group
+    ];
+    billzProducts = async () => ({ count: stemCatalog.length, products: stemCatalog });
+    billzPhoto = async (url) =>
+      sharp({
+        create: { width: 8, height: 8, channels: 3, background: url.includes('kok') ? { r: 20, g: 60, b: 200 } : { r: 240, g: 240, b: 230 } },
+      })
+        .png()
+        .toBuffer();
+    billzCalls = [];
+
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    expect(res.body.matchedProducts).toBe(1);
+    expect(res.body.updatedProducts).toBe(1);
+    expect(res.body.error).toBeNull();
+    // Color rows of one stem disagree in price → the existing disagreement warning fires.
+    expect(res.body.warnings.join(' ')).toContain('STEM-003: строки размеров расходятся в цене');
+    // Photos collected from BOTH color rows, including the non-matched stem-mate s3.
+    expect(res.body.importedPhotos).toBe(2);
+    const downloaded = billzCalls.filter((c) => c.method === 'downloadPhoto').map((c) => c.url);
+    expect(downloaded.sort()).toEqual([STEM_PHOTO_KOK, STEM_PHOTO_OQ].sort());
+
+    const p = (await auth(request(server()).get('/api/admin/products/test-dress'))).body;
+    expect(p.price).toBe(519000); // the matched row's price, not the ko'k 469 000
+    expect(p.sale).toBe(false);
+    expect(p.oldPrice).toBeNull();
+    expect(p.stock).toBe(6); // 2 + 1 + 3; the foreign-stem row's 9 stays out
+    expect(p.unavailableSizes).toEqual([]); // size union S + M, both stocked
+    expect(p.lowStockSizes).toEqual({ M: 1 }); // S = 2 + 3 = 5 summed across colors → above threshold
+    expect(p.mediaIds).toHaveLength(4); // curated + earlier naqshli photo + both sumka colors
+  });
+
   it('the public bundle leaks nothing: no billz/billzSync settings, no billzSku, no secret anywhere', async () => {
     const res = await request(server()).get('/api/public/content');
     expect(res.status).toBe(200);
