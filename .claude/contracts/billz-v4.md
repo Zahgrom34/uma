@@ -1,9 +1,9 @@
 ---
 feature: billz-v4 — name-based variant grouping in the Billz sync
-status: approved
+status: allowed
 budget:
   iterations_allowed: 1         # the remaining iteration of the 04.10.2026 2-iteration grant
-  iterations_used: 0
+  iterations_used: 1
   usd_at_start: 41.80
 created: 05.10.2026
 ---
@@ -73,7 +73,7 @@ then documentor close-out.
 
 ## 6. Conflict log
 
-(empty)
+(empty — no conflicts reported this run)
 
 ## 7. Verdict
 
@@ -113,3 +113,8 @@ No further full iteration is payable under the grant; none is required.
   fixture-only situation). Record in the feature doc as accepted behavior.
 - Stem-collision risk between identically-stemmed distinct products remains accepted per §2;
   revisit only if the merchant catalog ever grows such names.
+
+**Close-out (documentor, 05.10.2026):** deploy conditions satisfied — deployed 05.10.2026 as
+image `uma:billz-v4`, commit 816be83; prod re-verify of §4.2 passed (32/32 synced,
+importedPhotos 2 → 0, kurtka gallery 8 unique photos from both color rows, no size flapping).
+Feature record: `docs/features/billz-v4.md`.

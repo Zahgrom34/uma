@@ -35,6 +35,8 @@ none committed (contain live commercial data) — re-probe with the token from `
   every row now has a UNIQUE `parent_id` (variant groups of one). The group-resolution logic
   (sku → row → parent_id → siblings) still functions unchanged; it just resolves single-row groups.
   Flagged to the user separately; no sync changes made for it (billz-v3 §1/§2).
+  Since billz-v4 (05.10.2026) the sync groups variants by name stem (`name.split(' / ')[0]`,
+  case-insensitive) in union with the parent group — see `docs/features/billz-v4.md`.
 
 ## Shops
 

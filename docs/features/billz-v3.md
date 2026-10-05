@@ -82,7 +82,8 @@ line. supreme-court ruled on the evidence.
 - Merchant catalog restructure (observed 03.10.2026): every row now has a unique
   `parent_id`, so variant grouping degrades to groups of one. The grouping logic
   still functions; revisit size-grouping with the merchant (flagged to the user,
-  out of scope this run).
+  out of scope this run). **Resolved in billz-v4 (05.10.2026): grouping is now
+  name-stem-based — see `docs/features/billz-v4.md`.**
 - playwright-qa's in-browser check of the legacy hide-branch (report without
   `importedPhotos`) was covered at API level only; it can ride along with any
   future billz UI change.
