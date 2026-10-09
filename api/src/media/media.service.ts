@@ -13,7 +13,7 @@ export const UPLOADS_DIR = process.env.UPLOADS_DIR
   : path.resolve(process.cwd(), 'uploads');
 export const THUMBS_DIR = path.join(UPLOADS_DIR, 'thumbs');
 
-export const MAX_UPLOAD_BYTES = 10 * 1024 * 1024;
+export const MAX_UPLOAD_BYTES = 30 * 1024 * 1024;
 export const MAX_VIDEO_BYTES = 50 * 1024 * 1024;
 
 const MAGIC: { mime: string; check: (b: Buffer) => boolean }[] = [
@@ -97,8 +97,8 @@ export class MediaService {
     }
     if (buffer.length > MAX_UPLOAD_BYTES) {
       throw new BadRequestException({
-        message: 'Файл больше 10 МБ — уменьшите изображение и попробуйте снова',
-        fieldErrors: { files: 'Файл больше 10 МБ' },
+        message: 'Файл больше 30 МБ — уменьшите изображение и попробуйте снова',
+        fieldErrors: { files: 'Файл больше 30 МБ' },
       });
     }
     const hash = createHash('sha1').update(buffer).digest('hex').slice(0, 12);

@@ -12,6 +12,16 @@ const PAGE_LIMIT = 100;
 const PHOTOS_PER_PRODUCT = 10;
 /** Merchant-defined size attribute names, matched case-insensitively (billz-v2 §3.4). */
 const SIZE_ATTR = /^(razmer|размер|size)$/i;
+/** Wearable letter sizes (billz-v5 §1B.1); input already trimmed + uppercased. */
+const LETTER_SIZE = /^(XXS|XS|S|M|L|XL|XXL|3XL|4XL)$/;
+/** Numeric clothing/shoe/ring sizes: 1–2 digits, optional half (billz-v5 §1B.1). */
+const NUMERIC_SIZE = /^\d{1,2}([.,]5)?$/;
+/**
+ * A razmer value counts as a wearable size iff it matches one of the two patterns.
+ * Anything else (dimensions «18*33», STD, ONE SIZE, free text) is NOT a size: its qty
+ * counts toward the product total only, with no warning (billz-v5 §1B.1).
+ */
+const isWearableSize = (value: string): boolean => LETTER_SIZE.test(value) || NUMERIC_SIZE.test(value);
 
 interface BillzSyncSettings {
   secretKey: string;
@@ -203,7 +213,7 @@ export class BillzService {
     return union;
   }
 
-  /** Aggregates a variant group: first row's pricing wins, sizes summed, size-less rows count toward the total only. */
+  /** Aggregates a variant group: first row's pricing wins, recognized sizes summed, other rows count toward the total only. */
   private aggregate(group: BillzProductRow[], shopIds: string[], warnings: string[]): SkuGroup {
     const result: SkuGroup = { retail: 0, promo: 0, totalQty: 0, sizeQty: new Map() };
     let priced = false;
@@ -221,7 +231,7 @@ export class BillzService {
       const qty = this.rowQty(row, shopIds);
       result.totalQty += qty;
       const size = this.rowSize(row);
-      if (size) result.sizeQty.set(size, (result.sizeQty.get(size) ?? 0) + qty);
+      if (size && isWearableSize(size)) result.sizeQty.set(size, (result.sizeQty.get(size) ?? 0) + qty);
     }
     return result;
   }
@@ -344,30 +354,28 @@ export class BillzService {
           }
         }
 
-        // Per-size stock.
-        const seenSizes = new Set<string>();
-        for (const s of product.sizes) {
-          const norm = s.size.trim().toUpperCase();
-          const qty = group.sizeQty.get(norm);
-          if (qty === undefined) {
-            warnings.push(`Товар ${label(product)}: размер ${s.size} не найден в Billz, оставлен без изменений`);
-            continue;
-          }
-          seenSizes.add(norm);
+        // Per-size stock (billz-v5 §1B): Billz is the source of truth for recognized sizes —
+        // existing rows update, missing ones are created, and UMA sizes absent from the
+        // Billz group are pruned with a targeted deleteMany inside the same $transaction.
+        const existingBySize = new Map(product.sizes.map((s) => [s.size.trim().toUpperCase(), s]));
+        for (const [size, qty] of group.sizeQty) {
+          const data = {
+            available: qty > 0,
+            lowStockQty: qty > 0 && qty <= LOW_STOCK_THRESHOLD ? Math.round(qty) : null,
+          };
+          const existing = existingBySize.get(size);
           ops.push(
-            this.prisma.productSize.update({
-              where: { productId_size: { productId: product.id, size: s.size } },
-              data: {
-                available: qty > 0,
-                lowStockQty: qty > 0 && qty <= LOW_STOCK_THRESHOLD ? Math.round(qty) : null,
-              },
-            }),
+            existing
+              ? this.prisma.productSize.update({
+                  where: { productId_size: { productId: product.id, size: existing.size } },
+                  data,
+                })
+              : this.prisma.productSize.create({ data: { productId: product.id, size, ...data } }),
           );
         }
-        for (const size of group.sizeQty.keys()) {
-          if (!seenSizes.has(size)) {
-            warnings.push(`Товар ${label(product)}: размер ${size} есть в Billz, но не заведён в UMA — пропущен`);
-          }
+        const staleSizes = product.sizes.filter((s) => !group.sizeQty.has(s.size.trim().toUpperCase())).map((s) => s.size);
+        if (staleSizes.length) {
+          ops.push(this.prisma.productSize.deleteMany({ where: { productId: product.id, size: { in: staleSizes } } }));
         }
 
         const totalQty = Math.round(group.totalQty);

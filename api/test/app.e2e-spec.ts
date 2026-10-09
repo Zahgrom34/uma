@@ -783,7 +783,9 @@ describe('UMA API (e2e smoke)', () => {
     expect(report.updatedProducts).toBe(1);
     expect(report.unmatchedSkus).toEqual([]);
     expect(report.error).toBeNull();
-    expect(report.warnings.join(' ')).toContain('XXL');
+    // billz-v5: the Billz-only XXL is created instead of warned about; no size warnings at all.
+    expect(report.warnings.join(' ')).not.toContain('не заведён');
+    expect(report.warnings.join(' ')).not.toContain('не найден в Billz');
     expect(typeof report.startedAt).toBe('string');
     expect(typeof report.durationMs).toBe('number');
     // paginated until count (5) covered
@@ -799,6 +801,15 @@ describe('UMA API (e2e smoke)', () => {
     expect(p.outOfStock).toBe(false);
     expect(p.unavailableSizes).toEqual(['XS']); // qty 0 in the selected shop
     expect(p.lowStockSizes).toEqual({ M: 2 }); // 0 < qty ≤ 3
+    // billz-v5 upsert: the Billz-only XXL (qty 5, above threshold) now exists in UMA.
+    expect(p.sizes).toEqual(
+      expect.arrayContaining([
+        { size: 'XS', available: false },
+        { size: 'M', available: true, lowStockQty: 2 },
+        { size: 'XXL', available: true },
+      ]),
+    );
+    expect(p.sizes).toHaveLength(3);
 
     // report persisted → survives "reload" via the status endpoint
     const status = await auth(request(server()).get('/api/admin/billz/status'));
@@ -969,6 +980,118 @@ describe('UMA API (e2e smoke)', () => {
     expect(p.unavailableSizes).toEqual([]); // size union S + M, both stocked
     expect(p.lowStockSizes).toEqual({ M: 1 }); // S = 2 + 3 = 5 summed across colors → above threshold
     expect(p.mediaIds).toHaveLength(4); // curated + earlier naqshli photo + both sumka colors
+  });
+
+  // ---- billz-driven sizes + larger photos (contract billz-v5) --------------
+
+  const v5Row = (id: string, sku: string, size: string, qty: number): BillzProductRow => ({
+    id,
+    parent_id: '',
+    is_variative: false,
+    name: `V5 item / ${size}`,
+    sku,
+    product_attributes: [{ attribute_name: 'razmer', attribute_value: size }],
+    shop_prices: [{ shop_id: SHOP_A, shop_name: 'UMA ЦУМ', retail_price: 300000, retail_currency: 'UZS', promo_price: 0 }],
+    shop_measurement_values: [{ shop_id: SHOP_A, shop_name: 'UMA ЦУМ', active_measurement_value: qty }],
+  });
+
+  it('billz-v5 upsert: recognized Billz sizes missing in UMA are created with available/lowStockQty', async () => {
+    await auth(request(server()).patch('/api/admin/products/test-dress')).send({
+      billzSku: 'V5-001',
+      sizes: [{ size: 'S', available: false }],
+    });
+    const catalog = [
+      v5Row('v1', 'V5-001', 'S', 2),
+      v5Row('v2', 'V5-002', 'M', 1),
+      v5Row('v3', 'V5-003', 'L', 0),
+      v5Row('v4', 'V5-004', '16,5', 4), // numeric ring/shoe size — recognized too
+    ];
+    billzProducts = async () => ({ count: catalog.length, products: catalog });
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    expect(res.body.error).toBeNull();
+    expect(res.body.warnings.join(' ')).not.toContain('не заведён');
+    expect(res.body.warnings.join(' ')).not.toContain('не найден в Billz');
+
+    const p = (await auth(request(server()).get('/api/admin/products/test-dress'))).body;
+    expect(p.sizes).toEqual(
+      expect.arrayContaining([
+        { size: 'S', available: true, lowStockQty: 2 }, // existing row updated
+        { size: 'M', available: true, lowStockQty: 1 }, // created, low stock
+        { size: 'L', available: false }, // created, qty 0 → unavailable
+        { size: '16,5', available: true }, // created, above threshold
+      ]),
+    );
+    expect(p.sizes).toHaveLength(4);
+    expect(p.stock).toBe(7);
+  });
+
+  it('billz-v5 prune: UMA sizes absent from the Billz group are deleted', async () => {
+    const catalog = [v5Row('v5', 'V5-001', 'M', 2)];
+    billzProducts = async () => ({ count: catalog.length, products: catalog });
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    expect(res.body.error).toBeNull();
+    expect(res.body.warnings.join(' ')).not.toContain('не найден в Billz');
+
+    const p = (await auth(request(server()).get('/api/admin/products/test-dress'))).body;
+    expect(p.sizes).toEqual([{ size: 'M', available: true, lowStockQty: 2 }]); // S, L, 16,5 pruned
+    expect(p.stock).toBe(2);
+  });
+
+  it('billz-v5 recognition: dimension razmer «18*33» and STD → no ProductSize, no warning, qty in total', async () => {
+    const catalog = [v5Row('v6', 'V5-001', '18*33', 2), v5Row('v7', 'V5-005', 'STD', 3)];
+    billzProducts = async () => ({ count: catalog.length, products: catalog });
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    expect(res.body.error).toBeNull();
+    expect(res.body.warnings.join(' ')).not.toContain('размер');
+
+    const p = (await auth(request(server()).get('/api/admin/products/test-dress'))).body;
+    expect(p.sizes).toEqual([]); // the leftover M pruned, nothing created for 18*33 / STD
+    expect(p.stock).toBe(5); // both quantities count toward the total
+    expect(p.outOfStock).toBe(false);
+  });
+
+  it('billz-v5 photos: a 12 MiB image downloads and ingests (cap raised to 30 MiB)', async () => {
+    const BIG_PHOTO_URL = 'https://uma-test.fra1.digitaloceanspaces.com/products/v5-big.png';
+    const catalog = [{ ...v5Row('v8', 'V5-001', 'M', 2), photos: [{ photo_url: BIG_PHOTO_URL, sequence: 1, is_main: true }] }];
+    billzProducts = async () => ({ count: catalog.length, products: catalog });
+    // Incompressible noise PNG: raw RGB 2200×2200 ≈ 14.5 MB stored uncompressed.
+    const noise = Buffer.alloc(2200 * 2200 * 3);
+    for (let i = 0; i < noise.length; i += 1) noise[i] = Math.floor(Math.random() * 256);
+    const bigPng = await sharp(noise, { raw: { width: 2200, height: 2200, channels: 3 } })
+      .png({ compressionLevel: 0 })
+      .toBuffer();
+    expect(bigPng.length).toBeGreaterThan(10 * 1024 * 1024);
+    expect(bigPng.length).toBeLessThan(30 * 1024 * 1024);
+    billzPhoto = async () => bigPng;
+    billzCalls = [];
+
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    expect(res.body.error).toBeNull();
+    expect(res.body.importedPhotos).toBe(1);
+    expect(res.body.warnings.join(' ')).not.toContain('не удалось загрузить фото');
+    expect(billzCalls.filter((c) => c.method === 'downloadPhoto')).toEqual([{ method: 'downloadPhoto', url: BIG_PHOTO_URL }]);
+  }, 60000);
+
+  it('billz-v5 photos: over 30 MiB is still rejected with the Russian photo warning', async () => {
+    const HUGE_PHOTO_URL = 'https://uma-test.fra1.digitaloceanspaces.com/products/v5-huge.jpg';
+    const catalog = [{ ...v5Row('v9', 'V5-001', 'M', 2), photos: [{ photo_url: HUGE_PHOTO_URL, sequence: 1, is_main: true }] }];
+    billzProducts = async () => ({ count: catalog.length, products: catalog });
+    // 31 MiB with JPEG magic bytes: passes the mime sniff, fails the 30 MiB ingest cap.
+    const huge = Buffer.alloc(31 * 1024 * 1024);
+    huge[0] = 0xff;
+    huge[1] = 0xd8;
+    huge[2] = 0xff;
+    billzPhoto = async () => huge;
+
+    const res = await auth(request(server()).post('/api/admin/billz/sync'));
+    expect(res.status).toBe(200);
+    expect(res.body.error).toBeNull();
+    expect(res.body.importedPhotos).toBe(0);
+    expect(res.body.warnings.join(' ')).toContain('не удалось загрузить фото из Billz');
   });
 
   it('the public bundle leaks nothing: no billz/billzSync settings, no billzSku, no secret anywhere', async () => {
