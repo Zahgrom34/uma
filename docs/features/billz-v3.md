@@ -22,7 +22,8 @@ normal «Синхронизировать» action.
 - **Download seam** (`api/src/billz/billz.client.ts`, `downloadPhoto`): plain
   unauthenticated GET (the URLs are public DO Spaces objects), 15 s timeout per
   attempt, up to 2 attempts, bodies over 10 MiB rejected (Content-Length when
-  present AND final buffer length). All outbound photo traffic goes through this
+  present AND final buffer length). **The cap is 30 MiB since billz-v5
+  (09.10.2026) — see `docs/features/billz-v5.md`.** All outbound photo traffic goes through this
   method so the e2e stub covers it.
 - **Dedup, three layers** (`resolvePhoto` + attach loop): an already-imported
   asset is reused via `media.findBySourceUrl(url)`; otherwise the download goes

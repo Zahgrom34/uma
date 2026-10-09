@@ -27,6 +27,9 @@ share the same Billz product name:
 - **Sizes/stock:** per-size qty is SUMMED across all group rows (`sizeQty`
   map; previously last-row-wins) — several color rows of size S add up; the
   size set is the union over the group; product stock is the group total.
+  **Since billz-v5 (09.10.2026) sync also creates/prunes ProductSize rows to
+  match the recognized Billz sizes instead of only updating existing ones —
+  see `docs/features/billz-v5.md`.**
 - **Photos:** `groupPhotoUrls` from billz-v3 already collects per group, so
   stem grouping widens photo import to every variant row automatically; dedup,
   `is_main`/`sequence` ordering and the cap of 10 are unchanged.

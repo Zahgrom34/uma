@@ -1,9 +1,9 @@
 ---
 feature: billz-v5 — Billz-driven sizes + larger photo inputs
-status: approved
+status: allowed
 budget:
   iterations_allowed: 1         # user-granted 09.10.2026
-  iterations_used: 0
+  iterations_used: 1
   usd_at_start: 29.41
 created: 09.10.2026
 ---
